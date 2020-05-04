@@ -1,0 +1,89 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                                              %%%
+%%%     Language Science Press Master File       %%%
+%%%         follow the instructions below        %%%
+%%%                                              %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+% Everything followin a % is ignored
+% Some lines start with %. Remove the % to include them
+
+\documentclass[output=book,
+	draftmode,
+	arseneau,
+	colorlinks,
+%    showindex
+		  ]{langscibook/langscibook}    
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                                              %%%
+%%%          additional packages                 %%%
+%%%                                              %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% put all additional commands you need in the 
+% following files. {I}f you do not know what this might 
+% mean, you can safely ignore this section
+
+\input{localmetadata.tex}
+\input{localpackages.tex}
+\input{localhyphenation.tex}
+\addbibresource{localbibliography.bib} 
+\graphicspath{{figures/}}
+\input{localcommands.tex} 
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                                              %%%
+%%%             Frontmatter                      %%%
+%%%                                              %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\maketitle                
+\frontmatter
+% %% uncomment if you have preface and/or acknowledgements
+
+\currentpdfbookmark{Contents}{name} % adds a PDF bookmark
+\tableofcontents
+% % % \include{chapters/preface}
+\include{chapters/acknowledgments}
+\include{chapters/abbreviations} 
+\mainmatter         
+  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                                              %%%
+%%%             Chapters                         %%%
+%%%                                              %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\include{chapters/Chapter1} % Introduction
+\include{chapters/Chapter2} % Getting data right || A novel approach to the analysis of Russian complex verbs
+\include{chapters/Chapter4} % Limitations of existing approaches
+\include{chapters/Chapter5} %Semantics of individual prefixes  %% label: section:semantics
+\include{chapters/Chapter6} % Pragmatics
+\include{chapters/Chapter7} % Formal analysis 
+\include{chapters/Chapter8} % XMG
+\include{chapters/Chapter9} % Conclusion
+
+\appendix
+\input{chapters/AppendixA}	% Appendix Title
+\input{chapters/AppendixB} % Appendix Title
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%                                              %%%
+%%%             Backmatter                       %%%
+%%%                                              %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{localseealso.tex} 
+% There is normally no need to change the backmatter section
+% \input{backmatter.tex} 
+\end{document} 
+
+% you can create your book by running
+% xelatex main.tex
+%
+% you can also try a simple 
+% make
+% on the commandline
