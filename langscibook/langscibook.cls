@@ -476,8 +476,11 @@
   \lsSchmutztitel}
   %%%%%%%%%%%%%%%%%%%%
   \AtEndDocument{
-        \lsPageStyleEmpty
-        \null\newpage\thispagestyle{empty} % add a final blank page
+	\lsPageStyleEmpty
+	\null\newpage\thispagestyle{empty} % add a final blank page
+	%% Back page:
+    {\lsBackPage}
+    \null\newpage\thispagestyle{empty}
   }
 \fi
 
