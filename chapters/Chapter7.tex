@@ -30,7 +30,8 @@ Figure \ref{fig:exampletree} shows an example of a derivation: the initial tree 
     \label{fig:exampletree}
 \end{figure}
 
-\paragraph*{Feature-structure based TAG} Feature-structure based TAG, or FTAG, is a variant of TAG in which elementary trees are enriched with feature structures \citep{Vijay-ShankerJoshi:88}. Using feature structures as non-terminal nodes allows to generalize agreement via underspecification, helps to model adjunction constraints and leads to more compact grammars.
+\subsubsection{Feature-structure based TAG} 
+Feature-structure based TAG, or FTAG, is a variant of TAG in which elementary trees are enriched with feature structures \citep{Vijay-ShankerJoshi:88}. Using feature structures as non-terminal nodes allows to generalize agreement via underspecification, helps to model adjunction constraints and leads to more compact grammars.
 
 For example, \figref{fig:nofstruct} shows the derivation of the sentence \textit{``Grammars leak"} without feature structures and some trees involved in it (this example, including the \figref{fig:nofstruct},  \figref{fig:grleaksubst},  \figref{fig:isleaking}, and  \figref{fig:isleakingresult}, is due to Timm Lichte). One can see that already such a small piece of derivation contains a lot of redundancy that cannot be avoided if only labelled categories are used. In such a TAG, the following trees have to be kept in the grammar for a regular noun, such as \textit{grammars}: third person singular nominative, third person singular accusative, plural nominative, and plural accusative.
 \begin{figure}[h!]
@@ -71,7 +72,8 @@ In the final derived tree, top and bottom feature structures unify for all nodes
 
 %To sum up, FTAG is used instead of the simple TAG because feature structures as nodes allow to abstract away from agreement properties by underspecification, which leads to the fact that linguistic generalizations can be expressed more conveniently. Moreover, a split into top and down features provide a convenient mechanism for encoding adjunction constraints, as was illustrated by \figref{fig:isleaking} and \ref{fig:isleakingresult}. Another important fact is that
 
-\paragraph*{Lexicalized TAG} \citet{Abeille:02} and \cite{Frank:02} formulate principles that specify how TAG elementary trees should look like if they are used to model natural languages. First, each elementary tree must have at least one non-empty lexical item. This item is called \textit{lexical anchor}. When all the elementary trees satisfy this condition, a TAG is called \textit{lexicalized TAG,} or LTAG. This property has been argued to be a reasonable requirement with respect to modelling of natural languages. On the computational side it reduces the parsing time. 
+\subsubsection{Lexicalized TAG} 
+\citet{Abeille:02} and \cite{Frank:02} formulate principles that specify how TAG elementary trees should look like if they are used to model natural languages. First, each elementary tree must have at least one non-empty lexical item. This item is called \textit{lexical anchor}. When all the elementary trees satisfy this condition, a TAG is called \textit{lexicalized TAG,} or LTAG. This property has been argued to be a reasonable requirement with respect to modelling of natural languages. On the computational side it reduces the parsing time. 
 
 The second important principle for a natural language TAG is called \textit{theta-criterion for TAG} \citep{Frank:92}, or \textit{elementary tree minimality}. It requires that every elementary tree with a predicate as a lexical anchor must contain slots (substitution nodes or foot nodes) for all arguments of this predicate (including the subject) and for nothing else. Nominal arguments are usually represented as substitution nodes, whereas sentential arguments are often realised by foot nodes in order to allow long-distance dependency constructions through adjunction  \citep{Kroch:89, Frank:02}.
 
