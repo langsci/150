@@ -82,13 +82,43 @@ The second important principle for a natural language TAG is called \textit{thet
 As I have already mentioned, there are several levels of factorization of the LTAG lexicon. The first step is the separation of lexical anchors and tree templates (unanchored elementary trees). As a second step, the set of elementary trees is organized into tree families. Each tree family represents all possible realisations of one subcategorization frame: e.g., there is a tree family for transitive verbs (this means transitive verbs should be used as lexical anchors, i.e. fill the node marked with a diamond). This tree family contains patterns as shown on \figref{fig:treefamily}: canonical position, argument extraction, realization in combination with a passive verb form, among others.
 
 \begin{figure}
-\begin{tabular}{l l l}
-\includegraphics[scale=0.9]{TransVerb.pdf}
-&
-\includegraphics[scale=0.9]{TransVerb2.pdf}
-&
-\includegraphics[scale=0.9]{TransVerb3.pdf}
-\end{tabular}
+% \begin{tabular}{l l l}
+% \includegraphics[scale=0.9]{TransVerb.pdf}
+% &
+% \includegraphics[scale=0.9]{TransVerb2.pdf}
+% &
+% \includegraphics[scale=0.9]{TransVerb3.pdf}
+% \end{tabular}
+\begin{forest}
+[S
+ [NP]
+ [VP
+   [V◇]
+   [NP]
+ ]
+]
+\end{forest}\hfill
+\begin{forest}
+[S
+  [NP]
+  [S
+   [NP [$\epsilon$,no edge,tier=word]]
+   [VP [V◇,tier=word] [NP,tier=word]]
+  ]
+]
+\end{forest}\hfill
+\begin{forest}
+[S
+  [NP]
+  [VP
+    [V◇]
+    [PP
+      [P [by]]
+      [NP]
+    ]
+  ]
+]
+\end{forest}\hfill
 \caption{Some elemantary trees from the transitive verb tree family\label{fig:treefamily}}
 \end{figure}
 
@@ -239,7 +269,13 @@ There are two ways in which the proposed requirement regarding the scale type ca
 
 \begin{figure}
 \centering
-\includegraphics[scale=1]{ZaV.pdf}\\
+% % \includegraphics[scale=1]{ZaV.pdf}\\
+\begin{forest}
+[VP\textsuperscript{[E=\textbf{f}]}
+  [Pref [za-]]
+  [VP\textsuperscript{[E=\textbf{e}]}]
+]
+\end{forest}
 \begin{tabular}[t]{ll}
 \begin{tabular}[t]{l}
 \avm{
@@ -319,7 +355,16 @@ Now we are ready to unify the verbal frame (on the right side of \figref{frame:b
 
 \begin{figure}
 \centering
-\includegraphics[scale=1]{ZaBegat.pdf}\\
+% % \includegraphics[scale=1]{ZaBegat.pdf}\\
+\begin{forest}
+[S\textsuperscript{[E=\textbf{f}]}
+  [NP\textsuperscript{$\left[\text{I=\avm{\2}}\right]$}]
+  [VP\textsuperscript{E=\textbf{f}}
+    [Pref [za-]]
+    [VP\textsuperscript{[E=\textbf{e}]} [V [begat']]]
+  ]
+]
+\end{forest}
 \begin{tabular}[t]{ll}
 \begin{tabular}[t]{l}
 \avm{
@@ -371,18 +416,30 @@ Vasya \glb{za}.run.\glb{pst}.\glb{sg}.\glb{m} two hours\\
 Let me note that Russian and English time measure expressions are not parallel. For example, the accusative time measure phrase \textit{dva \v{c}asa} `for two hours' can become a part of a prepositional construction \textit{za dva \v{c}asa} `in two hours', which is not possible for English \textit{(*in for two hours)}. Furthermore, it can be used in the \textit{v-}headed prepositional phrase to refer to a point in time (\textit{v dva \v{c}asa} `at two o'clock'). Keeping this in mind, I propose to represent the semantics of the measure expression \textit{dva \v{c}asa} `two hours' as shown on the left side of \figref{frame:2hours}. 
 
 \begin{figure}
-\begin{tabular}[t]{c}
-\includegraphics[scale=1]{NumP.pdf}\\
+\begin{tabular}[b]{c}
+% % \includegraphics[scale=1]{NumP.pdf}\\
+\begin{forest}
+[NumP\textsuperscript{[I=\textbf{f}]}
+[Num] [N]
+]
+\end{forest}\\
 \avm{
 \btag{f} [\type*{length}
   		\VAL & 2\\
   		\MUNIT & hour  
   ]
 }
-\end{tabular}
-\hfill
-\begin{tabular}[t]{c}
-\includegraphics[scale=1]{VNumP.pdf}\\
+\end{tabular}\hspace{2cm}
+\begin{tabular}[b]{c}
+% % \includegraphics[scale=1]{VNumP.pdf}\\
+\begin{forest}
+[VP\textsuperscript{[E=\textbf{e}]}
+  [VP*]
+  [NumP\textsuperscript{[I=\textbf{f}]}
+    [Num] [N]
+  ]
+]
+\end{forest}\\
 \avm{
 \btag{e}[\type*{event}
   \DURATION & \btag{f}[\type*{length}
@@ -593,7 +650,7 @@ The second prefix that we have discussed in Chapter~\ref{Chapter5} is the prefix
 
 
 \begin{figure}
-\begin{minipage}{0.4\textwidth}
+\begin{minipage}{0.5\textwidth}
 \avm{
 \btag{e} [\type*{bounded-event}
 	   \NOUNDIM & \3\\       
@@ -608,13 +665,16 @@ The second prefix that we have discussed in Chapter~\ref{Chapter5} is the prefix
   		 	\POS & \4 ]\\
    ]
 }\\
-\vspace{1cm}
 \centering
 \svar{2} $\leq$ \svar{4}
-\end{minipage}
-\hfill
-\begin{minipage}{0.4\textwidth}
-\includegraphics[scale=1]{NaVerb.pdf}\\
+\end{minipage}\hspace{2cm}\begin{minipage}{0.25\textwidth}
+% % \includegraphics[scale=1]{NaVerb.pdf}\\
+\begin{forest}
+[VP\textsuperscript{[E=\textbf{e}]}
+  [Pref [na-]]
+  [VP\textsuperscript{[E=\textbf{e}]}]
+]
+\end{forest}
 \end{minipage}
 \caption{Representation of the contribution of the prefix \textit{na-}\label{frame:na}}
 \end{figure}
@@ -664,9 +724,21 @@ With this in mind let us see how the prefix is combined with some verbs that ope
 }\\
 \centering
 \svar{5} $\leq$ \svar{6}\\
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
-\includegraphics[scale=0.8	]{NaGret.pdf}
+\end{minipage}\hspace{1cm}
+\begin{minipage}{0.33\textwidth}
+% % \includegraphics[scale=0.8]{NaGret.pdf}
+\begin{forest}
+[S\textsuperscript{[E=\textbf{e}]}
+  [NP\textsuperscript{[I=\avm{\1}]}]
+  [VP\textsuperscript{[E=\textbf{e}]}
+   [VP\textsuperscript{[E=\textbf{e}]}
+     [Pref [na-]]
+     [VP\textsuperscript{[E=\textbf{e}]} [V [gret']]]
+   ]
+  [NP\textsuperscript{[I=\avm{\2}]}]
+  ]
+]
+\end{forest}
 \end{minipage}
 \caption{Representation of the verb \textit{nagret'} `to warm up' \label{frame:nagret}}
 \end{figure}
@@ -716,7 +788,14 @@ Objects in general may be associated with various measure dimensions, as in case
 }
 \end{minipage}
 \begin{minipage}{0.35\textwidth}
-\includegraphics[scale=1]{NaTemp.pdf}
+% % \includegraphics[scale=1]{NaTemp.pdf}
+\begin{tikzpicture}[baseline]
+\node at (0,0) (VP) {VP\textsuperscript{[E=\textbf{e}]}};
+\node (follows) [right = 1em of VP] {$\prec\prec$};
+\node [right = 1em of follows] (NP) {NP\textsuperscript{[I=\textbf{f}]}};
+\node [below=\baselineskip of NP] (N) {N};
+\draw (NP) -- (N);
+\end{tikzpicture}
 \end{minipage}
 \caption{Temperature dimension constructor\label{constructor:temp}}
 \end{figure}
@@ -762,9 +841,15 @@ The second dimension constructor applicable in case of the noun \textit{sup} `so
 \NOUNDIM & \1
 ]
 }
-\end{minipage}
-\begin{minipage}{0.35\textwidth}
-\includegraphics[scale=1]{NPgen.pdf}
+\end{minipage}\hspace{1em}\begin{minipage}{0.4\textwidth}
+% % \includegraphics[scale=1]{NPgen.pdf}
+\begin{tikzpicture}[baseline]
+\node at (0,0) (VP) {VP\textsuperscript{[E=\textbf{e}]}};
+\node (follows) [right = 1em of VP] {$\prec\prec$};
+\node [right = 1em of follows] (NP) {NP$^{\text{[I=\textbf{f}]}}_{\text{[case = gen]}}$};
+\node [below=\baselineskip of NP] (N) {N\textsuperscript{[case = gen]}};
+\draw (NP) -- (N);
+\end{tikzpicture}
 \end{minipage}
 \caption{Amount dimension constructor \label{constructor:amount}}
 \end{figure}
@@ -782,7 +867,7 @@ The second dimension constructor applicable in case of the noun \textit{sup} `so
 	   		\MUNIT & degree Celsius ] \\
        \KIND & [\type*{soup-kind}]\\
        \TASTE & [\type*{taste}]\\
-       \AMOUNTDIM & @4 [\type*{amount $\und$ measure-of-change}
+       \AMOUNTDIM & \4 [\type*{amount $\und$ measure-of-change}
        		\MIN & 0\\
        		\MAX & \1
        	]\\
@@ -1195,7 +1280,6 @@ Let us consider the case where a non-quantified object can cause the distributiv
 
 \begin{figure}
 \small
-% \begin{minipage}{0.575\textwidth}
 \avm{
 \btag{e} [\type*{event}
 	\THEME & \btag{f} [\type*{entity}
@@ -1209,11 +1293,15 @@ Let us consider the case where a non-quantified object can cause the distributiv
        	]
 ]
 }
-% \end{minipage}
-\hfill%
-\begin{minipage}[c]{0.4\textwidth}
-\includegraphics[scale=1]{NPpl.pdf}
-\end{minipage}
+\hspace{1em}\normalsize%
+% % \includegraphics[scale=1]{NPpl.pdf}
+\begin{tikzpicture}[baseline]
+\node at (0,0) (VP) {VP\textsuperscript{[E=\textbf{e}]}};
+\node (follows) [right = 1em of VP] {$\prec\prec$};
+\node [right = 1em of follows] (NP) {NP$^{\text{[I=\textbf{f}]}}_{\text{[num = pl]}}$};
+\node [below=\baselineskip of NP] (N) {N\textsuperscript{[num = pl]}};
+\draw (NP) -- (N);
+\end{tikzpicture}
 \caption{Cardinality dimension constructor\label{constructor:cardinality}}
 \end{figure}
 
@@ -1432,7 +1520,14 @@ What is still missing in this frame is the specification of the path that has to
 \svar{1} $\in$ \svar{5} $\und$ \svar{2} $\in$ \svar{4} $\und$ \svar{3} $\in$ \svar{4}
 \end{minipage}\hfill%
 \begin{minipage}{0.25\textwidth}
-\includegraphics[scale=.8]{NaTemp.pdf}
+% \includegraphics[scale=.8]{NaTemp.pdf}
+\begin{tikzpicture}[baseline]
+\node at (0,0) (VP) {VP\textsuperscript{[E=\textbf{e}]}};
+\node (follows) [right = 1em of VP] {$\prec\prec$};
+\node [right = 1em of follows] (NP) {NP\textsuperscript{[I=\textbf{f}]}};
+\node [below=\baselineskip of NP] (N) {N};
+\draw (NP) -- (N);
+\end{tikzpicture}
 \end{minipage}
 \caption{Path dimension constructor\label{constructor:path}}
 \end{figure}
@@ -1828,7 +1923,14 @@ Now the noun that is used as a direct object has to provide information about th
 }
 \end{minipage}%
 \begin{minipage}{0.35\textwidth}
-\includegraphics[scale=1]{NaTemp.pdf}
+% \includegraphics[scale=1]{NaTemp.pdf}
+\begin{tikzpicture}[baseline]
+\node at (0,0) (VP) {VP\textsuperscript{[E=\textbf{e}]}};
+\node (follows) [right = 1em of VP] {$\prec\prec$};
+\node [right = 1em of follows] (NP) {NP\textsuperscript{[I=\textbf{f}]}};
+\node [below=\baselineskip of NP] (N) {N};
+\draw (NP) -- (N);
+\end{tikzpicture}
 \end{minipage}
 \caption{Time scale constructor: case of a scale with one marked point \label{constructor:time}}
 \end{figure}
@@ -2089,7 +2191,15 @@ The last usage of the prefix \textit{pere-} that I provide a frame for is iterat
  }
  \end{minipage}\hfill%
  \begin{minipage}{0.45\textwidth}
- \includegraphics[scale=.85]{PereV.pdf}
+% %  \includegraphics[scale=.85]{PereV.pdf}
+\begin{forest}
+[VP\textsuperscript{[E=\textbf{f}]}
+ [VP\textsuperscript{[E=\textbf{f}]}
+   [Pref [pere-]]
+   [VP\textsuperscript{[E=\textbf{e}]}]
+ ] [NP\textsuperscript{[I=\avm{\6}]}]
+]
+\end{forest}
  \end{minipage}
 \caption{Representation of the contribution of the prefix \textit{pere-}: case of a property scale \label{frame:pere:iter}}
 \end{figure}
@@ -2114,7 +2224,12 @@ The next restriction, apart from the property type of the scale, is that the eve
  }\hfill%
 %  \end{minipage}
 %  \begin{minipage}{0.25\textwidth}
- \includegraphics[scale=1]{VPcoerce.pdf}\hfill
+% %  \includegraphics[scale=1]{VPcoerce.pdf}\hfill
+\begin{forest}
+[VP\textsuperscript{[E=\textbf{e}]}
+  [VP\textsuperscript{[E=\textbf{e}]}]
+]
+\end{forest}
 %  \end{minipage}
 \caption{Frame and tree for coercion of an unbounded event into a bounded event \label{frame:coerce}}
 \end{figure}
