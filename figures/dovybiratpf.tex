@@ -1,0 +1,86 @@
+% Author: Till Tantau
+% Source: The PGF/TikZ manual
+\documentclass{standalone}
+\def\xcolorversion{2.00}
+\def\xkeyvalversion{1.8}
+% \usepackage{geometry}
+\usepackage{graphicx}
+\usepackage[version=0.96]{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,snakes,automata,backgrounds,petri}
+\usetikzlibrary{shapes.multipart}
+% \usepackage[latin1]{inputenc}
+\usepackage{verbatim}
+\usepackage{libertinus-otf}
+\newcommand{\type}[1]{\textit{#1}}
+\newcommand{\framerel}[1]{\textit{#1}}
+\newcommand{\reltype}[1]{\textit{#1}}
+%\newcommand{\feat}[1]{\textsc{#1}}
+\newcommand{\feat}[1]{\textsc{#1}}
+
+% \geometry{papersize={21.2cm,14.9cm},total={21.2cm,14.9cm}}
+
+\begin{document}
+% \rput(9.9,-6.8){
+\begin{tikzpicture}[node distance=4.3cm,>=stealth',bend angle=45,auto,every text node part/.style={align=center}]
+
+  \tikzstyle{place}=[circle,thick,draw=black!75,minimum size=18mm]
+  \tikzstyle{placeout}=[circle,double, double distance=1mm,draw=black!75,minimum size=18mm]
+  \tikzstyle{red place}=[place,draw=red!75,fill=red!20]
+  \tikzstyle{transition}=[rectangle,thick,draw=black!75,
+  			  fill=black!20,minimum size=4mm]
+
+
+  \begin{scope}
+    % First net
+    \node [place] (e2)             {\type{progression}};
+
+    \node [placeout] (e1) [left of=e2] {\type{bounded}\\ \type{event}}
+      edge [post] node[swap] {\feat{part-of}}  (e2);
+  
+    \node [place] (e3) [right of=e2] {\type{bounded}\\ \type{event}}
+      edge [pre, bend right, pos=0.3, thick, dotted] node[swap] {\type{segm-of}}  (e1)
+      edge [pre,thick, dotted] node[swap] {\it{part-of}}                          (e2)
+      edge [pre, bend right, pos=0.6]  node[swap] {\feat{m-dim}}         (e2);
+     
+     \node [place] (l2) [below of=e1] {\type{degree}}
+  		edge[pre, thick] node[swap] {\feat{max}} (e1)
+ 		edge[pre, thick] node[swap] {\feat{max}} (e3);
+    
+    \node [place] (e1init) [left of=e1] {\type{stage}}
+      edge [pre] node[swap] {\feat{init}}  (e1);
+      
+%     \node [place] (l1)  [below of=e1init]  {\type{scale}}
+ %    edge [pre] node[swap] {\feat{init}} (e1);
+     
+    \node [place] (l3)  [below of=l2] {\type{stage}}
+       edge[post] node[swap] {\feat{sc-deg}} (l2)
+ 		edge[pre] node[swap] {\feat{fin}} (e3)
+ 		edge[pre, bend left] node[swap] {\feat{fin}} (e1);
+ 		
+%     \node [place] (degree) [below of=l1] {\type{degree}}
+ %     edge [pre] node[swap] {\feat{sc-deg}}  (l1);
+      
+       \node [place] (min) [right of=e3] {\type{degree}}
+       edge [pre, bend right] node[swap] {\feat{min}}  (e1)
+      edge [pre] node[swap] {\feat{min}}  (e3);
+      
+       \node [place] (e3init) [below of=min] {\type{stage}}
+       edge[post] node[swap] {\feat{sc-deg}} (min)
+       edge [pre] node[swap] {\feat{init}}  (e3);
+      
+      \node [place] (cognizer) [below of=e3init] {\type{entity}}
+      edge [pre, pos=0.2] node[swap] {\feat{cognizer}}  (e3);
+      \node [place] (manner) [left of=cognizer] {\type{choosing}}
+      edge [pre, pos=0.2] node[swap] {\feat{manner}}  (e3);
+      \node [place] (possib) [left of=manner] {\type{entity}}
+      edge [pre, pos=0.2] node[swap] {\feat{possibilities}}  (e3);
+      \node [place] (chosen) [left of=l3] {\type{entity}}
+      edge [pre] node[swap] {\feat{chosen}}  (l3);
+
+  \end{scope}
+
+%,label=left:\type{bounded-event}
+\end{tikzpicture}
+% }
+\end{document}
