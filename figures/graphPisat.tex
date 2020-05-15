@@ -1,0 +1,45 @@
+% Author: Till Tantau
+% Source: The PGF/TikZ manual
+\documentclass{standalone}
+\def\xcolorversion{2.00}
+\def\xkeyvalversion{1.8}
+\usepackage{graphicx}
+\usepackage[version=0.96]{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,automata,backgrounds,petri,positioning}
+\usetikzlibrary{shapes.multipart}
+\usepackage{libertinus-otf}
+\newcommand{\type}[1]{\textit{#1}}
+\newcommand{\framerel}[1]{\textit{#1}}
+\newcommand{\reltype}[1]{\textit{#1}}
+\newcommand{\feat}[1]{\textsc{#1}}
+
+\begin{document}
+\begin{tikzpicture}[node distance=4.3cm,>=stealth',bend angle=45,auto,every text node part/.style={align=center}]
+
+  \tikzstyle{place}=[circle,thick,draw=black!75,minimum size=5mm]
+  \tikzstyle{placeout}=[circle,double, double distance=1mm,draw=black!75,minimum size=5mm]
+  \tikzstyle{red place}=[place,draw=red!75,fill=red!20]
+  \tikzstyle{transition}=[rectangle,thick,draw=black!75,
+  			  fill=black!20,minimum size=4mm]
+
+
+  \begin{scope}
+    % First net
+    \node [place, label={[align=center]\type{pisyvat'}\textsuperscript{IPF}\\`to write occasionaly'}] (e2)            {};
+
+    \node [place] (e1) [left=3.3cm of e2, label={[align=center]\type{pisat'}\textsuperscript{IPF}\\`to write'}] {}
+      edge [post] node[swap] {\it{-yva-}}  (e2);
+  
+    \node [place] (e3) [below=2cm of e1, label={[align=center]below:\type{dopisat'}\textsuperscript{PF}\\`to finish writing'}] {}
+      edge [pre] node[swap] {\it{do-}}                          (e1);
+%      edge [pre, bend right, pos=0.6]  node[swap] {\feat{m-dim}}         (e2);
+     
+        \node [place] (e4) [right=3.3cm of e3,  label={[align=center]below:\type{dopisyvat'}\textsuperscript{IPF}\\`to (be) finish(ing) writing'}] {}
+      edge [pre] node[swap] {\it{-yva-}}  (e3);
+  
+
+  \end{scope}
+%,label=left:\type{bounded-event}
+\end{tikzpicture}
+\end{document}

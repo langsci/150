@@ -285,14 +285,37 @@ The verb \textit{dozapisyvat'} `to finish writing/to be finishing writing' conta
 
 Following \citet{Svenonius:04b} and rule (e) in schema \ref{bor}, we obtain the tree shown on \figref{tree:sven} for the verb \textit{dozapisyvat'} `to finish writing/to be finishing recording'. The completive prefix \textit{do}- scopes over the imperfective suffix, so the verb must be assigned the perfective aspect. Note that \citet{Svenonius:04b} does not explicitely discuss the characteristics of the prefix \textit{do-}. However, in \citet{Svenonius:04a} this prefix is classified as being superlexical and \citet{Svenonius:04b} makes general statements about the properties of the class of superlexical prefixes. In sum, this allows us to conclude that the verb \textit{dozapisyvat'} `to finish writing/to be finishing recording' should be analyzed in the way illustrated by \figref{tree:sven}. The analysis by \citet[357]{Ramchand:04} makes essentially the same predictions.
 
-\begin{figure}[h]
+\begin{figure}
 \caption{Tree for \textit{dozapisyvat'} `to (be) finish(ing) recording' according to the proposal in \citealt{Svenonius:04b}\label{tree:sven}}
-\includegraphics{dozapisyvat-Sven.pdf}
+% % \includegraphics{dozapisyvat-Sven.pdf}
+\begin{forest}
+[AspP
+ [PP [\textit{do-}\\\COMPL,align=center,roof]]
+ [Asp'
+   [Asp [-\textit{va}-\\\IMPF,align=center] ]
+        [\textit{v}P
+          [\textit{v}]
+          [VP
+            [V [\textit{pis}-\\`throw',align=center]]
+            [PP [\textit{za}-]]
+          ]
+        ]
+ ]
+]
+\end{forest}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}
 \caption{Tree for \textit{dozapisyvat'} `to (be) finish(ing) recording' according to the proposal in \citealt{Tatevosov:07}\label{tree:tat}}
-\includegraphics{dozapisyvat-Tat07.pdf}
+% % \includegraphics{dozapisyvat-Tat07.pdf}
+\begin{forest}
+[AspP
+ [-\textit{va}-]
+ [ItmP
+   [\textit{do}-] [\textit{v}P [\textit{za-pis},roof]]
+ ]
+]
+\end{forest}
 \end{figure}
 
 % states, that when a lexical prefix and a superlexical co-occur with the secondary imperfective suffix, the resulting word behaves like a perfective, i.e., the scoping is similar to what was proposed by \citet[ex.~(70)]{Svenonius:03}, corresponding to the rule (e) in the schema above.\\
@@ -458,11 +481,17 @@ come.\glb{pres.1.sg}, see.\glb{pres.1.sg}, conquer.\glb{pres.1.sg}, execute.\glb
 This shows that such contexts cannot be used as diagnostics for perfectivity and imperfectivity. The Maslov criterion requires a perfective verb as an input condition, so it is also negative for perfectivity. It allows to delimit the class of exclusively perfective verbs, but does not allow to distinguish between biaspectual and imperfective verbs. In \ref{maslovkaznit} the same verb is used in both sentences due to its biaspectual nature. At the same time the possibility to use the same verb in both sentences in \ref{maslovdumat} is explained by the imperfective aspect of \textit{dumal} `thought' in the first sentence. Moreover, there are other conceptual problems related to the application of the Maslov criterion\footnote{\citet[2]{Mikaelian:07} write that ``rather than a tool for establishing aspectual pairs, the Maslov criterion should be taken as a definition and raison d'\^etre of the aspectual correlation.''}.
 
 The crucial point to be made here is that no reliable positive test for perfectivity has been proposed so far.\footnote{A new proposal to overcome this problem has been recently offered by \citet{Piperski:biasp}. The author suggests to use gerund forms to identify the aspect of the verb, as each verb that is not biaspectual has exactly one gerund form, ``which denotes simultaneity for imperfective verbs and precedence for perfective verbs'' (p. 5). Moreover, the imperfective  and perfective gerunds are formally distinguishable, as the former one is marked by the \textit{-a/-ja} suffix, whereas the latter one uses the \textit{-v/-v\v{s}i} suffix. It turns out that biaspectual verbs can form gerund in both ways, which allows us to identify them. The only drawback of the this test is, as the author notes himself, that it works not for all verbs, but only for those that contain the suffix \textit{-ova-} or the suffix \textit{-a-} (and does not work with verbs those stems end on \textit{-e-} and \textit{-i-}).} Figure~\ref{circles} schematically represents the aspectual classes of Russian verbs. The standard tests listed in \ref{tests} are negative for perfectivity. They merely exclude the possibility that a given verb form is a member of Set 1. To separate the subset of biaspectual verbs (Set 3) from true imperfective verbs (Set 2), we need a positive test for perfectivity (Set 1). In combination with the standard tests we can then identify the class of the biaspectual verbs.
+
 \begin{figure}
-\begin{center}
-\includegraphics[scale=1]{EulerCircles}
+% % \includegraphics[scale=1]{EulerCircles}\\
 \caption{\label{circles}Aspectual classes}
-\end{center}
+\begin{tikzpicture}[every fit/.style={ellipse,draw,inner xsep=-10pt,inner ysep=\baselineskip}]
+\node at (0,0) (perfective) {(1) perfective};
+\node [right=1.5cm of perfective] (biaspectual) {(3) biaspectual};
+\node [right=1.5cm of biaspectual] (imperfective) {(2) imperfective};
+\node [fit = (perfective) (biaspectual)] {};
+\node [fit = (imperfective) (biaspectual)] {};
+\end{tikzpicture}
 \end{figure}
 
 The new positive test for perfectivity proposed in \citet{ZinovaFilip:13} capitalizes on the notion of the \textit{Narration relation}, defined as follows by \citet{Lascarides:93}:

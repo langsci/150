@@ -1,0 +1,50 @@
+% Author: Till Tantau
+% Source: The PGF/TikZ manual
+\documentclass{standalone}
+\def\xcolorversion{2.00}
+\def\xkeyvalversion{1.8}
+\usepackage{graphicx}
+\usepackage[version=0.96]{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,automata,backgrounds,petri,positioning}
+\usetikzlibrary{shapes.multipart}
+\usepackage{libertinus-otf}
+\newcommand{\type}[1]{\textit{#1}}
+\newcommand{\framerel}[1]{\textit{#1}}
+\newcommand{\reltype}[1]{\textit{#1}}
+\newcommand{\feat}[1]{\textsc{#1}}
+
+\begin{document}
+\begin{tikzpicture}[node distance=4.3cm,>=stealth',bend angle=45,auto,every text node part/.style={align=center}]
+
+  \tikzstyle{place}=[circle,thick,draw=black!75,minimum size=5mm]
+  \tikzstyle{placeout}=[circle,double, double distance=1mm,draw=black!75,minimum size=5mm]
+  \tikzstyle{red place}=[place,draw=red!75,fill=red!20]
+  \tikzstyle{transition}=[rectangle,thick,draw=black!75,
+  			  fill=black!20,minimum size=4mm]
+
+
+  \begin{scope}
+    % First net
+    \node [place, label={[align=center]\type{pisyvat'}\textsuperscript{IPF}\\`to write occasionaly'}] (e2)            {};
+
+    \node [place] (e1) [left=3.8cm of e2, label={[align=center]\type{pisat'}\textsuperscript{IPF}\\`to write'}] {}
+      edge [post] node[swap] {\it{-yva-}}  (e2);
+  
+    \node [place] (e3) [below=2cm of e1, label={[align=center]left:\type{zapisat'}\textsuperscript{PF}\\`to record'}] {}
+      edge [pre] node[swap] {\it{za-}}                          (e1);
+     
+     \node [place] (e5) [below=2cm of e3, label={[align=center]below:\type{dozapisat'}\textsuperscript{PF}\\`to finish recording'}] {}
+      edge [pre] node[swap] {\it{do-}}                          (e3);
+      
+        \node [place] (e4) [right=3.8cm of e3,  label={[align=center]\type{zapisyvat'}\textsuperscript{IPF}\\`to (be) record(ing)'}] {}
+      edge [pre, below] node[swap] {\it{-yva-}}  (e3);
+      
+      \node [place] (e6) [right=3.8cm of e5,  label={[align=center]below:\type{dozapisyvat'}\textsuperscript{PF\slash IPF}\\`to (be) finish(ing) recording'}] {}
+      edge [pre] node[swap] {\it{-yva-}}  (e5)
+      edge [pre] node[swap] {\it{do-}}  (e4);
+  
+
+  \end{scope}
+\end{tikzpicture}
+\end{document}
