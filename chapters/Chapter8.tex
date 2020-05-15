@@ -83,7 +83,10 @@ declare ?N ?Story ?X0 ?Length ?Card
 \begin{figure}
 \begin{minipage}{.5\textwidth}
 \centering
-\includegraphics[scale=1]{StoryTree.pdf}
+% % \includegraphics[scale=1]{StoryTree.pdf}
+\begin{forest}
+[?N [?Story]]
+\end{forest}
 \end{minipage}%
 \begin{minipage}{0.5\textwidth}
 \avm[types=\normalfont,values=\normalfont,attributes=\normalfont]{
@@ -129,7 +132,14 @@ declare ?NCard ?X0 ?Card ?N ?NP ?VP ?Dim ?Theme ?Case ?Num
 
 \begin{figure}
 % \begin{minipage}{0.5\textwidth}
-\includegraphics[scale=1]{NounCardTree.pdf}\\
+% % \includegraphics[scale=1]{NounCardTree.pdf}\\
+\begin{tikzpicture}[baseline]
+\node at (0,0) (VP) {\strut VP\textsuperscript{[e=?X0]}};
+\node [right=.5cm of VP] (precedes) {...precedes...};
+\node [right=.5cm of precedes] (NP) {\strut NP\textsuperscript{[i=?Theme]}};
+\node [below=\baselineskip of NP] (N) {N};
+\draw (NP) -- (N);
+\end{tikzpicture}\medskip\\
 % \end{minipage}%
 % \begin{minipage}{0.5\textwidth}
 \avm[types=\normalfont,values=\normalfont,attributes=\normalfont]{
@@ -230,10 +240,10 @@ declare ?V ?Pisat ?Za ?ZaLex ?X0 ?Actor ?Theme ?ScMin ?ScMax ?AGR ?VP
 \caption{XMG code for representation of the verb \textit{zapisat'} `to write down/record' \label{xmg:zapisat}}
 \end{figure}
 
-\begin{figure}
-\includegraphics[scale=0.45]{Zapisat.pdf}
+\begin{sidewaysfigure}
+\includegraphics[width=\textwidth]{Zapisat.pdf}
 \caption{Result of the compilation of the class Zapisat \label{fig:zapisat}}
-\end{figure}
+\end{sidewaysfigure}
 
 \section{Prefixes}
 As we have already discussed the frames for all individual prefix usages in the previous chapter, I will not go through the code for all of them (it can be found in Appendix~\ref{AppendixB}), but show how frames correspond to the XMG descriptions and what happens on the syntactic side, taking one prefix as an example.
@@ -290,10 +300,11 @@ As for the frame description part, it follows straightforwardly earlier proposed
 \end{figure}
 
 To make sure that the code not only looks similar to the frame, but also produces the desired result, let me show \figref{fig:poverb} that contains the result of the compilation of the proposed metagrammar class.
-\begin{figure}
-\includegraphics[scale=0.45]{PoVerb.pdf}
+
+\begin{sidewaysfigure}
+\includegraphics[width=\textwidth]{PoVerb.pdf}
 \caption{Result of the compilation of the class PoVerb \label{fig:poverb}}
-\end{figure}
+\end{sidewaysfigure}
 
 %When one contemplates the frame description of the prefix \textit{po-} it becomes clear that this prefix rarely can be used in combination with other prefixes or before the attachment of the secondary imperfective suffix. If immediately after the attachment of the prefix \textit{po-} another prefix is attached, the first step can be just skipped, as it increases the morphological complexity and does not influence the resulting semantic representation of the verb. Similar considerations apply if the \textit{po-}prefixed verb is to be suffixed with the imperfective suffix: normally, the basic imperfective verbs would denote the same events as the prefixed and suffixed verb. So even for the presence of some semantic difference, the price of adding two morphemes is too high and such verbs (as \textit{popisyvat'} `to write occasionally, non-seriously') would be used in a restricted number of situations when their meaning is pragmatically enriched. 
 %
@@ -407,10 +418,10 @@ declare ?VP ?VPInt ?Suf ?Iva ?AGR ?X0 ?X1 ?VDim
 \caption{XMG code for the habitual interpretation of the imperfective suffix \label{xmg:habitual}}
 \end{figure}
 
-\begin{figure}
-\includegraphics[scale=0.45]{IterImp.pdf}
+\begin{sidewaysfigure}
+\includegraphics[width=\textwidth]{IterImp.pdf}
 \caption{Result of the compilation of the class IterVerb \label{fig:iter}}
-\end{figure}
+\end{sidewaysfigure}
 
 The second interpretation of the imperfective suffix is progressive: on the semantic side I represent it as a creation of a new event that is a \PARTOF the event denoted by the derivational base. Due to the \PARTOF relation the new event remains limited. On \figref{graph:pf} and \figref{graph:ipf} in Chapter~\ref{Chapter1} I have realised \textit{part of} as a relation, as in this case (in contrast to the prefix \textit{do-}) it is not functional. As relations are currently not implemented in XMG, for the sake of the implementation I use \PARTOF as an attribute when representing the progressive interpretation of the imperfective suffix.
 
