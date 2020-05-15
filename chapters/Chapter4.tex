@@ -43,12 +43,44 @@ A couple of decades later the division of the prefixes into lexical\slash intern
 
 \citet{Romanova:04} proposes the structure for Russian verbs that is represented on \figref{fig:romanova}. \citet[272]{Romanova:04} assumes ``the presence of AspP in between VP and vP'', that ``is a possible place for merge of the secondary imperfective suffix or purely perfectivizing prefixes''. She also postulates that lexical prefixes are located below AspP, while ``superlexical prefixes originate -- or at least end up -- above the AspP domain'' (p.~271). Throughout the paper, a lot of questions regarding the behavior of prefixes are posed and the author arrives at the conclusion that ``there is no uniform distribution of all superlexicals''.
 
-\begin{figure}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{romanova.pdf}
+\begin{figure}\small
+% % \includegraphics[width=0.8\textwidth]{romanova.pdf}
 \caption{\label{fig:romanova} Verbal structure according to \citet[272]{Romanova:04}}
-\end{center}
+\begin{forest}
+[\textsc{dlmt}P
+  [(for a while)]
+  [\textsc{dlmt}'
+    [\textit{po-}]
+    [\textit{v}P
+      [\textsc{originator}]
+      [\textit{v}'
+        [\textit{v}]
+        [AspP
+          [\textsc{undergoer}]
+          [Asp'
+            [\textit{(-i)va}\slash \textit{PPP}]
+            [VP
+              [X]
+              [V'
+                [V]
+                [RP
+                  [\textsc{resultee}]
+                  [R'
+                    [R]
+                    [(PP)]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+]
+\end{forest}
 \end{figure}
+
 While \citet{Babko-Malaya:99} and \citet{Schoorlemmer:95} (among others) assume that superlexical prefixes form a homogeneous class, \citet{Svenonius:04b} argues that there is a tripartite division among superlexical prefixes based on their ability to form secondary imperfectives.
 
 According to \citet{Svenonius:04b}, certain superlexical prefixes (\textit{za-} with inceptive meaning, \textit{ot-} with terminative meaning, and \textit{pere-} with distributive meaning\footnote{\textit{pere-} has a variety of meanings (e.g. \citealt{Shvedova:82} distinguishes between 10 different meanings) including spatial, temporal, comparative, iterative, crossing the boundary, distributive and \textit{pere-} of excess. See Section~\ref{subsection:semantics:pere} for more information.}) may be attached higher than the structural position of the imperfective suffix, which is \textit{Asp}, the head of \textit{AspP}. Such prefixes disallow the formation of secondary imperfectives (e.g., \textit{za-} in its inceptive use). That is, the imperfective suffix cannot be directly attached to an imperfective stem and the result is an invalid structure (see \figref{fig:svenonius}).
@@ -63,13 +95,40 @@ Svenonius' main generalizations can be stated as follows (see also the summary i
 \item lexical and superlexical prefixes that (according to him) disallow secondary imperfectivization are separated by Asp in the syntactic structure; 
 \item exceptional superlexical prefixes are merged (sometimes) outside \textit{v}P, but below the Asp.
 \end{enumerate}
+
 \begin{figure}
-\begin{center}
-\includegraphics[width=0.8\textwidth]{svenonius.pdf}
-\caption{\label{fig:svenonius} Verbal structure according to \citet[231]{Svenonius:04b}}
-\end{center}
+% % \includegraphics[width=0.8\textwidth]{svenonius.pdf}
+\begin{forest}
+[AspP
+  [PP [\textit{za-}\\\textsc{incp},align=center,roof]]
+  [$\overline{\mbox{Asp}}$
+    [Asp [(*\textit{-yvaj})]]
+    [\textit{v}P
+      [\textit{v}]
+      [VP
+        [\textit{kur-}\\`smoke',align=center]
+      ]
+    ]
+  ]
+]
+\end{forest}
+\begin{forest}
+[AspP
+  [Asp [-\textit{yvaj}]]
+  [\textit{v}P
+    [PP [\textit{pere-}\\\textsc{re},align=center,roof]]
+    [\textit{v}P
+      [\textit{v}]
+      [VP [\textit{pis-}\\`write',align=center]]
+    ]
+  ]
+]
+\end{forest}
+\caption{\label{fig:svenonius}Verbal structure according to \citet[231]{Svenonius:04b}}
 \end{figure}
+
 From another study that follows the same tradition, \citealt{Ramchand:04}, the following `bottom-up' order of verbal affixes emerges:
+
 \begin{enumerate}
 \item lexical prefixes;
 \item aspectual head that may contain either the imperfective suffix or a superlexical prefix;
