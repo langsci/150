@@ -1,5 +1,26 @@
 %add all your local new commands to this file
 
+    \DeclareTOCStyleEntry
+      [  
+        entrynumberformat=\addfontfeature{Numbers={Monospaced,Lining}},
+        pagenumberformat=\addfontfeature{Numbers={Monospaced,Lining}}\bfseries,
+        raggedentrytext=true
+      ]
+      {tocline}
+      {chapter}
+      
+    \DeclareTOCStyleEntries
+      [
+        entrynumberformat=\addfontfeature{Numbers={Monospaced,Lining}},
+        pagenumberformat=\addfontfeature{Numbers={Monospaced,Lining}},
+        raggedentrytext=true
+      ]
+      {tocline}
+      {section,subsection,subsubsection,paragraph,subparagraph}
+
+    
+\avmdefinestyle{plain}{attributes=\normalfont,values=\normalfont}
+      
 \newcommand*{\biberror}[1]{{\color{red}#1}}
 
 \newcommand{\smiley}{:)}
