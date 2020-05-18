@@ -20,12 +20,35 @@ Substitution allows to replace a non-terminal leaf with a new tree and adjunctio
 
 Figure \ref{fig:exampletree} shows an example of a derivation: the initial tree for \textit{Mary} substitutes into the subject slot of the elementary tree for \textit{laughs}, and the \textit{sometimes} auxiliary tree for the VP modifier adjoins to the VP node. The result of performing these two operations is shown on the right side of the same figure.
 
-\begin{figure}[h!]
-	\centering
-	\hspace{-0.6cm}    
-    \includegraphics[width=8cm]{treeMaryLaughs.pdf} 
-    \hspace{0.4cm}
-    \includegraphics[width=4cm]{derivedTreeMaryLaughs.pdf} 
+\begin{figure}
+% %     \includegraphics[width=8cm]{treeMaryLaughs.pdf} 
+% %     \includegraphics[width=4cm]{derivedTreeMaryLaughs.pdf} 
+  \begin{forest}
+  [,phantom,s sep=.75cm
+    [,phantom,for tree = {red,edge=red}
+      [NP,tier=level1,name=NP1 [Mary]]
+    ]
+    [S
+      [NP,tier=level1,name=NP2,inner sep=0pt]
+      [VP,name=VP1 [V [laughs]]]
+    ]
+    [,phantom,for tree = {blue,edge=blue}
+      [VP,tier=level1,name=VP2
+        [Adv [sometimes]]
+        [VP*]
+      ]
+    ]
+    [S
+    [NP, for tree={red} [Mary,edge=red]]
+    [VP, for tree={blue} 
+      [Adv,edge=blue [sometimes,edge=blue]]
+      [VP,edge=blue,for tree={black} [V [laughs]]]
+    ]
+   ]
+  ]
+  \draw [red, dashed,-{Stealth[]}] (NP1.east) to [in control=+(90:-.5)] (NP2.south);
+  \draw [blue, dashed,-{Stealth[]}] (VP2.north) to [out control=+(90:.5),in=360] (VP1.east);
+  \end{forest}
     \caption{Example of a TAG derivation}
     \label{fig:exampletree}
 \end{figure}
