@@ -57,17 +57,69 @@ Figure \ref{fig:exampletree} shows an example of a derivation: the initial tree 
 Feature-structure based TAG, or FTAG, is a variant of TAG in which elementary trees are enriched with feature structures \citep{Vijay-ShankerJoshi:88}. Using feature structures as non-terminal nodes allows to generalize agreement via underspecification, helps to model adjunction constraints and leads to more compact grammars.
 
 For example, \figref{fig:nofstruct} shows the derivation of the sentence \textit{``Grammars leak"} without feature structures and some trees involved in it (this example, including the \figref{fig:nofstruct},  \figref{fig:grleaksubst},  \figref{fig:isleaking}, and  \figref{fig:isleakingresult}, is due to Timm Lichte). One can see that already such a small piece of derivation contains a lot of redundancy that cannot be avoided if only labelled categories are used. In such a TAG, the following trees have to be kept in the grammar for a regular noun, such as \textit{grammars}: third person singular nominative, third person singular accusative, plural nominative, and plural accusative.
-\begin{figure}[h!]
-	\centering
-    \includegraphics[scale=0.35]{nofstruct.pdf}
-    \caption{Example of a derivation for \textit{``Grammars leak"} without feature structures  \label{fig:nofstruct}}
+
+\begin{figure}
+% %     \includegraphics[scale=0.35]{nofstruct.pdf}
+\begin{forest}
+  [,phantom,for tree={fit=rectangle}
+    [,phantom
+      [,phantom
+       [NP\textsubscript{pl/acc},tier=3 [\textit{grammars},tier=word]]
+       [NP\textsubscript{pl/nom},name=NP1,tier=3 [\textit{grammars},tier=word]]
+      ]    
+    ] 
+    [S
+      [NP\textsubscript{pl/nom},name=NP2]
+      [VP [V\textsubscript{pl},tier=3 [\textit{leak},tier=word]]]
+    ]
+    [S
+      [NP\textsubscript{¬3/sg/nom}]
+      [VP [V\textsubscript{¬3/sg},tier=3 [\textit{leak},tier=word]]]
+    ]
+  ]
+\draw [dashed,-{Triangle[]}] (NP1.east) to[bend right] (NP2.south);
+\end{forest}
+    \caption{Example of a derivation for \textit{Grammars leak} without feature structures  \label{fig:nofstruct}}
 \end{figure}
 
 If feature structures are used, the example described above looks as shown on \figref{fig:grleaksubst}. In this case only two entries for the noun \textit{grammar} must be kept in the lexicon: one for the single form \textit{grammar} and one for the plural form \textit{grammars}. Case can remain underspecified, as it does not influence the surface form of the noun.
 
-\begin{figure}[h!]
-	\centering
-    \includegraphics[scale=0.35]{grammarsleak.pdf}
+\begin{figure}
+% %     \includegraphics[scale=0.35]{grammarsleak.pdf}
+    \avmsetup{style=plain}
+\begin{forest}
+  [,phantom,fit=rectangle
+    [,phantom
+     [,phantom
+       [\avm{
+         [cat & np\\
+          agr & [ num & plur \\
+                  per & 3\\
+                  3rdsing & \textminus]
+         ]
+       },name=avm1
+         [\textit{grammars},tier=word]
+       ]
+     ]
+    ]
+    [\avm{[cat & s]}
+     [\avm{
+       [cat & np\\
+        agr & \1\\
+        case & nom]
+     },name=avm2]
+     [\avm{[cat & vp]}
+       [\avm{
+         [cat & v \\
+          agr & \1[3rdsing & \textminus]]
+       }
+         [\textit{leak},tier=word]
+       ]
+     ]
+    ]
+  ]
+  \draw[dashed,-{Triangle[]}] (avm1.east) to[out=0,in=270] (avm2.south);
+\end{forest}
     \caption{Example of a derivation for \textit{``Grammars leak"} with feature structures \label{fig:grleaksubst}}
 \end{figure}
 
@@ -80,14 +132,92 @@ As a result, in an FTAG all the nodes have a top feature structure and, furtherm
 \end{itemize}
 
 \begin{figure}
-	\centering
-    \includegraphics[scale=0.5]{isleaking.pdf}
+% %     \includegraphics[scale=0.5]{isleaking.pdf}
+  \avmsetup{style=plain}
+  \begin{forest}
+[,phantom,for tree={fit=rectangle}
+  [,phantom
+    [,phantom
+     [{\color{lsRed}\avm{
+     [cat & vp\\
+      mode & ind\\
+      agr  & [num & sg\\
+              per & 3\\
+              3rdsing & +]]
+    }}\smallskip\\
+    \avm{[cat & vp]},name=avm1
+    [\avm{[cat & v]}\smallskip\\
+     \avm{[cat & v]}
+      [\textit{is},tier=word] 
+    ]
+    [\avm{[cat & vp]}\smallskip\\
+     {\color{lsRichGreen}\avm{
+       [cat & vp\\
+        mode & ger]
+     }},name=avm2
+    ]
+    ]
+   ]  
+  ]
+  [\avm{[cat & s]}\smallskip\\
+   \avm{[cat & s]}\smallskip\\
+     [\avm{[cat & np\\
+            agr & \1]}]
+     [{\color{lsRed}\avm{
+       [cat & vp\\
+        agr & \1\\
+        mode & ind]
+     }}\smallskip\\
+      {\color{lsRichGreen}\avm{
+        [cat & vp\\
+         mode & ger]
+      }},name=avm3
+       [\avm{[cat & v]}\smallskip\\
+        \avm{[cat & v]}
+          [\textit{leaking},tier=word]
+        ]     
+     ]
+  ]
+]
+\draw[dashed,-{Triangle[]}] (avm1) to[out=360,in=165] (avm3);
+\draw[dashed,-{Triangle[]}] (avm2) to[out=345,in=210] (avm3);
+  \end{forest}
     \caption{Adjunction of \textit{is} into the tree for \textit{leaking}     \label{fig:isleaking}}
 \end{figure}
 
 \begin{figure}
-	\centering
-    \includegraphics[scale=0.5]{isleakingresult.pdf}
+% %     \includegraphics[scale=0.5]{isleakingresult.pdf}
+    \avmsetup{style=plain}
+    \begin{forest}
+    [\avm{[cat & s]}\smallskip\\
+     \avm{[cat & s]}
+      [\avm{[cat & np \\ agr & \1]}]
+      [{\color{lsRed}\avm{
+        [ cat & vp\\
+          mode & ind\\
+          agr & \1 [num & sg\\
+                    per & 3\\
+                    3rdsing & +]
+        ]
+        }}\smallskip\\
+        \avm{[cat & vp]}
+          [\avm{[cat & v]}\smallskip\\
+           \avm{[cat & v]}
+             [\textit{is}]
+          ]
+          [\avm{[cat & vp]}\smallskip\\
+           {\color{lsRichGreen}
+            \avm{[cat & vp\\mode & ger]}
+           }
+           [
+             \avm{[cat & v]}\smallskip\\
+             \avm{[cat & v]}
+             [\textit{leaking}]
+           ]
+          ]
+       ]
+    ]
+    \end{forest}
     \caption{Adjunction of \textit{is} into the tree for \textit{leaking}: result \label{fig:isleakingresult}}
 \end{figure}
 
@@ -248,12 +378,42 @@ Labelled descriptions are allowed to be combined with Boolean operators. The att
 \subsection{Combining TAG and Frame Semantics}
 There is a number of properties that make LTAG a good candidate for a combination with a frame-based compositional semantics. Two properties are especially important in this respect: the combination of an extended domain of locality and the fact that elementary trees are lexicalized and contain slots for all the arguments of the respective predicate. This allows to link semantic representations directly to the argument slots. It is also convenient that no structural parallelism is required between the syntactic and semantic representations, as argument linking is explicit. The combination of an LTAG and Frame Semantics has been introduced in \cite{KallmeyerOsswald:12} and the most extensive description so far has been provided in \citealt{KallmeyerOsswald:13} (Section~4.1).
 
-In the approach proposed in \cite{KallmeyerOsswald:13} that I adopt here, a single semantic representation (a semantic frame in this case) is linked to the entire elementary tree. When an elementary tree is coupled with a semantic frame, syntactic arguments can be directly linked to their counterpart in the semantics. (Similar approaches with different semantic representation frameworks were introduced earlier in \cite{GardentKallmeyer:03} and \cite{KallmeyerRomero:08}.) Semantic composition is then modelled by unification, which is a result of performing adjunctions and substitutions. \figref{fig:examplesemantic} provides a simple illustration of the syntactic and semantic composition. The feature I on the nodes is a syntax-semantics interface feature. It stands for ``individual'' and is used for argument linking. In this example, substitutions trigger unifications between the nodes \svar{1} and \btag{g} and  between the nodes \svar{2} and \btag{h}. This leads to the correct insertion of the argument frames into the frame of \textit{loves}. The resulting frame representation is shown on Fig.~\ref{frame:love}.
+In the approach proposed in \cite{KallmeyerOsswald:13} that I adopt here, a single semantic representation (a semantic frame in this case) is linked to the entire elementary tree. When an elementary tree is coupled with a semantic frame, syntactic arguments can be directly linked to their counterpart in the semantics. (Similar approaches with different semantic representation frameworks were introduced earlier in \cite{GardentKallmeyer:03} and \cite{KallmeyerRomero:08}.) Semantic composition is then modelled by unification, which is a result of performing adjunctions and substitutions. \figref{fig:examplesemantic} provides a simple illustration of the syntactic and semantic composition. The feature I on the nodes is a syntax-semantics interface feature. It stands for ``individual'' and is used for argument linking. In this example, substitutions trigger unifications between the nodes \svar{1} and \btag{g} and  between the nodes \svar{2} and \btag{h}. This leads to the correct insertion of the argument frames into the frame of \textit{loves}. The resulting frame representation is shown on \figref{frame:love}.
+
 \begin{figure}
-	\centering
-    \includegraphics[scale=0.8]{treeJohnLovesMary.pdf} 
-    \caption{Syntactic and semantic composition of \textit{John loves Mary}}      
-    \label{fig:examplesemantic}
+% %     \includegraphics[scale=0.8]{treeJohnLovesMary.pdf} 
+\begin{forest}
+[,phantom,for tree={fit=rectangle}
+ [,phantom
+   [NP\textsuperscript{[I=\textbf{g}]},tier=cat,name=NP1
+     [\textit{John}\\
+      \avm{\textbf{g}[\type*{person}\\name & John]},tier=word
+     ]
+   ]
+ ]
+ [S
+   [NP\textsuperscript{[I=\avm{\1}]},tier=cat,name=NP2]
+   [VP
+     [V [\textit{loves}\\
+         \avm{\textbf{e}[\type*{love}\\
+                         experiencer & \1\\
+                         theme & \2]},tier=word
+     ]]
+     [NP\textsuperscript{[I=\avm{\2}]},name=NP3]
+   ]
+ ]
+ [,phantom
+   [NP\textsuperscript{[I=\textbf{h}]},tier=cat,name=NP4
+     [\textit{Mary}\\
+     \avm{\textbf{h}[\type*{person}\\name & Mary]},tier=word
+     ]
+   ]
+ ]
+]
+\draw[dashed,-{Triangle[]}] (NP1) to[out=90,in=270] (NP2);
+\draw[dashed,-{Triangle[]}] (NP4) to[out=180,in=360] (NP3);
+\end{forest}
+    \caption{Syntactic and semantic composition of \textit{John loves Mary}\label{fig:examplesemantic}}
 \end{figure}
 
 \begin{figure}
