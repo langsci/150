@@ -1439,26 +1439,24 @@ I \glb{po}.fly.\glb{pres}.\glb{1sg} and come.back\\
 So, under the traditional view, one has to assume that the result of prefixation of a determinate verb is always a perfective verb while the result of prefixation of an indeterminate verb depends on the prefix: it can be either an imperfective verb in case of the prefix \textit{pri-}, both perfective and imperfective verbs in case of the prefix \textit{pro-} and a perfective verb in case of the prefix \textit{po-}. An illustration, summarizing the examples above, is provided on \figref{fig.traditional}.
 
 \begin{figure}
-\begin{minipage}{0.5\linewidth}
+\begin{minipage}{0.475\linewidth}\centering
 \begin{forest}
-for tree={edge=->}
+for tree={edge=->,calign=child, calign child=2}
 [let\'{e}t$^{{\IPF}}$
   [prilet\'{e}t$^{{\PF}}$]
   [prolet\'{e}t$^{{\PF}}$]
   [polet\'{e}t$^{{\PF}}$]
 ]
-\end{forest}
-\end{minipage}%
-\begin{minipage}{0.5\linewidth}
+\end{forest}\end{minipage}%
+\begin{minipage}{0.525\linewidth}\centering
 \begin{forest}
-for tree={edge=->}
+for tree={edge=->,calign=child, calign child=2}
 [let\'{a}t$^{{\IPF}}$
   [prilet\'{a}t$^{\DR{{\IPF}}}$]
   [prolet\'{a}t$^{\DR{{\IPF}/{\PF}}}$]
   [polet\'{a}t$^{\DR{{\PF}}}$]
 ]
-\end{forest}
-\end{minipage}
+\end{forest}\end{minipage}%
 \caption{Traditional analysis}
 \label{fig.traditional}
 \end{figure}
@@ -1499,51 +1497,28 @@ lead & vodit' & provodit'$^{{\IPF}/{\PF}}$ & vesti & provesti\\
 
 Unlike \citet{Janda:10}, most researchers that accept the traditional view assume that the verb \textit{probeg\'{a}t'}$^{{\IPF}}$ `to be running past something' is not an exceptional imperfective verb formed from the indeterminate verb  \textit{b\'{e}gat'}$^{{\IPF}}$, but the secondary imperfective of the prefixed determinate verb \textit{be\v{z}\'{a}t'}$^{{\IPF}}$. It would then follow that the exceptional status of the six verbs listed in the Table~\ref{tab.seven-pairs} as opposed to the pairs \textit{b\'{e}gat'/be\v{z}\'{a}t'} (`to run') and \textit{p\'{o}lzat'/polzt\'{i}} (`to crawl') is based only on the same stress position in both verbs of the pair. 
 
-\begin{figure}[t]
+\begin{figure}
 \hfill
-\begin{tikzpicture}
-[
- baseline=(current bounding box.north), thick,
- >=stealth, outer sep=.5ex, inner sep=0ex
+\begin{forest}
+for tree={edge=->}
+[let\'{e}t$^{{\IPF}}$,calign=child, calign child=2
+    [prilet\'{e}t$^{{\PF}}$ [prilet\'{a}t$^{\DR{{\IPF}}}$]]
+    [prolet\'{e}t$^{{\PF}}$ [prolet\'{a}t$^{\DR{{\IPF}}}$]]
+    [polet\'{e}t$^{{\PF}}$]
 ]
-\node[matrix, minimum width=0ex, row sep=4ex, column sep=1.0ex, ampersand replacement=\&] at (0,0)
-{
-\& \node (v){~~let\'{e}t$^{{\IPF}}$}; \& \\
-\node (priv) {~~prilet\'{e}t$^{{\PF}}$}; \&
-\node (prov) {~~prolet\'{e}t$^{{\PF}}$}; \&
- \node (pov) {~~polet\'{e}t$^{{\PF}}$}; \\
-\node (privi) {~~prilet\'{a}t$^{\DR{{\IPF}}}$}; \& 
-\node (provi) {~~prolet\'{a}t$^{\DR{{\IPF}}}$}; \& \\
-};
-\draw[->] (v.south) -- (priv.north); 
-\draw[->] (v.south) -- (prov.north); 
-\draw[->] (v.south) -- (pov.north); 
-\draw[->] (priv) -- (privi); 
-\draw[->] (prov) -- (provi); 
-
-%\node[text width=22ex] (provit)  at (0, -3) {`to fly some \textbf{distance}  or past something'};
-%\draw[dashdotted, ->] (provi) -- (provit); 
-\end{tikzpicture}
+\end{forest}
 \hfill
-\begin{tikzpicture}
-[
- baseline=(current bounding box.north), thick,
- >=stealth, outer sep=.5ex, inner sep=0ex
+\begin{forest}
+for tree={edge=->}
+[let\'{a}t$^{{\IPF}}$
+  [prolet\'{a}t$^{\DR{{\PF}}}$]
+  [polet\'{a}t$^{\DR{{\PF}}}$]
 ]
-\matrix[minimum width=0ex, row sep=4ex, column sep=-3.0ex, ampersand replacement=\&]
-{
-\& \node (v){~~let\'{a}t$^{{\IPF}}$}; \& \\
-\node (prov) {~~prolet\'{a}t$^{\DR{{\PF}}}$}; \& \&
- \node (pov) {~~polet\'{a}t$^{\DR{{\PF}}}$}; \\
-};
-\draw[->] (v.south) -- (prov.north); 
-\draw[->] (v.south) -- (pov.north); 
 %\node[text width=15ex] (provt)  at (-1.1, -3.55) {`to spend some \textbf{time} flying'};
 %\draw[dashdotted, ->] (prov) -- (provt); 
-\end{tikzpicture}
+\end{forest}
 \hfill
-\caption{Reanalysis of the traditional view (cf.~\figref{fig.traditional})}
-\label{fig.reanalysis}
+\caption{Reanalysis of the traditional view (cf.~\figref{fig.traditional})\label{fig.reanalysis}}
 \end{figure}
 
 %\citet[328]{Isachenko:60} writes that \citet{Regnell:44} has shown 
@@ -1556,69 +1531,35 @@ Being left without any explanation in the literature defending the traditional v
 Another kind of argumentation is provided by \citet[146]{Romanova:06}. She argues that prefixed imperfective verbs cannot occur as a result of prefixation of indeterminate motion verbs because those verbs cannot be combined with lexical prefixes. Consider the verbs \textit{probeg\'{a}t'}$^{{\IPF}}$ `to be running past something' and \textit{prob\'{e}g{a}t'}$^{{\PF}}$ `to run for some time'. According to the theory advocated by \citet{Romanova:06}, the first verb contains a lexical prefix whereas the second verb contains a superlexical prefix. Romanova's analysis of motion verbs includes the assumption that the position for lexical prefixes is already occupied in the structure of a non-prefixed indeterminate motion verb. From this it follows that the verb \textit{probeg\'{a}t'}$^{{\IPF}}$ `to be running past something', that contains a lexical prefix, cannot be derived from the indeterminate motion verb \textit{begat'} `to run'. This argument is based on the assumption of syntactic differences between superlexical and lexical prefixes as well as specific differences in the internal syntactic structure of motion verbs. As this assumption is examined in Chapter~\ref{Chapter4} and I propose to abandon it in its current form, I will not go into further details of such an approach here.
 
 \begin{figure}
-\begin{center}
 \hfill
-\begin{tikzpicture}
-[
- baseline=(current bounding box.north), thick,
- >=stealth, outer sep=.5ex, inner sep=0ex
+\begin{forest}
+for tree={edge=->}
+[let\'{e}t'$^{{\IPF}}_{\DET}$,calign=child,calign primary child=3
+  [prilet\'{e}t'$^{{\PF}}$ [prilet\'{a}t'$^{{\IPF}}$]]
+  [perelet\'{e}t'$^{{\PF}}$ [perelet\'{a}t'$^{{\IPF}}$]]
+  [prolet\'{e}t'$^{{\PF}}$ [prolet\'{a}t'$^{{\IPF}}$]]
+  [zalet\'{e}t'$^{{\PF}}$ [zalet\'{a}t'$^{{\IPF}}$] ]
+  [polet\'{e}t'$^{{\PF}}$  ]
 ]
-\node[matrix, minimum width=0ex, row sep=4ex, column sep=1.0ex, ampersand replacement=\&] at (0,0)
-{
-\& \& \node (v){~~let\'{e}t'$^{{\IPF}}_{\DET}$}; \& \&\\
-\node (priv) {~~prilet\'{e}t'$^{{\PF}}$}; \&
-\node (perev) {~~perelet\'{e}t'$^{{\PF}}$}; \&
-\node (prov) {~~prolet\'{e}t'$^{{\PF}}$}; \&
-\node (zav) {~~zalet\'{e}t'$^{{\PF}}$}; \&
- \node (pov) {~~polet\'{e}t'$^{{\PF}}$}; \\
-
-\node (privi) {~~prilet\'{a}t'$^{{\IPF}}$}; \&
- \node (perevi) {~~perelet\'{a}t'$^{{\IPF}}$}; \&
-\node(provi) {~~prolet\'{a}t'$^{{\IPF}}$}; \&
-\node(zavi) {~~zalet\'{a}t'$^{{\IPF}}$}; \&\\
-};
-\draw[->] (v.south) -- (priv.north);
-\draw[->] (v.south) -- (prov.north);
-\draw[->] (v.south) -- (perev.north);
-\draw[->] (v.south) -- (zav.north);
-\draw[->] (v.south) -- (pov.north);
-\draw[->] (priv) -- (privi);
-\draw[->] (prov) -- (provi);
-\draw[->] (perev) -- (perevi);
-\draw[->] (zav) -- (zavi);
-
 %\node[text width=22ex] (provit)  at (0, -3) {`to fly some \textbf{distance}  or past something'};
 %\draw[dashdotted, ->] (provi) -- (provit);
-\end{tikzpicture}
+\end{forest}
 \hfill
 \vspace{1cm}
 \hfill
-\begin{tikzpicture}
-[
- baseline=(current bounding box.north), thick,
- >=stealth, outer sep=.5ex, inner sep=0ex
+\begin{forest}
+for tree = {edge=->}
+[let\'{a}t'$^{{\IPF}}_{\INDET}$
+  [perelet\'{a}t'$^{{\PF}}$]
+  [prolet\'{a}t'$^{{\PF}}$ ]
+  [zalet\'{a}t'$^{{\PF}}$  ]
+  [polet\'{a}t'$^{{\PF}}$  ]
 ]
-\matrix[minimum width=0ex, row sep=4ex, column sep=1.0ex, ampersand replacement=\&]
-{
-\&\&\& \node[inner xsep=-8ex] (v){~~let\'{a}t'$^{{\IPF}}_{\INDET}$}; \&\&\& \\
-\node (perev) {~~perelet\'{a}t'$^{{\PF}}$}; \&\&
-\node (prov) {~~prolet\'{a}t'$^{{\PF}}$}; \&\&
- \node (zav) {~~zalet\'{a}t'$^{{\PF}}$};\&\&
- \node (pov) {~~polet\'{a}t'$^{{\PF}}$}; \\
-};
-\draw[->] (v.south) -- (prov.north);
-\draw[->] (v.south) -- (pov.north);
-\draw[->] (v.south) -- (perev.north);
-\draw[->] (v.south) -- (zav.north);
-
 %\node[text width=15ex] (provt)  at (-1.1, -3.55) {`to spend some \textbf{time} flying'};
 %\draw[dashdotted, ->] (prov) -- (provt);
-
-\end{tikzpicture}
+\end{forest}
 \hfill
-\caption{Derivational trees for motions verbs}
-\label{fig.reanalysis-all}
-\end{center}
+\caption{Derivational trees for motions verbs\label{fig.reanalysis-all}}
 \end{figure}
 
 From the discussion in the literature and the facts examined above I conclude that there are no solid reasons to consider prefixation of indeterminate motion verbs to be exceptional and non-perfectivizing. So let us stick to the derivations as they are presented on \figref{fig.reanalysis-all}, where all verbs that are obtained by prefixation from both determinate and indeterminate motion verbs are perfective and some can be consequently imperfectivized.
