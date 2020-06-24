@@ -460,10 +460,10 @@ The property the test relies on is that if the Narration Relation holds and the 
 \caption{\label{table}Verbal aspect and the \textit{Narration} relation}
 \begin{tabular}{llc}
 \lsptoprule
-\multicolumn{2}{c}{Verbal combination}& Acceptance judgment\\\cmidrule(r){1-2}\cmidrule(l){3-3}
-perfective verb & \textit{i} `and' perfective verb~ & ok\\
+\multicolumn{2}{c}{Verbal combination}& Acceptance judgment\\\midrule
+perfective verb & \textit{i} `and' perfective verb~ & ok\hphantom{\textsuperscript{\textit{a}}}\\
 imperfective verb & \textit{i} `and' perfective verb~ & ??\footnote{I use this sign to indicate a problem on the discourse level.}\\
-biaspectual verb & \textit{i} `and' perfective verb~ & ok\\
+biaspectual verb & \textit{i} `and' perfective verb~ & ok\hphantom{\textsuperscript{\textit{a}}}\\
 \lspbottomrule
 \end{tabular}
 \end{table}
@@ -623,7 +623,7 @@ To summarize, I have shown that the verbs formed according to the pattern in \re
 \subsection{Introduction}
 As we have seen in the previous section, existing approaches to Russian prefixation do not account for the full range of prefixed verbs data. Moreover, they often do not agree on the data or some important data is missing and disregarded. This section is dedicated to the description of a structure that allows to reach an agreement on the prefixation data and easily check the proposed generalizations, if a database, organized according to the definition provided here, is implemented. Material presented in this section is partially covered in \citet{ZinovaFilip:14b}.
 
-In the last part of the section, \ref{subsection:predict}, I will show how the aspect of the verb can be easily predicted if we have the derivational graph, which is proposed here, at hand. In most cases such prediction is possible for a verb that is stored in the graph node exclusively on the basis of the information about the incoming edges. The cases where additional information (such as the aspect of the verb in the parent node) may be needed, are discussed in Section~\ref{section:new:perfectivity}.
+In the last part of this section, \sectref{subsection:predict}, I will show how the aspect of the verb can be easily predicted if we have the derivational graph, which is proposed here, at hand. In most cases such prediction is possible for a verb that is stored in the graph node exclusively on the basis of the information about the incoming edges. The cases where additional information (such as the aspect of the verb in the parent node) may be needed, are discussed in Section~\ref{section:new:perfectivity}.
 
 \subsection{Definitions}\label{section:chains:definition}
 As we have seen in the previous chapter, some prefixed verbs can be derived in various ways. I propose to observe these possibilities carefully before excluding some of them that on the first sight do not fit neatly into the common model of verbal prefixation.
@@ -697,10 +697,8 @@ Consider the verb \textit{pisat'} `to write' and the verb \textit{dopisyvat'} `t
 {to write} $\rightarrow$ {to write occasionally} $\rightarrow$ {to finish/be finishing writing}\\
 
 \begin{figure}
-\begin{center}
 \includegraphics{graphPisat.pdf}
 \caption{A fragment of the derivational graph: \textit{pisat'} `to write'\label{tree:dopisyvat}}
-\end{center}
 \end{figure}
 
 The fragment of the derivational graph, presented on \figref{tree:dopisyvat}, provides evidence for the hypothesis that if a verb contains both the prefix \textit{do-} and the imperfective suffix, it is imperfective. However, this hypothesis is quickly rejected on the basis of the other part of the graph: if one searches through the paths from the verb \textit{pisat'} `to write' to the verb \textit{dozapisyvat'} `to finish/be finishing writing down/recording', one finds two different derivational chains in the derivational graph, as shown on \figref{tree:dozapisyvat}. The first derivational chain, linearised in \ref{deriv:dozapisyvat1}, provides evidence against the proposed hypothesis, as the verb in the end of this chain is perfective and contains both the imperfective suffix and the prefix \textit{do-}. 
@@ -739,7 +737,7 @@ Let me explain why the approach outlined here leads to different predictions tha
 
 Another example, already mentioned in Section~\ref{subsection:bi:apply}, is the verb \textit{dovy\v{s}ivat'} `to finish embroidering'. It contains the same type of affixes as the verb \textit{dozapisyvat'} `to finish recording/writing down'. Namely, a completive prefix \textit{do-}, one more prefix commonly characterized as a lexical prefix, and the imperfective suffix. The verbs \textit{dovy\v{s}ivat'} `to finish embroidering' and \textit{dozapisyvat'} `to finish recording/writing down' are morphologically alike and thus there is no structural difference between them on any existing syntactic account of Russian verbal prefixation, as the structure of the verb and the order of the affix attachment is determined only on the basis of the syntactic properties of the affixes (with fixed interpretation).
  
-It turns out that these verbs are clearly different for most native speakers: while the perfective uses of the verb \textit{dozapisyvat'} `to finish recording/writing down' may be judged odd by some speakers (as claimed by Sergei Tatevosov, personal communication\footnote{Note that such behaviour can be explained on the account proposed here by assuming that these speakers use a stronger version of a general pragmatic principle that is used to account for the non-existence of a range of verbs (more information in Chapter~\ref{Chapter5} and Chapter~\ref{Chapter6}). This principle says that a more complex morphological form cannot be used to express the same meaning that a less marked form has. As a default, the domain of available alternatives is restricted to the verbs belonging to one derivational chain (where the complexity is directly connected to the place in the chain). In the stronger version, however, one can widen the domain to all the chains that start from the same source node. This modification will allow to account for the variation in the acceptability of various verbs.}), all the native speakers that I have consulted with agree that the verb \textit{dovy\v{s}ivat'} `to finish embroidering' can be used as a perfective verb. Moreover, most of these speakers do not accept \textit{dovy\v{s}ivat'} `to finish embroidering' as an imperfective verb. The same group of people rejects the existence of the verb $^?$\textit{dovy\v{s}it'}\textsuperscript{\PF} `to finish embroidering'. This behavior is easily explained by means of the relevant part of the derivational graph, presented on \figref{tree:dovyshivat}. For the group of speakers who reject the existence of the verb $^?$\textit{dovy\v{s}it'}\textsuperscript{\PF} `to finish embroidering', the derivation in \ref{deriv:dovyshivat2} is not available, as it requires the verb $^?$\textit{dovy\v{s}it'}\textsuperscript{\PF} `to finish embroidering' to be attested. Thus the verb \textit{dovy\v{s}ivat'} `to finish embroidering' cannot be assigned the imperfective aspect. On the other hand, at least some of the speakers that accept the verb $^?$\textit{dovy\v{s}it'}\textsuperscript{\PF} `to finish embroidering' also have access to the imperfective aspect of the verb \textit{dovy\v{s}ivat'} `to finish embroidering'.
+It turns out that these verbs are clearly different for most native speakers: while the perfective uses of the verb \textit{dozapisyvat'} `to finish recording/writing down' may be judged odd by some speakers (as claimed by Sergei Tatevosov, personal communication\footnote{Note that such behaviour can be explained on the account proposed here by assuming that these speakers use a stronger version of a general pragmatic principle that is used to account for the non-existence of a range of verbs (more information in Chapters~\ref{Chapter5} and~\ref{Chapter6}). This principle says that a more complex morphological form cannot be used to express the same meaning that a less marked form has. As a default, the domain of available alternatives is restricted to the verbs belonging to one derivational chain (where the complexity is directly connected to the place in the chain). In the stronger version, however, one can widen the domain to all the chains that start from the same source node. This modification will allow to account for the variation in the acceptability of various verbs.}), all the native speakers that I have consulted with agree that the verb \textit{dovy\v{s}ivat'} `to finish embroidering' can be used as a perfective verb. Moreover, most of these speakers do not accept \textit{dovy\v{s}ivat'} `to finish embroidering' as an imperfective verb. The same group of people rejects the existence of the verb $^?$\textit{dovy\v{s}it'}\textsuperscript{\PF} `to finish embroidering'. This behavior is easily explained by means of the relevant part of the derivational graph, presented on \figref{tree:dovyshivat}. For the group of speakers who reject the existence of the verb $^?$\textit{dovy\v{s}it'}\textsuperscript{\PF} `to finish embroidering', the derivation in \ref{deriv:dovyshivat2} is not available, as it requires the verb $^?$\textit{dovy\v{s}it'}\textsuperscript{\PF} `to finish embroidering' to be attested. Thus the verb \textit{dovy\v{s}ivat'} `to finish embroidering' cannot be assigned the imperfective aspect. On the other hand, at least some of the speakers that accept the verb $^?$\textit{dovy\v{s}it'}\textsuperscript{\PF} `to finish embroidering' also have access to the imperfective aspect of the verb \textit{dovy\v{s}ivat'} `to finish embroidering'.
 
 \ex.\label{deriv:dovyshivat}\ag.\label{deriv:dovyshivat1}\v{s}it'\textsuperscript{\IPF} $\rightarrow$ vy-\v{s}it'\textsuperscript{\PF} $\rightarrow$ vy-\v{s}-iva-t'\textsuperscript{\IPF} $\rightarrow$ do-vy-\v{s}-iva-t'\textsuperscript{\PF}\\
 {to sew} $\rightarrow$ {to embroider} $\rightarrow$ {to embroider/be embroidering} $\rightarrow$ {to finish embroidering}\\
@@ -753,7 +751,7 @@ It turns out that these verbs are clearly different for most native speakers: wh
 \end{center}
 \end{figure}		
 
-I would like to also point out another question that naturally arises in connection with the possible paths in the derivational graph. One may ask whether there are prefixes that can be considered perfectivity markers. The first step towards answering this question would be to look for such prefix that whenever a verb contains it, there will be no outgoing edges from the node corresponding to this verb in the derivational graph. Although this is a reformulation of one of the classical characteristics of the superlexical prefixes\footnote{See, e.g. \citet{Ramchand:04}, \citet{Svenonius:04a}, and \citet{Romanova:06}, who assume that superlexical prefixes occupy the highest position in the verbal structure.}, \citet{Tatevosov:07, Tatevosov:09} provides numerous counterexamples to such a constraint. In the account proposed in \citealt{Tatevosov:09}, the main constraints on the attachment of the superlexical prefixes are formulated in different terms: they must be attached either before the imperfective suffix or to a formally imperfective verb. Only the distributive prefix \textit{po}- that, according to \citet{Tatevosov:09}, occupies the left periphery of the verb, is then a prefix of such a type that the verb that contains it is necessarily perfective and no other morpheme can be attached higher than it. I will further investigate the ability of individual prefixes discussed here to constitute a part of an imperfective verb in Chapter~\ref{Chapter5}.\footnote{Note that even if we find such prefixes that can be encountered only on the last derivational step, they are not necessarily perfectivity markers, as there may be other reasons (e.g. semantic, pragmatic, phonological) why further derivational steps are not possible.}
+I would like to also point out another question that naturally arises in connection with the possible paths in the derivational graph. One may ask whether there are prefixes that can be considered perfectivity markers. The first step towards answering this question would be to look for such prefix that whenever a verb contains it, there will be no outgoing edges from the node corresponding to this verb in the derivational graph. Although this is a reformulation of one of the classical characteristics of the superlexical prefixes,\footnote{See, e.g. \citet{Ramchand:04}, \citet{Svenonius:04a}, and \citet{Romanova:06}, who assume that superlexical prefixes occupy the highest position in the verbal structure.} \citet{Tatevosov:07, Tatevosov:09} provides numerous counterexamples to such a constraint. In the account proposed in \citealt{Tatevosov:09}, the main constraints on the attachment of the superlexical prefixes are formulated in different terms: they must be attached either before the imperfective suffix or to a formally imperfective verb. Only the distributive prefix \textit{po}- that, according to \citet{Tatevosov:09}, occupies the left periphery of the verb, is then a prefix of such a type that the verb that contains it is necessarily perfective and no other morpheme can be attached higher than it. I will further investigate the ability of individual prefixes discussed here to constitute a part of an imperfective verb in Chapter~\ref{Chapter5}.\footnote{Note that even if we find such prefixes that can be encountered only on the last derivational step, they are not necessarily perfectivity markers, as there may be other reasons (e.g. semantic, pragmatic, phonological) why further derivational steps are not possible.}
 
 \section{Prefixation and perfectivity}\label{section:new:perfectivity}
 
@@ -780,45 +778,26 @@ To show that the prefixed verb \textit{perekvalificirovat'} `to requalify/to rec
 
 \ex.\ag.\label{ex:perekvalificirovat:perf}Krome togo, vynosja prigovor, sud'ja perekvalificiroval obvinenie i snizil s ``osobo krupnogo'' na ``krupnyj'' objem nefti, v xi\v{s}\v{c}enii kotoroj obvinjajutsja podsudimye.\\
 apart this, vy.carry.\glb{part.pres} sentence.\glb{sg.acc} judge.\glb{sg.nom} pere.classify.\glb{pst.sg.m} accusation.\glb{sg.acc} and lower.\glb{pst.sg.m} from ``particularly large'' on ``large'' volume.\glb{sg.acc} oil.\glb{gen} in theft.\glb{sg.prep} which.\glb{f.sg.prp} accuse.\glb{pres.3.pl.}refl defendant.\glb{pl.nom}\\
-\trans `Apart from this, when carrying out the sentence, the judge reclassified the accusation, changing the amount of oil that defendants are incriminated to have stolen from ``particularly large'' into ``large''.' 
-\begin{flushright}
-\vspace{-0.5em}
-\url{http://www.vesti.ru}
-\end{flushright}
+\trans `Apart from this, when carrying out the sentence, the judge reclassified the accusation, changing the amount of oil that defendants are incriminated to have stolen from ``particularly large'' into ``large''.'\\
+\hbox{}\hfill\hbox{\url{http://www.vesti.ru}}
 \bg.\label{ex:perekvalificirovat:perf2}Sudja perekvalificiroval delo i po\v{s}\"{e}l domoj.\\
 judge.\glb{sg.nom} pere.classify.\glb{pst.sg.m} case.\glb{sg.acc} and po.go.\glb{pst.sg.m} home\\
-`The judge reclassified the case and went home.'
+\trans `The judge reclassified the case and went home.'
 
 To show that the verb \textit{perekvalificirovat'} `to requalify/to reclassify' can as well be used as an imperfective verb, I apply to it the four common tests that delimit imperfective verbs. It turns out that in an appropriate context the verb \textit{perekvalificirovat'} `to requalify/to reclassify' can have a progressive interpretation, as shown by example \ref{ex:qualify1}, it can be used as a complement of a phasal verb (see example \ref{ex:qualify2}), form periphrastic future, as in the sentence \ref{ex:qualify3}, and form a present participle, as in \ref{ex:qualify4}. 
 
 \ex.\label{ex:qualify}\ag.\label{ex:qualify1}V dannyj moment on perekvalificiruet\textsuperscript{\IPF} svoju {``Armiju Maxdi''} v politi\v{c}eskoe dvi\v{z}enie.\\
 in given moment he pere.qualify.\glb{pres.3.sg} his {``Armija Maxdi''} in political movement\\
-\trans `Right now he is recategorizing his ``Armija Maxdi'' into a political movement.' 
-\begin{flushright}
-\vspace{-0.5em}
-subscribe.ru
-\end{flushright}
+\trans `Right now he is recategorizing his ``Armija Maxdi'' into a political movement.'\hbox{}\hfill\hbox{\url{subscribe.ru}}
 \bg.\label{ex:qualify2}Sej\v{c}as advokaty na\v{c}nut perekvalificirovat'\textsuperscript{\IPF} delo v politi\v{c}eskoje.\\
 now advocates start.\glb{pres.3.pl} iter.qualify.\glb{inf} case in political\\
-\trans `Now the advocates will start to reclassify this case as a political one.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{pikabu.ru}
-\end{flushright}
+\trans `Now the advocates will start to reclassify this case as a political one.'\\\hbox{}\hfill\hbox{\url{pikabu.ru}}
 \bg.\label{ex:qualify3}Policejskix budut perekvalificirovat'\textsuperscript{\IPF} v buxgalterov.\\	
 policemen will.be pere.qualify\glb{.inf} in accountant.\glb{pl.acc}\\
-\trans `Policemen will be requalified and become accountants.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{pikabu.ru}
-\end{flushright}
+\trans `Policemen will be requalified and become accountants.'\hbox{}\hfill\hbox{\url{pikabu.ru}}
 \bg.\label{ex:qualify4}Ne pozvoljaetsja smotret’ na perekvalificiruemye sdelki s pozicii togo, \v{c}to nalogoplatel’\v{s}\v{c}ik mog sdelat’ v tex uslovijax.\\
 not allow look on pere.qualify.\glb{part.pres.pl.acc} deals from position that, that tax.payer can.\glb{pst.sg.m} s.do.\glb{inf} in that conditions\\
-\trans `It is not allowed to regard the deals that are reclassify from the point of view of what the person paying the taxes could have done in the past situation.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{www.aetc.ru}
-\end{flushright}
+\trans `It is not allowed to regard the deals that are reclassify from the point of view of what the person paying the taxes could have done in the past situation.'\hbox{}\hfill\hbox{\url{www.aetc.ru}}
 
 Now let us examine other potential ways of deriving the verb \textit{perekvalificirovat'} `to requalify/to reclassify' in such a way that prefixation is not the last derivational step. The first idea is to allow the possibility of the suffix \textit{-ova-} to be attached after the prefix \textit{pere-}. This is not possible, since there is no verb *\textit{kvalificirit'} (i.e., \textit{kvalificirovat'} without the suffix -\textit{ova}-) and also no verb  *\textit{perekvalificirit'} that can be imperfectivized by the addition of the imperfective suffix.
 
@@ -828,11 +807,7 @@ Another possibility that must be considered is illustrated by \ref{chain:kvalifi
 
 \exg.\label{ex:kvalifikacija}Process trudoustrojstva mo\v{z}et uprostit' perekvalifikacija.\\
 process.\glb{sg.acc} placement.\glb{sg. gen} can.\glb{pres.3.sg} simplify.\glb{inf} pere.qualification.\glb{sg.nom}\\
-\trans `The requalification can simplify the process of placement.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{worldofscience.ru}
-\end{flushright}
+\trans `The requalification can simplify the process of placement.'\\\hbox{}\hfill\hbox{\url{worldofscience.ru}}
 
 The chain in \ref{chain:kvalificirovat'} should be compared with \ref{chain:kvalifikacija}, where the prefixed noun is derived from the prefixed verb, and not vice versa, but requires to admit the non-perfectivizing usage of the prefix \textit{pere-},
 
@@ -849,11 +824,7 @@ So far it seems that the derivation in \ref{chain:kvalificirovat'} is a possible
 
 \exg.\label{ex:dokvalifikacija}Avtoservis primet na rabotu avto\`{e}lektrika. V perspektive vozmo\v{z}na dokvalifikacija.\\
 {auto.service} take.\glb{pres.3.sg} on work {auto.electrician.\glb{sg.acc}} in perspective possible do.qualification.\glb{sg.nom}\\
-\trans `Auto service will hire an auto electrician. Improving qualification is possible in future.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{www.kolmovo.ru}
-\end{flushright}
+\trans `Auto service will hire an auto electrician. Improving qualification is possible in future.'\hbox{}\hfill\hbox{\url{www.kolmovo.ru}}
 
 \exg.\label{chain:dokvalificirovat'}kvalificirovat'\textsuperscript{\PF\slash\IPF} {$\rightarrow$} kvalifikacija {$\rightarrow$} dokvalifikacja {$\rightarrow$} dokvalificirovat'\textsuperscript{\PF\slash\IPF}\\
 {`to qualify'} {} {`qualfication'} {} {`qualification improvement'} {} {`to improve qualification'}\\
@@ -862,33 +833,17 @@ It is obvious that the verb \textit{dokvalificirovat'} `to improve qualification
 
 \exg.\label{ex:dokvalificirovat':perf}Ja okon\v{c}il Veterinarnuju akademiju, a armija dokvalificirovala menja do normal'nogo medika.\\
 I finish.\glb{pst.sg.m} veterinary.\glb{f.sg.acc} academy.\glb{sg.acc}, but arm.\glb{sg.nom} do.qualify.\glb{pst.sg.f} I.\glb{acc} to normal.\glb{m.sg.gen} physician.\glb{sg.gen}\\
-\trans `I graduated from the vererinary academy and in the army I improved my qualification enough to be a physician.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{www.ogoniok.com}
-\end{flushright}
+\trans `I graduated from the vererinary academy and in the army I improved my qualification enough to be a physician.'\hbox{}\hfill\hbox{\url{www.ogoniok.com}}
 
 \ex.\label{ex:dokvalificirovat':imperf}\ag.\label{ex:dokvalificirovat':ongoing}My vse vremja u\v{c}im, pereobu\v{c}aem na\v{s}i kadry, dokvalificiruem, perekvalificiruem.\\
 we all time teach.\glb{pres.3.sg}, pere.ob.teach.\glb{pres.3.sg} our personnel.\glb{pl.acc}, do.qualify.\glb{pres.3.sg}, pere.quaify.\glb{pres.3.sg}\\
-\trans `We always teach and reteach our personnel, train them to the new level, retrain.' 
-\begin{flushright}
-\vspace{-0.5em}
-\url{dic.academic.ru}
-\end{flushright}
+\trans `We always teach and reteach our personnel, train them to the new level, retrain.'\hbox{}\hfill\hbox{\url{dic.academic.ru}}
 \bg.\label{ex:dokvalificirovat':part}Pri \`{e}tom kak nastavnikam novoprinjatyx kolleg, tak i dokvalificiruemyx proizvoditsja premial'naja oplata za rabo\v{c}ee vremja, posvja\v{s}\v{c}ennoe obu\v{c}eniju.\\
 with this as mentor.\glb{pl.dat} new.accepted.\glb{pl.gen} colleague.\glb{pl.gen}, so and do.qualify.\glb{part.pass.pres.pl.gen} make.\glb{pres.3.sg.}refl premium payment.\glb{sg.nom} behind work.\glb{sg.n.acc} time.\glb{sg.acc}, dedicate.\glb{part.pass.pst.sg.n.nom} education.\glb{dat}\\
-\trans `Wherein both mentors of the novices as well as mentors of those workers that are being extra-trained are payed additionally for the working time they spend on educational purposes.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{upload.studwork.org}
-\end{flushright}
+\trans `Wherein both mentors of the novices as well as mentors of those workers that are being extra-trained are payed additionally for the working time they spend on educational purposes.'\\\hbox{}\hfill\hbox{\url{upload.studwork.org}}
 \bg.\label{ex:dokvalificirovat':future}Kto budet dokvalificirovat' kadry?\\
 Who will do.qualify.\glb{inf} personnel.\\
-\trans `Who will train the personnel to the new level?'
-\begin{flushright}
-\vspace{-0.5em}
-\url{https://twitter.com/hashtag/smartcitykazan}
-\end{flushright}
+\trans `Who will train the personnel to the new level?'\\\hbox{}\hfill\hbox{\url{https://twitter.com/hashtag/smartcitykazan}}
 
 As there are few examples like these in \ref{ex:dokvalificirovat':imperf} on the internet, I have run a mini-survey, asking native speakers of Russian if the sentences in \ref{ex:dokvalificirovat':imperf} are acceptable for them. Out of 11 respondents 4 accepted \textit{dokvalificirovat'} `to improve qualification' as an imperfective verb, while 7 did not.
 
@@ -896,38 +851,22 @@ What some speakers suggested was to attach the imperfective suffix to the verb \
 
 \exg.\label{ex:dokvalificirovyvat}Vodil nado dokvalificirovyvat' v vy\v{s}ibal, \v{c}tob oni prinimali v takix slu\v{c}ajax kardinal'nye mery.\\
 driver.\glb{pl.acc} need do.qualify.imp.\glb{inf} in doorman.\glb{pl.acc}, that they take.\glb{pst.pl} in such case.\glb{pl.prp} drastic measure.\glb{pl.acc}\\
-\trans `Drivers should be requalified in doormen, so that they could take drastic measures.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{journals.ru}
-\end{flushright}
+\trans `Drivers should be requalified in doormen, so that they could take drastic measures.'\hbox{}\hfill\hbox{\url{journals.ru}}
 
-The derived verb is not very natural from a phonological point of view and hardly used. \citet[590]{Shvedova:82} writes that suffixation with \textit{-iva-} is possible for the verbs with the \textit{-ova-/-irova-} suffix only if the last syllable of the suffix is stressed\footnote{\citet[590]{Shvedova:82}: ``pribavlenie morfa \textit{-­iva-} vozmo\v{z}no tol'ko v tom slu\v{c}ae, kogda udarenie padaet na vtoroj slog suf. \textit{-­ova-/-irova-}'' [the addition of the \textit{-iva-} morpheme is possible only if the second syllable of the \textit{-­ova-/-irova-} suffix is stessed], but from the examples that follow it is clear the she means either the second syllable of the \textit{-ova-} suffix or the last syllable of the \textit{-irova-} suffix.}. In sum, it seems that imperfectivization with the suffix \textit{-iva-} is allowed from a morphological point of view, but blocked for phonological reasons.
+The derived verb is not very natural from a phonological point of view and hardly used. \citet[590]{Shvedova:82} writes that suffixation with \textit{-iva-} is possible for the verbs with the \textit{-ova-/-irova-} suffix only if the last syllable of the suffix is stressed.\footnote{\citet[590]{Shvedova:82}: ``pribavlenie morfa \textit{-­iva-} vozmo\v{z}no tol'ko v tom slu\v{c}ae, kogda udarenie padaet na vtoroj slog suf. \textit{-­ova-/-irova-}'' [the addition of the \textit{-iva-} morpheme is possible only if the second syllable of the \textit{-­ova-/-irova-} suffix is stessed], but from the examples that follow it is clear the she means either the second syllable of the \textit{-ova-} suffix or the last syllable of the \textit{-irova-} suffix.} In sum, it seems that imperfectivization with the suffix \textit{-iva-} is allowed from a morphological point of view, but blocked for phonological reasons.
  
 A behavior similar to the one of \textit{do-} is observed for the prefix \textit{pod-}. Consider, for example, the borrowed biaspectual verb \textit{amortizirovat'} `to cushion'. The verb \textit{podamortizirovat'} `to cushion slightly' is not only used as a perfective verb (example \ref{ex:cushion1}), but sometimes also as an imperfective verb (example \ref{ex:cushion2}). Again, there exists a noun \textit{podamortizacija} `slight cushioning' (see example \ref{ex:podamortizacija}) that could serve as a source of derivation of the prefixed verb, but is accepted only by some native speakers of Russian.
 
 \ex.\label{ex:cushion}\ag.\label{ex:cushion1}…krome togo, mo\v{z}no e\v{s}\v{c}e snizu porolon\v{c}ikom \v{z}estkim podamortizirovat'\textsuperscript{\PF}\\		
 …aside that, possible also below {foam rubber} hard pod.cushion.\glb{inf}\\
-\trans `it is also possible to put some hard foam rubber below as a cushion'
-\begin{flushright}
-\vspace{-0.5em}
-\url{forum.guitarplayer.ru}
-\end{flushright}
-\vspace{0.5em}\bg.\label{ex:cushion2}\v{C}to tolku podamortizirovat'\textsuperscript{\IPF} perednee koleso, esli zadnie \v{z}estko sidjat na rame.\\
+\trans `it is also possible to put some hard foam rubber below as a cushion'\\\hbox{}\hfill\hbox{\url{forum.guitarplayer.ru}}
+\bg.\label{ex:cushion2}\v{C}to tolku podamortizirovat'\textsuperscript{\IPF} perednee koleso, esli zadnie \v{z}estko sidjat na rame.\\
 what sense pod.cushion.\glb{inf} front wheel if back hardly sit.\glb{pres.pl} on frame\\
-\trans `What's the point to cushion the front wheel when the back ones are sitting hard on the frame?'
-\begin{flushright}
-\vspace{-0.5em}
-\url{www.pnevmohod.ru}
-\end{flushright}
+\trans `What's the point to cushion the front wheel when the back ones are sitting hard on the frame?'\hbox{}\hfill\hbox{\url{www.pnevmohod.ru}}
 
 \exg.\label{ex:podamortizacija}Ili, ska\v{z}em, v BTR-ax su\v{s}\v{c}estvuet podamortizacija sidenij: dlja togo, \v{c}toby v slu\v{c}ae naezda na minu desantnika ne tak sil'no trjaxnulo.\\
 Or, say.\glb{pres.1.pl}, in BTR.\glb{pl.prep} exist.\glb{pres.3.sg} pod.cushioning.\glb{sg.nom} seat.\glb{pl.gen}: for that, that in case hitting on bomb paratrooper not as strongly shake.\glb{pst.sg.n}\\
-\trans `Or, say, BTRs have a slight seat cushioning: in case of hitting a bomb the paratrooper won't be shaken so much.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{topwar.ru}
-\end{flushright}
+\trans `Or, say, BTRs have a slight seat cushioning: in case of hitting a bomb the paratrooper won't be shaken so much.'\hbox{}\hfill\hbox{\url{topwar.ru}}
 
 It might seem that for some speakers biaspectual borrowed verbs ending on \textit{-irovat'-} lack aspect and remain underspecified in this respect when prefixed with any prefix. This is not the case, as apart from the three prefixes discussed above, biaspectual verbs become perfective after prefixation. 
 
@@ -935,31 +874,19 @@ As an example, let us consider the verb \textit{otkvalificirovat'} `to finish cl
 
 \exg.\label{ex:otkvalificirovat'}Ja li\v{s} otkvalificiroval na osnovanii tipi\v{c}nyx voprosov.\\
 I only ot.qualify.\glb{pst.sg.m} on basis typical question.\glb{pl.gen}\\
-\trans `I only classified according to the typical questions.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{forum.nag.ru}
-\end{flushright}
+\trans `I only classified according to the typical questions.'\hbox{}\hfill\hbox{\url{forum.nag.ru}}
 
 It also has to be mentioned that besides borrowed biaspectual verbs with the \textit{-irova-} suffix, there are also borrowed biaspectual verbs with the suffix \textit{-ova-}, such as \textit{organizovat'} `to organize' in \ref{ex:organizovat1}. 
 
 \exg.\label{ex:organizovat1}Pervyj kanal organizoval\textsuperscript{\PF} v Tule grandioznyj prazdnik dlja detej.\\
 first channel organize.\glb{pst.sg.m} in Tula.\glb{prp} colossal celebration for children.\glb{gen}\\
-\trans `First channel organized a colossal celebration for children in Tula.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{www.1tv.ru}
-\end{flushright}
+\trans `First channel organized a colossal celebration for children in Tula.'\\\hbox{}\hfill\hbox{\url{www.1tv.ru}}
 
 The verb \textit{organizovat'} `to organize' does not fall under the phonological restriction on the attachement of the imperfective suffix, so an imperfective verb \textit{organizovyvat'}\textsuperscript{\IPF} `to organize/to be organizing' exists. Due to the presence of an unambiguously imperfective verb, \textit{organizovat'} `to organize' seems to be partially loosing its biaspectuality, as I could find no examples of uttering \textit{organizovat'} `to organize' as an imperfective verb in the past tense. However, in the non-past tense imperfective usages of the verb \textit{organizovat'} `to organize' are natural and common (see example \ref{ex:organizovat}).
 
 \exg.\label{ex:organizovat}Kak ja organizuju\textsuperscript{\IPF} informaciju pri prodvi\v{z}enii sajtov.\\
 how I organize.\glb{pres.1.sg} information.\glb{acc} at promotion.\glb{sg.prp} website.\glb{pl.gen}\\
-\trans `How do I organize information when promoting a website.'
-\begin{flushright}
-\vspace{-0.5em}
-shakin.ru
-\end{flushright}
+\trans `How do I organize information when promoting a website.'\hbox{}\hfill\hbox{shakin.ru}
 
 This asymmetry may be due to the different ways of constructing the tensed forms of the verbs. In the past tense personal forms of the verbs \textit{organizovat'} `to organize' and \textit{organizovyvat'}\textsuperscript{\IPF} `to organize/to be organizing' differ by one syllable (\textit{organizoval} `he organized' vs. \textit{organizov\textbf{yv}al} `he organized/was organizing'). In the non-past tense the phonological and morphological distance is bigger: personal forms of the secondary imperfective verb (e.g., \textit{organizo\textbf{vyva}ju} `I organize/am organizing') are two syllables and two morphemes longer than the respective personal forms of the source verb (e.g., \textit{organizuju} `I organize'). Due to this, the cost of using the suffixed and not the original biaspectual verb (in a context that requires the imperfective aspect) is less for the past tense.
 
@@ -974,18 +901,10 @@ When the completive prefix \textit{do-} is attached to the same verbs, the verb 
 
 \ex.\label{ex:doorganizovyvat}\ag.sam budu doorganizovyvat'\textsuperscript{\IPF} obu\v{c}enie\\
 myself will do.organize.imp.\glb{inf} education.\glb{acc}\\
-\trans `I will finish organizing the education process myself'
-\begin{flushright}
-\vspace{-0.5em}
-\url{deco-house.ru}
-\end{flushright}
+\trans `I will finish organizing the education process myself'\\\hbox{}\hfill\hbox{\url{deco-house.ru}}
 \bg.Ja da\v{z}e svoju gil'diju do six por ne doorganizovyval\textsuperscript{\PF}, ne to, \v{c}to celoe kom'juniti\\
 I also my guild.\glb{sg.acc} until this time not do.organize.imp.\glb{pst.sg.m}, not that, that whole community\\
-\trans `I still did not finish organizing my guild, not to say about the whole community.'
-\begin{flushright}
-\vspace{-0.5em}
- \url{http://forum.tera-online.ru}
-\end{flushright}
+\trans `I still did not finish organizing my guild, not to say about the whole community.'\hbox{}\hfill\hbox{\url{http://forum.tera-online.ru}}
 
 \ex.\label{chain:doorg}\ag.organizovat'\textsuperscript{\PF\slash\IPF} {$\rightarrow$} {doorganizovat'\textsuperscript{\PF}} {$\rightarrow$} doorganizovyvat\textsuperscript{\IPF}\\
 {`to organize'} {} {`to finish organizing'} {} {`to finish organizing/be finishing organizing'}\\
@@ -1015,61 +934,36 @@ Let us now consider the verb \textit{planirovat'} `to plan/be planning'. It is a
 
 \exg.\label{ex:pereplanirovat'}Arendator samovol'no pereplaniroval\textsuperscript{\PF} ofisnye pome\v{s}\v{c}enija.\\
 tenant.\glb{sg.nom} {without permit} pere.plan.\glb{pst.sg.m} office room.\glb{pl.acc}\\
-\trans `The tenant replanned office rooms without permission.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{ppt.ru/news/90927}
-\end{flushright}
+\trans `The tenant replanned office rooms without permission.'\\\hbox{}\hfill\hbox{\url{ppt.ru/news/90927}}
 
 \ex.\label{ex:pereplanirovat:imperf}\ag.\label{ex:pereplanirovat:future1}A poka budu pereplanirovat'\textsuperscript{\IPF} u\v{c}astok pod buduju\v{s}\v{c}uju posadku.\\
 but now will pere.plan.\glb{inf} {garden plot} under future planting\\
-\trans `In the meanwhile I will replan the garden plot for the future planting.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{forum.vinograd.info}
-\end{flushright}
+\trans `In the meanwhile I will replan the garden plot for the future planting.'\hbox{}\hfill\hbox{\url{forum.vinograd.info}}
 \bg.\label{ex:pereplanirovat:future2}Budu pereplanirovat' mar\v{s}rut s u\v{c}etom ostanovok i vylazok s mesta dislokacii po radiusu.\\
 will pere.plan.\glb{inf} route with accounting stop.\glb{pl.gen} and outing.\glb{pl.gen} with place location.\glb{sg.gen} on radius\\
-\trans `I will replan the route, taking into account stops and radial outings from our location.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{forum.awd.ru}
-\end{flushright}
+\trans `I will replan the route, taking into account stops and radial outings from our location.'\hbox{}\hfill\hbox{\url{forum.awd.ru}}
 \bg.\label{ex:pereplanirovat:start}Soglasilsja. Na\v{c}al pereplanirovat' svoi dela na vyxodnye.\\
 agree.\glb{pst.sg.m.refl} start.\glb{pst.sg.m} pere.plan.\glb{inf} my affairs on weekend\\
-\trans `I agreed. Started to replan my weekend activities.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{market.yandex.ru}
-\end{flushright}
+\trans `I agreed. Started to replan my weekend activities.'\\\hbox{}\hfill\hbox{\url{market.yandex.ru}}
 \bg.\label{ex:pereplanirovat:prog}Imeetsja kvartira (5 komnat), kotoruju v dannyj moment pereplanirujut i pereoformljajut, kak 2 i 3.\\
 have.\glb{pres.3.sg.refl} flat.\glb{sg.nom} (5 room\glb{.pl.gen}) that in given moment pere.plan.\glb{pres.3.pl} and pere.register.\glb{pres.3.pl} as 2 and 3\\
-\trans `There is a flat (5 rooms), that is now being replanned and reregistered, as one 2 room and one 3 room flat.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{m.disput.az}
-\end{flushright}
+\trans `There is a flat (5 rooms), that is now being replanned and reregistered, as one 2 room and one 3 room flat.'\hbox{}\hfill\hbox{\url{m.disput.az}}
 \bg.\label{ex:pereplanirovat:part}Tol'ko ja svoju pereplanirovku sdala v \`{e}kspluataciju v 2004 godu i polu\v{c}ila pravo sobstvennosti na pereplaniruemyj ob'ekt.\\
 only I my pere.planning.glb{sg.acc} s.give.\glb{pst.sg.f} in operation in 2004 year and receive.\glb{pst.sg.f} right property on pere.plan.\glb{part.pass.pres.sg.m.acc} object\\
 `But my replanning was put into operation in 2004 and I received the right of property for the replanned object.'
-\begin{flushright}
-\url{http://www.zonazakona.ru}
-\end{flushright}
+\hbox{}\hfill\hbox{\url{www.zonazakona.ru}}
 
 From the biaspectual verb \textit{pereplanirovat'} `to replan/be replanning' a deverbal noun \textit{pereplanirovanie} `replanning' can be derived by means of the suffix \textit{-anij-}. An example from the internet that includes this noun is provided in \ref{ex:pereplanirovanie}.
 
 \exg.\label{ex:pereplanirovanie}\`{E}ksperty pristupili k pereplanirovaniju territorij ob'edinennogo stoli\v{c}nogo regiona.\\
 expert.\glb{pl.nom} start.\glb{pst.pl} to pere.planning.\glb{sg.dat} territory.\glb{pl.gen} joint capital region\\
-\trans `Experts started to replan the area of the joint capital region.'
-\begin{flushright}
-\url{realty.newsru.com}
-\end{flushright}
+\trans `Experts started to replan the area of the joint capital region.'\\\hbox{}\hfill\hbox{\url{realty.newsru.com}}
 
 In contrast to the case of loaned biaspectual verbs, native biasectual verbs that undergo prefixation by means of prefixes other than the repetitive \textit{pere-}, such as \textit{splanirovat'} `to plan', \textit{naplanirovat'} `to plan a lot of', and \textit{doplanirovat'} `to finish planning' are perfective only. Even speakers that accept imperfective usages of the verb \textit{dokvalificirovat'} `to improve qualification' do not accept imperfective usages of the verb \textit{doplanirovat'} `to finish planning'. In particular, all native speakers of Russian that were exposed to the sentence \ref{ex:doplaniruju}, where the verb \textit{doplanirovat'} `to finish planning' has to get an ongoing interpretation, marked it as ungrammatical.
 
 \exg.*Ja sej\v{c}as si\v{z}u na turisti\v{c}eskix sajtax i doplaniruju na\v{s}u poezdku.\label{ex:doplaniruju}\\
 I now seat.\glb{pres.1.sg} on touristic website.\glb{pl.prep} and do.plan.\glb{pres.1.sg} our trip\\
-\trans `I am now browsing through touristic websites and finish planning our trip.'
+\trans `I am now browsing through touristic websites and finish planning our trip.'\largerpage
 
 These observations point again towards the special status (the absence of the perfectivization effect) of the prefix \textit{pere-} with respect to the aspect of the derived verb.
 
@@ -1092,11 +986,7 @@ in given moment they\glb{.acc} pere.marry.off.\glb{pres.3.pl} in accordance with
 
 \exg.\label{ex:perezenivat'}Esli troix detej net, nasil'no brak rastorgat' i pere\v{z}enivat'.\\
 if three child.\glb{pl.gen} no by.force marriage cancel.\glb{inf} and pere.marry.off.\glb{inf}\\
-\trans `If a couple does not have three children, cancel their marriage by force and marry them off anew.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{forum.guns.ru}
-\end{flushright}
+\trans `If a couple does not have three children, cancel their marriage by force and marry them off anew.'\hbox{}\hfill\hbox{\url{forum.guns.ru}}
 
 From this we can conclude, that native biaspectual verbs ending on \textit{-it'} become perfective when prefixed with the repetitive prefix \textit{pere-}, if such prefixation is possible at all. This is reflected in the derivational chain \ref{ex:peremarry}.
 
@@ -1108,11 +998,7 @@ Another neat example involving a verb belonging to the same group (\textit{krest
 
 \exg.\label{ex:krestit'}Potrebuem perekre\v{s}\v{c}ivat' vsex mladencev i pereotpevat' vsex pokojnikov? Pereven\v{c}ivat' i pereispovedovat'?\\
 po.demand.\glb{pres.1.pl} pere.baptize.imp.\glb{inf} all infant.\glb{pl.gen} and pere.ot.sing.imp.\glb{inf} all deceased.\glb{pl.gen} pere.baptize.imp.\glb{inf} and pere.profess.\glb{inf}\\
-\trans `Will we demand to rebaptize all the infants and reread the burial service for all the deceased? Rebaptize and reprofess?'
-\begin{flushright}
-\vspace{-0.5em}
-\url{http://www.dobroeslovo.ru/}
-\end{flushright}
+\trans `Will we demand to rebaptize all the infants and reread the burial service for all the deceased? Rebaptize and reprofess?'\hbox{}\hfill\hbox{\url{www.dobroeslovo.ru}}
 
 
 \exg.\label{chain:baptize}krestit'\textsuperscript{\IPF\slash\PF} $\rightarrow$ perekrestit'\textsuperscript{\PF} $\rightarrow$ $^?$perekre\v{s}\v{c}ivat'\textsuperscript{\IPF}\\
@@ -1124,17 +1010,10 @@ Another class of native biaspectual verbs consists of just one verb \textit{obe\
 \ex.\label{ex:promise}\ag.\label{ex:promise:ipf}Devu\v{s}ka, kotoroj obe\v{s}\v{c}an dar mol\v{c}it, esli {v te\v{c}enii} nedeli ne otvetit -- budu pereobe\v{s}\v{c}at'.\\
 girl.\glb{sg.nom} which promise.\glb{part.pass.sg.m} gift keep.silent.\glb{pres.3.sg} if during week not answer.\glb{pres.3.sg}  will pere.promise.\glb{inf}\\
 \trans `The girl to whom I promised the gift, remains silent, if she does not reply within a week -- I will repromise.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{darudar.org}
-\end{flushright}
+\hbox{}\hfill\hbox{\url{darudar.org}}
 \bg.\label{ex:promise:pf}Poobe\v{s}\v{c}ali perezvonit', \v{c}to ja pereobe\v{s}\v{c}al v svoju o\v{c}ered' Rome...\\
 po.promise.\glb{pst.pl} pere.call.\glb{inf}, what I pere.promise.\glb{pst.sg} in my turn Roma.\glb{dat}\\
-\trans `They promised to call back, what I, in my turn, promised then to Roma...'
-\begin{flushright}
-\vspace{-0.5em}
-\url{yphooteem.kidalia.com}
-\end{flushright}
+\trans `They promised to call back, what I, in my turn, promised then to Roma...'\hbox{}\hfill\hbox{\url{yphooteem.kidalia.com}}
 
 To my ear, the usage in \ref{ex:promise:ipf} is strange and I would mark the verb \textit{pereobe\v{s}\v{c}at'} `to promise anew' as a perfective one, but, as evidenced by the examples found in the internet, some speakers accept this verb as belonging to the imperfective aspect as well.
 
@@ -1142,11 +1021,8 @@ The last group of verbs consists of those verbs that are formed with the suffix 
 
 \exg.\label{ex:reprofess}Zanovo pereispovedoval i e\v{s}\v{c}\"{e} dolgo ute\v{s}al sladkimi slovami o spasenii i radosti bogoljubija.\\
 Anew pere.profess.\glb{pst.sg.m} and more long comfort.\glb{psd.sg.m} sweet word.\glb{pl.inst} about salvation and joy godliness.\glb{gen}\\
-\trans `He professed me anew and spent a long time comforting me with sweet words about the salvation and the joy of godliness.'
-\begin{flushright}
-\vspace{-0.5em}
-\url{lib.pravmir.ru}
-\end{flushright}
+\trans `He professed me anew and spent a long time comforting me with sweet words about the salvation and the joy of godliness.'\hbox{}\hfill\hbox{\url{lib.pravmir.ru}}
+
 
 \subsection{Borrowed prefixes}\label{subsection:perf:prefixes}
 %Previous hypothesis: 
@@ -1251,7 +1127,7 @@ Verbs of motion pose a challenge to the traditional view on Russian verbal morph
 %The apparent resistance of these six `anomalous' indeterminate verbs to perfectivization when prefixed represents analogy \citep{Saxmatov:41, Isachenko:60}. That is, the primary pair \textit{nesti/nosit'} is the model for the prefixed pair \textit{prinesti/prinosit'}.''
 %Note: as Isachenko is actually ``on the other side'', the citation has to be used more carefully.
 
-As an example, consider the pair of motion verbs \textit{letet'/letat'} `to fly'. According to the traditional view, if the prefix \textit{pri-} is combined with \textit{letet'}$_{\DET}$ `to fly', the resulting verb is \textit{priletet'}\textsuperscript{\PF} `to arrive by flying' and when the source verb is \textit{letat'}$_{\INDET}$ `to fly', the derived verb is \textit{priletat'}\textsuperscript{\IPF} `to arrive/be arriving by flying'. Thus, the two derived verbs are of different aspect: \textit{priletet'} `to arrive by flying', in accordance with the standard view on prefixation, is perfective, while \textit{priletat'} `to arrive/be arriving by flying' is not. This is schematically illustrated in \ref{scheme:fly-pri} and examples of the usage of the two prefixed motion verbs are provided in \ref{ex:fly-pri}. In \ref{ex:fly-pri1} the prefixed determinate verb is used to describe a single event of arrival that happened in the past. In \ref{ex:fly-pri2} the prefixed indeterminate verb denotes a series of arrivals that happened regularly.
+As an example, consider the pair of motion verbs \textit{letet'/letat'} `to fly'. According to the traditional view, if the prefix \textit{pri-} is combined with \textit{letet'}\textsubscript{\DET} `to fly', the resulting verb is \textit{priletet'}\textsuperscript{\PF} `to arrive by flying' and when the source verb is \textit{letat'}\textsubscript{\INDET} `to fly', the derived verb is \textit{priletat'}\textsuperscript{\IPF} `to arrive/be arriving by flying'. Thus, the two derived verbs are of different aspect: \textit{priletet'} `to arrive by flying', in accordance with the standard view on prefixation, is perfective, while \textit{priletat'} `to arrive/be arriving by flying' is not. This is schematically illustrated in \ref{scheme:fly-pri} and examples of the usage of the two prefixed motion verbs are provided in \ref{ex:fly-pri}. In \ref{ex:fly-pri1} the prefixed determinate verb is used to describe a single event of arrival that happened in the past. In \ref{ex:fly-pri2} the prefixed indeterminate verb denotes a series of arrivals that happened regularly.
 
 \ex.\label{scheme:fly-pri}\ag. let\'{e}t\textsuperscript{\IPF}~$\to$~ prilet\'{e}t\textsuperscript{\PF}\\
 {`to fly'} {`to arrive by flying'}\\
@@ -1340,11 +1216,10 @@ Adopting the traditional view requires to provide some explanation why only inde
 
 The key explanation idea is that whereas most Russian verbs are ambiguous with respect to the Completability, motion verbs are specialized in this respect: determinate verbs are used to denote Completable functions and indeterminate verbs are used for Non-completable functions. \citet[138]{Janda:10} concludes that due to Non-completability, indeterminate verbs form prefixed imperfectives and ``three types of perfectives: Complex Act Perfectives that express engagement in an activity that is bounded in time; Single Act Perfectives that express a single cycle of a repeated action, namely a single round trip; and Specialized Perfectives that narrow reference to only a subset of the action described by the stem.''
 
-Now let us consider a subclass of motion verbs that differ from the pairs like \textit{letat'$_{\INDET}$-letet'$_{\DET}$} `to fly' with respect to the stress position, e.g., \textit{b\'{e}gat'$_{\INDET}$-be\v{z}\'{a}t'$_{\DET}$} `to run'. The argument that follows is mentioned by \citet{Isachenko:60}, but is not considered in detail there, so I would like to go through is thoroughly. 
+Now let us consider a subclass of motion verbs that differ from the pairs like \textit{letat'\textsubscript{\INDET}-letet'\textsubscript{\DET}} `to fly' with respect to the stress position, e.g., \textit{b\'{e}gat'\textsubscript{\INDET}-be\v{z}\'{a}t'\textsubscript{\DET}} `to run'. The argument that follows is mentioned by \citet{Isachenko:60}, but is not considered in detail there, so I would like to go through is thoroughly. 
 
 It is assumed that among the pairs of verbs of motion listed in
-Table~\ref{fig.det-indet-pairs}, there are seven pairs that behave like
-\txt{letat'$_{\INDET}$/letet'$_{\DET}$} `to fly'. Table~\ref{tab.seven-pairs} shows the result of prefixation of both members in each pair with the prefix \textit{pro-}. Now let us consider the pair \textit{b\'{e}gat'$_{\INDET}$/be\v{z}\'{a}t'$_{\DET}$} `to run' (the pair \textit{p\'{o}lzat'$_{\INDET}$/polzt\'{i}$_{\DET}$} `to crawl' behaves similarly). The crucial difference from the verbs in Table~\ref{tab.seven-pairs} is that in the pair of verbs \textit{b\'{e}gat'$_{\INDET}$/be\v{z}\'{a}t'$_{\DET}$} `to run' the stress position in the determinate verb is different from the stess position in the indeterminate verb. So the imperfective and perfective prefixed verbs that were phonologically identical in case we have considered before (\textit{proletat'}\textsuperscript{\PF} `to spend some time flying' and \textit{proletat'}\textsuperscript{\IPF} `to fly/be flying past something') now look the same in written form but have different stress positions. Due to this fact, there is no way to represent \textit{probegat'} as being one verb. There are two homographs: \textit{prob\'{e}gat'}\textsuperscript{\PF} `to spend some time running' and \textit{probeg\'{a}t'}\textsuperscript{\IPF} `to be running past something'.
+Table~\ref{fig.det-indet-pairs}, there are seven pairs that behave like \txt{letat'\textsubscript{\INDET}\slash letet'\textsubscript{\DET}} `to fly'. Table~\ref{tab.seven-pairs} shows the result of prefixation of both members in each pair with the prefix \textit{pro-}. Now let us consider the pair \textit{b\'{e}gat'\textsubscript{\INDET}/be\v{z}\'{a}t'\textsubscript{\DET}} `to run' (the pair \textit{p\'{o}lzat'\textsubscript{\INDET}/polzt\'{i}\textsubscript{\DET}} `to crawl' behaves similarly). The crucial difference from the verbs in Table~\ref{tab.seven-pairs} is that in the pair of verbs \textit{b\'{e}gat'\textsubscript{\INDET}/be\v{z}\'{a}t'\textsubscript{\DET}} `to run' the stress position in the determinate verb is different from the stess position in the indeterminate verb. So the imperfective and perfective prefixed verbs that were phonologically identical in case we have considered before (\textit{proletat'}\textsuperscript{\PF} `to spend some time flying' and \textit{proletat'}\textsuperscript{\IPF} `to fly/be flying past something') now look the same in written form but have different stress positions. Due to this fact, there is no way to represent \textit{probegat'} as being one verb. There are two homographs: \textit{prob\'{e}gat'}\textsuperscript{\PF} `to spend some time running' and \textit{probeg\'{a}t'}\textsuperscript{\IPF} `to be running past something'.
 
 \begin{table}
 \begin{tabular}{llllll}
@@ -1363,7 +1238,7 @@ lead & vodit' & provodit'\textsuperscript{\IPF\slash\PF} & vesti & provesti\\
 \caption{Prefixation with \textit{pro-}: traditional view\label{tab.seven-pairs}}
 \end{table}
 
-\citet{Janda:10} does not draw a distinction between the verbs of the \txt{letat'$_{\INDET}$\slash letet'$_{\DET}$} (`to fly') and \textit{b\'{e}gat'$_{\INDET}$/be\v{z}\'{a}t'$_{\DET}$} (`to run') type. The problem that arises is an unexpected stress shift that happens when prefixed imperfectives are formed from indeterminate stems, like in \textit{probeg\'{a}t'}\textsuperscript{\IPF} `to run/be running past something'. In case when a prefixed perfective is formed from the same verb with the same prefix (\textit{prob\'{e}g{a}t'}\textsuperscript{\PF} `to run for some time'), no stress shift happens. This is illustrated by the derivational chains \ref{chain:probegat1} and \ref{chain:probegat2}. Such stress shift is not explained in \citet{Janda:10}.
+\citet{Janda:10} does not draw a distinction between the verbs of the \txt{letat'\textsubscript{\INDET}\slash letet'\textsubscript{\DET}} (`to fly') and \textit{b\'{e}gat'\textsubscript{\INDET}/be\v{z}\'{a}t'\textsubscript{\DET}} (`to run') type. The problem that arises is an unexpected stress shift that happens when prefixed imperfectives are formed from indeterminate stems, like in \textit{probeg\'{a}t'}\textsuperscript{\IPF} `to run/be running past something'. In case when a prefixed perfective is formed from the same verb with the same prefix (\textit{prob\'{e}g{a}t'}\textsuperscript{\PF} `to run for some time'), no stress shift happens. This is illustrated by the derivational chains \ref{chain:probegat1} and \ref{chain:probegat2}. Such stress shift is not explained in \citet{Janda:10}.
 
 \ex.\ag.\label{chain:probegat1}b\'{e}gat'\textsuperscript{\IPF} $\rightarrow$ prob\'{e}gat'\textsuperscript{\PF}\\
 {`to run'} {~} {`to run for some time'}\\
@@ -1401,7 +1276,7 @@ for tree={edge=->}
 %``Das \"{u}bliche Ansicht ist, dass imperfektive Formen wie \textit{prinositi} und \textit{napadati} Zusammensetzungen mit dem ``iterativen'' \textit{nositi} und \textit{padati} sind. Demgem\"{a}ss betrachtet man sie als Ausnahmen von der Regel, dass ``ein einfaches Verbum durch Zusammensetzung perfectiv wird''.''
 %Another kind of argumentation is provided by \citet[146]{Romanova:06}. She argues that the point of view under which prefixed imperfective verbs are thought of as being the result of the prefixation of an indeterminate verb, is wrong. However, the argumentation seems to be theory-internal: it is based on the assumption that indeterminate motion verbs cannot be combined with the lexical prefixes because the necessary syntactic position is occupied. 
 
-Being left without any explanation in the literature defending the traditional view, let us turn to the alternative view, schematically represented on \figref{fig.reanalysis}. \citet{Regnell:44} provides the following two arguments in favor of analysing prefixed imperfective verbs of motion as secondary imperfectives of the prefixed determinate verbs. First, indeterminate motion verbs, such as \textit{nosit'}$_{\INDET}$ `to carry', contain (at least originally) a component of iterativity, while the corresponding prefixed imperfective verbs, such as \textit{prinosit'} `to bring/be bringing', lack it (this has been noticed already by \citealt{Mazon:1928}). Second, some verbs clearly do not follow the pattern ``indeterminate verb+prefix''. For example, \textit{priplyvat'} `to come/be coming by swimming' is not formed by \textit{pri-} + \textit{*plyvat'}, as the latter one does not exist. Generally speaking, only a subclass of motion verbs demonstrates what seems to be an exceptional behavior while another subclass produces regular secondary imperfective forms. Another point is that in other Slavic languages verbs similar to Russian ``exceptional'' ones are clearly the secondary imperfective forms and all the verbs that are the result of direct prefixation of motion verbs are perfective.
+Being left without any explanation in the literature defending the traditional view, let us turn to the alternative view, schematically represented on \figref{fig.reanalysis}. \citet{Regnell:44} provides the following two arguments in favor of analysing prefixed imperfective verbs of motion as secondary imperfectives of the prefixed determinate verbs. First, indeterminate motion verbs, such as \textit{nosit'}\textsubscript{\INDET} `to carry', contain (at least originally) a component of iterativity, while the corresponding prefixed imperfective verbs, such as \textit{prinosit'} `to bring/be bringing', lack it (this has been noticed already by \citealt{Mazon:1928}). Second, some verbs clearly do not follow the pattern ``indeterminate verb+prefix''. For example, \textit{priplyvat'} `to come/be coming by swimming' is not formed by \textit{pri-} + \textit{*plyvat'}, as the latter one does not exist. Generally speaking, only a subclass of motion verbs demonstrates what seems to be an exceptional behavior while another subclass produces regular secondary imperfective forms. Another point is that in other Slavic languages verbs similar to Russian ``exceptional'' ones are clearly the secondary imperfective forms and all the verbs that are the result of direct prefixation of motion verbs are perfective.
 
 Another kind of argumentation is provided by \citet[146]{Romanova:06}. She argues that prefixed imperfective verbs cannot occur as a result of prefixation of indeterminate motion verbs because those verbs cannot be combined with lexical prefixes. Consider the verbs \textit{probeg\'{a}t'}\textsuperscript{\IPF} `to be running past something' and \textit{prob\'{e}g{a}t'}\textsuperscript{\PF} `to run for some time'. According to the theory advocated by \citet{Romanova:06}, the first verb contains a lexical prefix whereas the second verb contains a superlexical prefix. Romanova's analysis of motion verbs includes the assumption that the position for lexical prefixes is already occupied in the structure of a non-prefixed indeterminate motion verb. From this it follows that the verb \textit{probeg\'{a}t'}\textsuperscript{\IPF} `to be running past something', that contains a lexical prefix, cannot be derived from the indeterminate motion verb \textit{begat'} `to run'. This argument is based on the assumption of syntactic differences between superlexical and lexical prefixes as well as specific differences in the internal syntactic structure of motion verbs. As this assumption is examined in Chapter~\ref{Chapter4} and I propose to abandon it in its current form, I will not go into further details of such an approach here.
 
@@ -1409,7 +1284,7 @@ Another kind of argumentation is provided by \citet[146]{Romanova:06}. She argue
 \hfill
 \begin{forest}
 for tree={edge=->}
-[let\'{e}t'$^{{\IPF}}_{\DET}$,calign=child,calign primary child=3
+[let\'{e}t'$^{{\IPF}}_{\text{\DET}}$,calign=child,calign primary child=3
   [prilet\'{e}t'\textsuperscript{\PF} [prilet\'{a}t'\textsuperscript{\IPF}]]
   [perelet\'{e}t'\textsuperscript{\PF} [perelet\'{a}t'\textsuperscript{\IPF}]]
   [prolet\'{e}t'\textsuperscript{\PF} [prolet\'{a}t'\textsuperscript{\IPF}]]
@@ -1418,13 +1293,10 @@ for tree={edge=->}
 ]
 %\node[text width=22ex] (provit)  at (0, -3) {`to fly some \textbf{distance}  or past something'};
 %\draw[dashdotted, ->] (provi) -- (provit);
-\end{forest}
-\hfill
-\vspace{1cm}
-\hfill
+\end{forest}\medskip\\
 \begin{forest}
 for tree = {edge=->}
-[let\'{a}t'$^{{\IPF}}_{\INDET}$
+[let\'{a}t'$^{{\IPF}}_{\text{\INDET}}$
   [perelet\'{a}t'\textsuperscript{\PF}]
   [prolet\'{a}t'\textsuperscript{\PF} ]
   [zalet\'{a}t'\textsuperscript{\PF}  ]
@@ -1467,7 +1339,7 @@ she s.boil.\glb{pst.sg.f} soup.\glb{acc} behind 3 hours\\
 \trans `She cooked the soup in 3 hours.'
 
 %\TODO:change everything to pochitat knigu
-This test, however, does not work with all perfective telic verbs. It is neither obligatory for the telic verbal description to be compatible with the \textit{za}-headed temporal adverbial nor does such compatibility indicate that the predicate denotes a set of single completed events. Consider the prefix \textit{po-}. The verb \textit{po\v{c}itat'\textsuperscript{\PF}}`to read for some time' is perfective and it denotes a set of bounded reading events, but it is only compatible with accusative temporal adverbials, as illustrated by \ref{ex:pobrosal}.
+This test, however, does not work with all perfective telic verbs. It is neither obligatory for the telic verbal description to be compatible with the \textit{za}-headed temporal adverbial nor does such compatibility indicate that the predicate denotes a set of single completed events. Consider the prefix \textit{po-}. The verb \textit{po\v{c}itat'}\textsuperscript{\PF} `to read for some time' is perfective and it denotes a set of bounded reading events, but it is only compatible with accusative temporal adverbials, as illustrated by \ref{ex:pobrosal}.
 
 \ex.\label{ex:pobrosal}\ag.\label{ex:pobrosal:delim}On po\v{c}ital knigu pjat' minut.\\
 he po.read.\glb{pst.sg.m} book.\glb{sg.acc} five.\glb{acc} minute.\glb{pl.gen}\\
@@ -1497,7 +1369,7 @@ he po.read.\glb{pst.sg.m} book.\glb{sg.acc} behind five.\glb{acc} minute.\glb{pl
 %\vspace{0.5em}
 %`He threw all the balls in 3 hours.'
 
-So if the compatibility with different temporal adverbials is regarded as a test for telicity for Russian, we would have to assume that some perfective verbs and even verb phrases (on the assumption that telicity is determined on the VP level, e.g. \citealt{Borer:05}) could be atelic. This is not a problem per se, but does not agree with the semantic definition: if, according to the definition of \citet[3]{Rothstein:08a} any predicate that denotes a set of either completed or bounded events is telic, then the verb \textit{po\v{c}itat'} `read for some time' and the verbal phrase \textit{po\v{c}itat' knigu} `read the book for some time' in \ref{ex:pobrosal:delim} are telic. From this it follows that compatibility with temporal adverbials in Russian cannot serve as a test for telicity in the sense of \citet{Rothstein:08a}
+So if the compatibility with different temporal adverbials is regarded as a test for telicity for Russian, we would have to assume that some perfective verbs and even verb phrases (on the assumption that telicity is determined on the VP level, e.g. \citealt{Borer:05}) could be atelic. This is not a problem per se, but does not agree with the semantic definition: if, according to the definition of \citet[3]{Rothstein:08a} any predicate that denotes a set of either completed or bounded events is telic, then the verb \textit{po\v{c}itat'} `read for some time' and the verbal phrase \textit{po\v{c}itat' knigu} `read the book for some time' in \ref{ex:pobrosal:delim} are telic. From this it follows that compatibility with temporal adverbials in Russian cannot serve as a test for telicity in the sense of \citet{Rothstein:08a}.
 
 %This is clear if one compares \ref{ex:pobrosal0} with \ref{ex:brosal}, as these two examples differ exactly by the boundedness of the event of throwing the balls.
 

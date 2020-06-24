@@ -45,7 +45,8 @@
 %\avmsortfont{\footnotesize\it}
 
 \newtheorem{definition}{Definition}
-\newcommand*{\defref}[1]{Definition \ref{#1}}
+\newcommand*{\defref}[1]{Definition~\ref{#1}}
+\renewcommand*{\sectref}[1]{Section~\ref{#1}}
 
 
 \newcommand{\D}{\,{:}\,}
@@ -97,14 +98,14 @@
 \newcommand{\txt}[1]{\textit{#1}}
 \newcommand{\qtxt}[1]{`#1'}
 
-\newcommand{\DET}{\mathit{det}}
-\newcommand{\INDET}{\mathit{indet}}
+\newcommand{\DET}{\normalfont det}
+\newcommand{\INDET}{\normalfont indet}
 \newcommand{\TR}{\mathit{trans}}
 \newcommand{\INTR}{\mathit{intrans}}
 \newcommand{\DPF}{\mathit{\bfseries PF}}
 \newcommand{\DIPF}{\mathit{\bfseries IPF}}
-\newcommand{\PF}{PF}
-\newcommand{\IPF}{IPF}
+\newcommand{\PF}{\textsc{pf}}
+\newcommand{\IPF}{\textsc{ipf}}
 \newcommand{\DR}[1]{{#1}}
 \newcommand{\lift}{$\vphantom{2^{2^2}}$}
 \newcommand{\JudgeOK}{\textsc{ok}}
