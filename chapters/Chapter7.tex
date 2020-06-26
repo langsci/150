@@ -6,7 +6,7 @@
 
 As I have shown in the previous chapters, Russian verbal prefixation is a complex system that cannot be successfully modelled by means of one linguistic layer. In order to simplify individual components of the system and allow for the observed flexibility without massive overgeneration, one needs to coordinate the work of the morphological, syntactic, semantic, and pragmatic representations, as well as describe the interfaces between them. In the fragment I describe here I limit myself to the first three systems, leaving pragmatic strengthening at the level of a tentative proposal provided in Chapter~\ref{Chapter6}. Even with this limitation there are not a lot of formalisms that would be suitable for such a representation.
 
-Following \citet{KallmeyerOsswald:12, KallmeyerOsswald:13}, I will adopt a combination of frame semantics \citep{Fillmore:82} and Lexicalized Tree Adjoining Grammars (LTAG, \citealt{JoshiSchabes:97}, \citealt{Frank:92}, \citealt{AbeilleRambow:00}, \citealt{Abeille:02}, \citealt{Frank:02}). This framework has various benefits, such as a transparent syntax-se\-man\-tics interface, numerous factorisation possibilities within the lexicon (especially important for modelling of the derivational morphology), and cognitive plausibility. More information about the advantages of frame-based LTAG semantics can be found in \citet{KallmeyerOsswald:13}. 
+Following \citet{KallmeyerOsswald:12, KallmeyerOsswald:13}, I will adopt a combination of frame semantics \citep{Fillmore:82} and Lexicalized Tree Adjoining Grammars\linebreak (LTAG, \citealt{JoshiSchabes:97}, \citealt{Frank:92}, \citealt{AbeilleRambow:00}, \citealt{Abeille:02}, \citealt{Frank:02}). This framework has various benefits, such as a transparent syntax-se\-man\-tics interface, numerous factorisation possibilities within the lexicon (especially important for modelling of the derivational morphology), and cognitive plausibility. More information about the advantages of frame-based LTAG semantics can be found in \citet{KallmeyerOsswald:13}. 
 
 In this chapter, I concentrate on the semantic side of the analysis and show semantic composition that is triggered by operations at the morphological and syntactic levels. I also provide trees and tree fragments that are associated with the proposed semantic frames, but the presentation is kept on a level suitable also for those readers that are not familiar with LTAG and XMG 2 \citep{Petitjean:16}. In Chapter~\ref{Chapter8} I will provide more technical details about the syntactic part of the analysis, metagrammar decomposition, and specific implementation problems. As for the material that I present in this chapter, the number of decisions motivated by the framework restrictions is small and I discuss all of them. Thus, the proposed frames can be easily adapted to be used within some other framework or even translated into another language of semantic description, e.g. Neo-Davidsonian event representation.
 
@@ -56,7 +56,7 @@ Figure \ref{fig:exampletree} shows an example of a derivation: the initial tree 
 \subsubsection{Feature-structure based TAG} 
 Feature-structure based TAG, or FTAG, is a variant of TAG in which elementary trees are enriched with feature structures \citep{Vijay-ShankerJoshi:88}. Using feature structures as non-terminal nodes allows to generalize agreement via underspecification, helps to model adjunction constraints and leads to more compact grammars.
 
-For example, \figref{fig:nofstruct} shows the derivation of the sentence \textit{``Grammars leak"} without feature structures and some trees involved in it (this example, including the \figref{fig:nofstruct},  \figref{fig:grleaksubst},  \figref{fig:isleaking}, and  \figref{fig:isleakingresult}, is due to Timm Lichte). One can see that already such a small piece of derivation contains a lot of redundancy that cannot be avoided if only labelled categories are used. In such a TAG, the following trees have to be kept in the grammar for a regular noun, such as \textit{grammars}: third person singular nominative, third person singular accusative, plural nominative, and plural accusative.
+For example, \figref{fig:nofstruct} shows the derivation of the sentence \textit{Grammars leak} without feature structures and some trees involved in it (this example, including Figures \ref{fig:nofstruct}--\ref{fig:isleakingresult}, is due to Timm \ia{Lichte, Timm@Lichte, Timm}Lichte). One can see that already such a small piece of derivation contains a lot of redundancy that cannot be avoided if only labelled categories are used. In such a TAG, the following trees have to be kept in the grammar for a regular noun, such as \textit{grammars}: third person singular nominative, third person singular accusative, plural nominative, and plural accusative.
 
 \begin{figure}
 % %     \includegraphics[scale=0.35]{nofstruct.pdf}
@@ -128,10 +128,10 @@ However, when adjunction is performed, the adjunction site is practically split 
 As a result, in an FTAG all the nodes have a top feature structure and, furthermore, all nodes except substitution nodes have a bottom feature structure. Feature unification applies during the derivation process when adjunction and substitution take place and is performed according to the following rules:
 \begin{itemize}
 \item when substitution takes place, the top of the root of the rewriting tree unifies with the top of the substitution node;
-\item when adjunction takes place, the top of the root of the rewriting tree unifies with the top of the adjunction site, and the bottom of the foot of the rewriting tree unifies with the bottom of the adjunction site (as illustrated by \figref{fig:isleaking} and \figref{fig:isleakingresult}).
+\item when adjunction takes place, the top of the root of the rewriting tree unifies with the top of the adjunction site, and the bottom of the foot of the rewriting tree unifies with the bottom of the adjunction site (as illustrated by Figures~\ref{fig:isleaking} and~\ref{fig:isleakingresult}).
 \end{itemize}
 
-\begin{figure}
+\begin{figure}\small
 % %     \includegraphics[scale=0.5]{isleaking.pdf}
   \avmsetup{style=plain}
   \begin{forest}
@@ -179,13 +179,13 @@ As a result, in an FTAG all the nodes have a top feature structure and, furtherm
      ]
   ]
 ]
-\draw[dashed,-{Triangle[]}] (avm1) to[out=360,in=165] (avm3);
+\draw[dashed,-{Triangle[]}] (avm1) to[out=345,in=210] (avm3.170);
 \draw[dashed,-{Triangle[]}] (avm2) to[out=345,in=210] (avm3);
   \end{forest}
     \caption{Adjunction of \textit{is} into the tree for \textit{leaking}     \label{fig:isleaking}}
 \end{figure}
 
-\begin{figure}
+\begin{figure}\small
 % %     \includegraphics[scale=0.5]{isleakingresult.pdf}
     \avmsetup{style=plain}
     \begin{forest}
@@ -288,9 +288,10 @@ The level of the metagrammar is well-suited for capturing derivational morpholog
 \subsection{Frame Semantics}
 The idea of using frame representations in linguistic semantics and cognitive
 psychology has been put forward by \citet{Fillmore:82} and
-\citet{Barsalou:92}, among others. A widescale realisation of this idea is the Berkeley FrameNet project \citep{Fillmore:03}. The goal of this project is to describe a huge variety of situations by basic role frames that represent the type of the situation and the semantic roles of its participants. One issue that FrameNet does not address is modelling compositional semantics: the frames used in the project are static and do not interact with each other. In order to widen the area where frames could be used, a number of studies that offer further formalization of the frame theory has been conducted in the last years \citep[][among others]{Petersen:07, PetersenOsswald:10, KallmeyerOsswald:12, KallmeyerOsswald:13, KallmeyerOsswaldPogodalla:15, Loebner:2014}.
+\citet{Barsalou:92}, among others. A widescale realisation of this idea is the Berkeley FrameNet project \citep{Fillmore:03}. The goal of this project is to describe a huge variety of situations by basic role frames that represent the type of the situation and the semantic roles of its participants. One issue that FrameNet does not address is modelling compositional semantics: the frames used in the project are static and do not interact with each other. In order to widen the area where frames could be used, a number of studies that offer further formalization of the frame theory has been conducted in the last years (\citealt{Petersen:07, PetersenOsswald:10, KallmeyerOsswald:12, KallmeyerOsswald:13, KallmeyerOsswaldPogodalla:15, Loebner:2014}, among other).
 
 The main ideas that motivate the use of frames as a general semantic and conceptual representation format can be summarized as follows (cf.\ \citealt{Loebner:2014}):
+
 \begin{itemize}
 \item conceptual-semantic entities can be described by types and
 attributes;
@@ -312,20 +313,16 @@ The middle column of \figref{fig-frame-example} (this figure and \figref{fig-fra
 for the frame depicted on the left of the figure, where circles
 represent nodes, the bold-face letters \fsbase{b} and \fsbase{c} are base
 labels, labels of solid arrows stand for attributes, labels of dotted arrow
-indicated (binary) relations, and the symbols $s$ and $t$ are types.
-%
+indicated (binary) relations, and the symbols $s$ and $t$ are types.\largerpage
+
 \begin{figure}
-\hfill
-\includegraphics[scale=1.2]{fig-frame-example}
-\hfill
-\caption{Example of a base-labelled feature structure with types and relations}
-\label{fig-frame-example}
-\end{figure}%
-%
+\fbox{\includegraphics[width=\textwidth - 3\fboxsep]{fig-frame-example}}%
+\caption{Example of a base-labelled feature structure with types and relations\label{fig-frame-example}}
+\end{figure}
 
 As the example on \figref{fig-frame-example} reveals, a node can have more than one type. The special property of the type system used in frame theory as it is presented in \citealt{KallmeyerOsswald:13} is that type conjunction is always possible unless it violates explicitly stated incompatibility constraints. We will return to the discussion of the type hierarchy in Section~\ref{section:types}.
 
-Frames as attribute-value descriptions can be reformulated in terms of first-order predicate logic and thus related to other semantic representation formats, such as Neo-Davidsonian event semantics. In such a reformulation (fully described in \citealt{KallmeyerOsswald:13}, Section~3.3.3), types and base
+Frames as attribute-value descriptions can be reformulated in terms of first-order predicate logic and thus related to other semantic representation formats, such as Neo-Davidsonian event semantics. In such a reformulation (fully described in \citealt[Section~3.3.3]{KallmeyerOsswald:13}), types and base
 labels are regarded as one-place predicates, attributes as two-place predicates, and relation symbols as $n$-place predicates with $n>1$.
 In addition, attributes are required to be functional and base labels must
 not denote more than one node;
@@ -334,7 +331,7 @@ attributes $f$ and base labels $l$:
 
 \ex.\label{ex.fun-axioms}
 $\every u\every v\every w(f(u,v)\und f(u,w)\ifthen v=w)$
-\qquad and \qquad
+\quad and \quad
 $\every u\every v(l(u)\und l(v)\ifthen u=v)$
 %\a.\label{ex.funrel-axiom}
 %$\every u\every v\every w(f(u,v)\und f(u,w)\ifthen v=w)$
@@ -343,40 +340,41 @@ $\every u\every v(l(u)\und l(v)\ifthen u=v)$
 
 The frame shown on \figref{fig-frame-example} can be viewed
 as a \emph{model} of the formula shown on the upper left of \figref{fig-frame-example-II} (in the sense of predicate logic). This model also satisfies the formulas given in \ref{ex.fun-axioms}. In what follows I will use frames in form of attribute-value matrices, like the frame shown on the right side of \figref{fig-frame-example-II}.
-%
+
 \begin{figure}
-\hfill
-\includegraphics[scale=1.1]{fig-frame-example-II}
-\hfill
+\fbox{\includegraphics[width=\textwidth - 3\fboxsep]{fig-frame-example-II}}%
 \caption{Alternative ways of specifying the frame on the left side of
-\figref{fig-frame-example}}
-\label{fig-frame-example-II}
-\end{figure}%
-%
+\figref{fig-frame-example}\label{fig-frame-example-II}}
+\end{figure}
 
-For the purposes of a metagrammar specification we need another way of description of frames: attribute-value logic that is defined in \citealt{KallmeyerOsswald:13} (Section~3.3.2). It is constructed as a language of general attribute-value descriptions and then complemented by base labels.
+For the purposes of a metagrammar specification we need another way of description of frames: attribute-value logic that is defined in \citealt[Section~3.3.2]{KallmeyerOsswald:13}. It is constructed as a language of general attribute-value descriptions and then complemented by base labels.\pagebreak
 
-The primitive general attribute-value descriptions over a signature $\langle A, T, R \rangle$ are expressions of the form $t, r, p : t, p \doteq q, p \triangleq q, (p_1, \ldots , p_n) : r$, and $\langle p_1, \ldots , p_n \rangle : r$,
-with $p, p_i, q \in A^*, t \in T$, and $r \in R$. For a feature structure $F = \langle V, \delta, \tau, \pi \rangle$ over a signature $\langle A, T, R \rangle$ with $v,w, v_i \in V$ the satisfaction relation $\models$ between attribute-value descriptions and nodes/node tuples of $F$ is defined as shown in \ref{def:satisfaction} (Def.~(3) in \citealt{KallmeyerOsswald:13}).
+The primitive general attribute-value descriptions over a signature $\langle A, T, R \rangle$ are expressions of the form: \[t, r, p : t, p \doteq q, p \triangleq q, (p_1, \ldots , p_n) : r\] and \[\langle p_1, \ldots , p_n \rangle : r \text{, with } p, p_i, q \in A^*, t \in T \text{, and }r \in R\text{.}\] For a feature structure $F = \langle V, \delta, \tau, \pi \rangle$ over a signature $\langle A, T, R \rangle$ with $v,w, v_i \in V$ the satisfaction relation $\models$ between attribute-value descriptions and nodes/node tuples of $F$ is defined as shown in \ref{def:satisfaction} (Def.~(3) in \citealt{KallmeyerOsswald:13}).
 
-\ex.\label{def:satisfaction}\a. $v \models t$ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iff $v \in \tau (t)$
-\b. $\langle v_1, \ldots , v_n \rangle \models r$ ~~~~~~~~~~~~~~~~~~~~~~ iff $\langle v_1, \ldots , v_n \rangle \in \rho (t)$
-\b. $v \models p : t$ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iff $\delta (v, p) \models t$
-\b. $v \models p \doteq q$ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iff $\delta (v, p) = \delta (v, q)$
-\b. $\langle v, w \rangle \models p \triangleq q$ ~~~~~~~~~~~~~~~~~~~~~~~~ iff $\delta (v, p) = \delta (w, q)$
-\b. $v \models (p_1, \ldots , p_n ) : r$ ~~~~~~~~~~~~~~~~~~ iff $\langle \delta (v, p_1), \ldots , \delta (v, p_n) \rangle \models r$
-\b. $\langle v_1, \ldots , v_n \rangle \models \langle p_1, \ldots , p_n \rangle : r$ ~~~~~ iff $\langle \delta (v, p_1), \ldots , \delta (v, p_n) \rangle \models r$
+\ex.\label{def:satisfaction}
+\begin{tabular}[t]{@{}llll@{}}
+a. & $v \models t$   & iff &  $v \in \tau (t)$\\
+b. & $\langle v_1, \ldots , v_n \rangle \models r$   & iff &  $\langle v_1, \ldots , v_n \rangle \in \rho (t)$\\
+c. & $v \models p : t$   & iff &  $\delta (v, p) \models t$\\
+d. & $v \models p \doteq q$   & iff &  $\delta (v, p) = \delta (v, q)$\\
+e. & $\langle v, w \rangle \models p \triangleq q$   & iff &  $\delta (v, p) = \delta (w, q)$\\
+f. & $v \models (p_1, \ldots , p_n ) : r$   & iff &  $\langle \delta (v, p_1), \ldots , \delta (v, p_n) \rangle \models r$\\
+g. & $\langle v_1, \ldots , v_n \rangle \models \langle p_1, \ldots , p_n \rangle : r$   & iff &  $\langle \delta (v, p_1), \ldots , \delta (v, p_n) \rangle \models r$
+\end{tabular}
 
 Labelled attribute-value descriptions are of the form $l \cdot \phi, l \cdot p \triangleq k \cdot q$, and $\langle l_1 \cdot p_1, \ldots , l_n \cdot p_n \rangle : r$, with $k, l, l_i \in B$. The satisfaction conditions are listed in \ref{def:labelled} (Def.~(4) in \citealt{KallmeyerOsswald:13}).
 
-\ex.\label{def:labelled}\a. $\langle F, \beta \rangle \models l \cdot \phi$ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ iff $\beta (l) \models \phi $
-\b.$\langle F, \beta \rangle \models l \cdot p \triangleq k \cdot q $ ~~~~~~~~~~~~~~~~~~~~~~~~~ iff $\langle \beta (l), \beta (k) \rangle \models p \triangleq q$
-\b.$\langle F, \beta \rangle \models \langle l_1 \cdot p_1, \ldots l_n \cdot p_n \rangle : r$ ~~~~~~~~~~~~~~~~~~~~~~ iff $\langle \delta (\beta (l_1), p_1), \ldots \delta (\beta (l_n), p_n) \rangle \models r $
+\ex.\label{def:labelled}
+\begin{tabular}[t]{@{}llll@{}}
+a. & $\langle F, \beta \rangle \models l \cdot \phi$   & iff &  $\beta (l) \models \phi $\\
+b. & $\langle F, \beta \rangle \models l \cdot p \triangleq k \cdot q $   & iff &  $\langle \beta (l), \beta (k) \rangle \models p \triangleq q$\\
+c. & $\langle F, \beta \rangle \models \langle l_1 \cdot p_1, \ldots l_n \cdot p_n \rangle : r$   & iff &  $\langle \delta (\beta (l_1), p_1), \ldots \delta (\beta (l_n), p_n) \rangle \models r $\\
+\end{tabular}
 
 Labelled descriptions are allowed to be combined with Boolean operators. The attribute-value matrix shown on the right side of \figref{fig-frame-example-II} can be regarded as a normal form of the attribute-value description given at the bottom of the left side of the same figure. 
 
-\subsection{Combining TAG and Frame Semantics}
-There is a number of properties that make LTAG a good candidate for a combination with a frame-based compositional semantics. Two properties are especially important in this respect: the combination of an extended domain of locality and the fact that elementary trees are lexicalized and contain slots for all the arguments of the respective predicate. This allows to link semantic representations directly to the argument slots. It is also convenient that no structural parallelism is required between the syntactic and semantic representations, as argument linking is explicit. The combination of an LTAG and Frame Semantics has been introduced in \cite{KallmeyerOsswald:12} and the most extensive description so far has been provided in \citealt{KallmeyerOsswald:13} (Section~4.1).
+\subsection{Combining TAG and frame semantics}
+There is a number of properties that make LTAG a good candidate for a combination with a frame-based compositional semantics. Two properties are especially important in this respect: the combination of an extended domain of locality and the fact that elementary trees are lexicalized and contain slots for all the arguments of the respective predicate. This allows to link semantic representations directly to the argument slots. It is also convenient that no structural parallelism is required between the syntactic and semantic representations, as argument linking is explicit. The combination of an LTAG and frame semantics has been introduced in \cite{KallmeyerOsswald:12} and the most extensive description so far has been provided in \citet[Section~4.1]{KallmeyerOsswald:13}.
 
 In the approach proposed in \cite{KallmeyerOsswald:13} that I adopt here, a single semantic representation (a semantic frame in this case) is linked to the entire elementary tree. When an elementary tree is coupled with a semantic frame, syntactic arguments can be directly linked to their counterpart in the semantics. (Similar approaches with different semantic representation frameworks were introduced earlier in \cite{GardentKallmeyer:03} and \cite{KallmeyerRomero:08}.) Semantic composition is then modelled by unification, which is a result of performing adjunctions and substitutions. \figref{fig:examplesemantic} provides a simple illustration of the syntactic and semantic composition. The feature I on the nodes is a syntax-semantics interface feature. It stands for ``individual'' and is used for argument linking. In this example, substitutions trigger unifications between the nodes \svar{1} and \btag{g} and  between the nodes \svar{2} and \btag{h}. This leads to the correct insertion of the argument frames into the frame of \textit{loves}. The resulting frame representation is shown on \figref{frame:love}.
 
@@ -436,7 +434,7 @@ As I have already mentioned above, any two types can be unified unless there is 
 
 The list of types I use for the frames in this chapter and for the implementation to follow can be divided into three major categories (three subtypes of the type \textit{root}): \textit{entity, event,} and \textit{scale.} Among these, \textit{entity} is the only type that is not compatible with the other two. It has subtypes \textit{object} and \textit{person}, that in turn have subtypes and are not compatible with each other. As I do not aim at constructing a large ontology, I use trivial object types and assume that they cannot be unified.
 
-The part of the hierarchy that is more interesting for the current analysis concerns the subtypes of events and scales. Let us start with events. I will be using the following types of events (not compatible with each other): \textit{process, state,} and \textit{transition.} These types can be combined with the event types \textit{bounded-event} and \textit{iteration}. Such classification covers Vendler's \citep{Vendler:67} four-way distinction between states, activities (\textit{process} here), accomplishments (\textit{process $\und$ bounded-event} here), and achievements (\textit{transition}). What is not built into the type system is the distinction between dynamic and static states, that is used, e.g., by \citet{Bach:86}. The rest of the classification proposed in \citealt{Bach:86} is effortlessly expressed: process has the same name, protracted event is a \textit{process $\und$ bounded-event}, happening is \textit{transition}, and culmination is \textit{transition} that has a preparatory phase. These types may have subtypes: e.g., \textit{translocation} and \textit{change-of-state} are subtypes of a process.
+The part of the hierarchy that is more interesting for the current analysis concerns the subtypes of events and scales. Let us start with events. I will be using the following types of events (not compatible with each other): \textit{process, state,} and \textit{transition.} These types can be combined with the event types \textit{bounded-event} and \textit{iteration}. Such classification covers Vendler's \citep{Vendler:67} four-way distinction between states, activities (\textit{process} here), accomplishments (\textit{process $\wedge$ bounded-event} here), and achievements (\textit{transition}). What is not built into the type system is the distinction between dynamic and static states, that is used, e.g., by \citet{Bach:86}. The rest of the classification proposed in \citealt{Bach:86} is effortlessly expressed: process has the same name, protracted event is a \textit{process $\wedge$ bounded-event}, happening is \textit{transition}, and culmination is \textit{transition} that has a preparatory phase. These types may have subtypes: e.g., \textit{translocation} and \textit{change-of-state} are subtypes of a process.
 
 The last and most important part of type hierarchy for this work is the domain of scales. The main subtypes of the type \textit{scale} are \textit{closed-scale, one-marked-point, proper-scale, measure-of-change, cardinality}, and \textit{property}. These six types come in three groups such that the subtypes of one group are not compatible with each other. The first group is constituted by the types \textit{closed-scale} and \textit{one-marked-point}, that refer to the presence of end points and are not compatible with each other. To the second group belong the types \textit{measure-of-change} and \textit{proper-scale}. They describe how the scale is organized: in case of a \textit{proper-scale,} for each point of the scale there must be an event stage that is characterized exactly by this point. The \textit{measure-of-change} scale type does not have such requirements: as long as the initial and the final stage of the event are associated with particular scale values, any intermediate stages are allowed. The last group is formed by the \textit{cardinality} and \textit{property-scale} types that refer to the dimension and not to the structure of the scale. Subtypes of the \textit{property-scale} type (such as \textit{color, temperature, length, amount} etc.) are not compatible with each other. The \textit{cardinality} type of the scale allows to talk about iterated events.
 
@@ -448,7 +446,7 @@ Now that all the parts needed for the analysis are introduced, let us move to th
 \section{Frame semantics for the prefix \textit{za-}}\label{section:frame:za}
 In this section I propose the frame semantic representation for the inchoative interpretation of the prefix \textit{za-} and show how this prefix combines with a verb. To start, let us recall the conclusions that I have made about the prefix \textit{za-} (in particular about its inchoative interpretation) in Chapter~\ref{Chapter5} by further developing the ideas of \citet{Braginsky:08} and \citet{Kagan:book}. First, I proposed that the inchoative interpretation of the prefix is only possible when the derivational base does not contain any explicit scales except for the time scale in their semantic representation. Second, I offered the following description of the semantic contribution of the prefix \textit{za-} under inchoative interpretation: when the prefix is attached, it relates the initial stage of the event to the state of the absence and the final stage of the event to the state of the presence of the activity denoted by the derivational base.
 
-There are two ways in which the proposed requirement regarding the scale type can be connected with the semantic change caused by the prefix attachment: a `restrictive' one and a `conditional' one. With `restrictive' I mean a straightforward realisation of the proposal above: select only such verbs that have no other scale rather than time (realised with the self-scaling of the event according to the proposal above) in their semantic structure and then describe the semantics of the derived verb in this case. With `conditional' I mean a proposal of such a prefix semantics that, only in case the input verb is related exclusively to the time scale, the desired output (inchoative interpretation of the derived verb) is produced. I pursue the second, more general option. This choice implies the stronger claim that the semantics of the prefix in combination with the semantics of a verb, yields the correct interpretations (probably with some minor modifications or additional constraints) also in cases when the verb is associated with another type of scale (e.g. a \textit{path} scale or a \textit{property} scale). 
+There are two ways in which the proposed requirement regarding the scale type can be connected with the semantic change caused by the prefix attachment: a \textit{restrictive} one and a \textit{conditional} one. With \textit{restrictive} I mean a straightforward realisation of the proposal above: select only such verbs that have no other scale rather than time (realised with the self-scaling of the event according to the proposal above) in their semantic structure and then describe the semantics of the derived verb in this case. With \textit{conditional} I mean a proposal of such a prefix semantics that, only in case the input verb is related exclusively to the time scale, the desired output (inchoative interpretation of the derived verb) is produced. I pursue the second, more general option. This choice implies the stronger claim that the semantics of the prefix in combination with the semantics of a verb, yields the correct interpretations (probably with some minor modifications or additional constraints) also in cases when the verb is associated with another type of scale (e.g. a \textit{path} scale or a \textit{property} scale). 
 
 \begin{figure}
 \centering
@@ -492,7 +490,7 @@ $\tuple{\btag{f}\BC\POST\C\MDIM,\btag{e}\BC\MDIM}\D\type{segm-of}$\\
 \label{fig.za.frame.semantics}
 \end{figure}
 
-The basic frame that I propose in order to represent the general semantic contribution of the prefix \textit{za-} is provided on \figref{fig.za.frame.semantics} together with a tree fragment that represents the attachment of the prefix (and belongs to the metagrammar description). Informally it can be read in the following way: suppose the derivational base denotes some event \textbf{e} that has as its measure dimension some scale of type \textit{proper-scale}. Then the verb prefixed with the prefix \textit{za-} denotes another event that is of type \textit{transition}. A transition is in general characterized by its anterior and posterior states. In this case we are interested in the posterior state that has to be a segment of the event denoted by the derivation base. What we also know is that the scale in the measure dimension of the posterior state of the transition event corresponds to some initial segment of the scale in the measure dimension of the event denoted by the derivational base. The identity of two attributes \VERBDIM and \MDIM of the event frame on Fig.~\ref{fig.za.frame.semantics} ensures that the measure dimension of the event is determined by the verb.
+The basic frame that I propose in order to represent the general semantic contribution of the prefix \textit{za-} is provided on \figref{fig.za.frame.semantics} together with a tree fragment that represents the attachment of the prefix (and belongs to the metagrammar description). Informally it can be read in the following way: suppose the derivational base denotes some event \textbf{e} that has as its measure dimension some scale of type \textit{proper-scale}. Then the verb prefixed with the prefix \textit{za-} denotes another event that is of type \textit{transition}. A transition is in general characterized by its anterior and posterior states. In this case we are interested in the posterior state that has to be a segment of the event denoted by the derivation base. What we also know is that the scale in the measure dimension of the posterior state of the transition event corresponds to some initial segment of the scale in the measure dimension of the event denoted by the derivational base. The identity of two attributes {\scshape\VERBDIM} and {\scshape\MDIM} of the event frame on \figref{fig.za.frame.semantics} ensures that the measure dimension of the event is determined by the verb.
 
 Let me now illustrate what happens when this prefix is attached to a verb. Consider an indeterminate motion verb \textit{begat'} `to run'. The frame representation of this verb is provided on the left side of \figref{frame:begat}. It refers to an event of type \textit{translocation} with the manner of motion of type \textit{run}. The motion leaves some trace and it is performed by some actor. Note that there is no \PATH attribute. This is the assumption made and advocated in \citealt{ZinovaOsswald:paper}, as the \TRACE is regarded to be a set of points the object moved through and thus it is present in the description of any event of type \textit{translocation}. The \PATH attribute is taken to have a more complex structure and be present only in case of a directed motion event.
 
@@ -526,7 +524,7 @@ The frame on the right side of \figref{frame:begat} is an enriched variant of th
 
 %For those verbs the measure dimension is already determined in the basic verb representation and cannot be changed. If the direct object is present, it must be able to provide the same measure dimension as is preselected by the verb, usually through the relevant attribute, such as price. Note that such attribute is not necessarily present in the default representation of the object, but can be added, if needed. One can hypothesise that in case the attribute is present by default (e.g., for a house) it would be easier (faster) to use it as a direct object of the verb \textit{stoit'} `to cost' then if such attribute is absent (e.g., for a sky).
 
-The second group of verbs is such that no specific scale is provided in their representation. This means that most of the time these verbs will `accept' the scales `offered' by the direct objects, except for the cases when the prefix demands that the measure dimension is determined by the verb. In these situations the representation of the verb has to be enriched with the information about the scale. The only scale that seems to be generally available as the verbal dimension is the event itself. So the frame on the right side of \figref{frame:begat} obtains an attribute \VERBDIM with a value of type \textit{scale} that has to be identified with the event itself. The type \textit{scale} then gets conjoined with the type \textit{event}. The separation of the dimension information (if this information is not verb-specific) from the rest of the verbal frame (as it is shown by the different states of the frames on the left and right sights of \figref{frame:begat}) allows for a more compact lexicon representation. At the same time it is also possible to store the enriched representation as a dictionary entry and this is in fact what I have to do in the implementation (see Chapter~\ref{Chapter8}) due to the current restrictions of the formalism. 
+The second group of verbs is such that no specific scale is provided in their representation. This means that most of the time these verbs will ``accept'' the scales ``offered'' by the direct objects, except for the cases when the prefix demands that the measure dimension is determined by the verb. In these situations the representation of the verb has to be enriched with the information about the scale. The only scale that seems to be generally available as the verbal dimension is the event itself. So the frame on the right side of \figref{frame:begat} obtains an attribute {\scshape\VERBDIM} with a value of type \textit{scale} that has to be identified with the event itself. The type \textit{scale} then gets conjoined with the type \textit{event}. The separation of the dimension information (if this information is not verb-specific) from the rest of the verbal frame (as it is shown by the different states of the frames on the left and right sights of \figref{frame:begat}) allows for a more compact lexicon representation. At the same time it is also possible to store the enriched representation as a dictionary entry and this is in fact what I have to do in the implementation (see Chapter~\ref{Chapter8}) due to the current restrictions of the formalism. 
  
 %This procedure is similar for the verbs and the nouns and could be optimized if the formalism would allow to define a set as a value of an attribute and use any member of the set as a measure dimension as long as it satisfies other conditions imposed by the prefix or the context. Such solution is sketched in \citealt{Zinova:14}, but as it cannot be implemented in the current framework, I now offer a less elegant, but implementable variant. 
 
@@ -641,7 +639,7 @@ In order to combine the measure phrase with a verbal phrase, we need to embed it
 
 When the verbal phrase is constructed, constraint \ref{constr:duration} is applied. It states that if the type of the frame is \textit{bounded-event}, than the measure dimension of this event is of type \textit{measure-of-change} and \textit{time}, the minimum on the scale is \textit{zero} and the maximum is equal to the value of the duration.
 
-\ex.\label{constr:duration}\textit{bounded-event} $\und$ (\DURATION = $\top$) $\rightarrow$ (\MDIM = \textit{measure-of-change} $\und$ time) $\und$  \MDIM . \MIN = 0 $\und$ \MDIM . \MAX $\triangleq$ \DURATION .\VAL
+\ex.\label{constr:duration}\textit{bounded-event} $\und$ (\DURATION = $\top$) $\rightarrow$ ({\scshape\MDIM} = \textit{measure-of-change} $\und$ time) $\und$  {\scshape\MDIM} . \MIN = 0 $\und$ {\scshape\MDIM} . \MAX $\triangleq$ \DURATION .\VAL
 
 %Note that this solution can be improved by creating a system of rules that will assign thematic roles and also determine the slots various measure and path expressions should occupy in the verbal structure. At the moment the asymmetry is explained by the presence of case system that help to determine thematic roles using syntactic information, whereas in the domain of measure expressions only semantic information is left. This problem, however, can be solved, as one can conclude looking at the recent systems of thematic role assignment, such as CITE LAURA?
 
@@ -649,9 +647,9 @@ When the verbal phrase is constructed, constraint \ref{constr:duration} is appli
 
 \begin{figure}
 \hfill
-\begin{tabular}[t]{cl}
+\begin{tabular}[t]{@{}cl@{}}
 \txt{za}-V &
-\begin{tabular}[t]{l}
+\begin{tabular}[t]{@{}l@{}}
 \avm{
 \btag{f} [\type*{transition}
       \POST & \2 [\type*{event}
@@ -662,14 +660,14 @@ When the verbal phrase is constructed, constraint \ref{constr:duration} is appli
 }\\
 \end{tabular}
 \begin{footnotesize}
-\begin{tabular}[t]{l}
+\begin{tabular}[t]{@{}l@{}}
 $\tuple{\btag{f}\BC\POST,\btag{e}}\D\type{esegm-of}$\\[1ex]
 $\tuple{\btag{f}\BC\POST\C\MDIM,\btag{e}\BC\MDIM}\D\type{segm-of}$\\
 \end{tabular}
 \end{footnotesize}
 \\\\
 V &
-\begin{tabular}[t]{l}
+\begin{tabular}[t]{@{}l@{}}
 \avm{
 \btag{e} [\type*{transloc}
 	   \DURATION & [\type*{length}
@@ -695,7 +693,7 @@ V &
 
 Now we can combine the representation on the right side of \figref{frame:2hours} with the representation of the verb \textit{zabegat'} `to start running' provided on \figref{frame:zabegat}. The unification in this case leads to a conflict due to the type constraint shown in \ref{const:proper}. The combination of the two frames with the underlined conflict is shown on \figref{frame:zabegat:2hours}. 
 
-To complete the picture, let me show that there is no unification failure when the same time measure phrase is combined with a non-prefixed verb. In this case the resulting phrase \textit{begat' dva \v{c}asa} `run for two hours' is perfectly acceptable. Indeed, as the verbal dimension is required to unify with the measure dimension only at the moment of \textit{za-}prefixation, no conflict arises in this case, as the values of the attributes \MDIM and \VERBDIM remain unrelated. The frame can be read as follows: `There is an event of translocation with manner \textit{run} that some actor is involved in. This translocation leaves some trace and has a duration of two hours.' The rest of the frame is not relevant for its final interpretation and, in fact, could be generated at the moment of prefix attachment (this is, however, not possible to implement in the framework I use due to current restrictions of the compiler).
+To complete the picture, let me show that there is no unification failure when the same time measure phrase is combined with a non-prefixed verb. In this case the resulting phrase \textit{begat' dva \v{c}asa} `run for two hours' is perfectly acceptable. Indeed, as the verbal dimension is required to unify with the measure dimension only at the moment of \textit{za-}prefixation, no conflict arises in this case, as the values of the attributes {\scshape\MDIM} and {\scshape\VERBDIM} remain unrelated. The frame can be read as follows: ``There is an event of translocation with manner \textit{run} that some actor is involved in. This translocation leaves some trace and has a duration of two hours.'' The rest of the frame is not relevant for its final interpretation and, in fact, could be generated at the moment of prefix attachment (this is, however, not possible to implement in the framework I use due to current restrictions of the compiler).
 
 \begin{figure}
 \centering
@@ -714,26 +712,25 @@ To complete the picture, let me show that there is no unification failure when t
    		]\\	   
 	   \VERBDIM & \btag{e}
 ]
-}\\
+}\\fv
 \caption{Frame representation of the verbal phrase \textit{begat' dva \v{c}asa} `run for two hours' \label{frame:begat:2hours}}
 \end{figure}
 
-As there is nothing special with the indeterminate motion verbs that could influence the process of combining them with the prefix \textit{za-}, other verbs that have self-reference (\textit{event} $\und$ \textit{scale} type) as the verbal dimension acquire inchoative interpretation in combination with the prefix \textit{za-} in exactly the same way. Let me illustrate this and also the fact that the proposed analysis can be extended to other usages of the prefix \textit{za-} (that occur in presence of other scales) using as an example the verb \textit{\v{z}eltet'} `to be yellow and be seen/to become yellow' that we have discussed in Chapter~\ref{Chapter5}. First let us construct two frames that reflect two interpretations of the basic imperfective verb that probably follow two semantic schemes associated with deriving verbs from color terms. Under the first interpretation, the verb refers to a state of the theme. The color of the theme is (constantly) yellow and the state can be specified as \textit{be seen}. As for any other stative verb, the only available verbal dimension is the event (state) itself. 
-\begin{figure}
-\begin{tabular}[t]{c}
+As there is nothing special with the indeterminate motion verbs that could influence the process of combining them with the prefix \textit{za-}, other verbs that have self-reference (\textit{event} $\wedge$ \textit{scale} type) as the verbal dimension acquire inchoative interpretation in combination with the prefix \textit{za-} in exactly the same way. Let me illustrate this and also the fact that the proposed analysis can be extended to other usages of the prefix \textit{za-} (that occur in presence of other scales) using as an example the verb \textit{\v{z}eltet'} `to be yellow and be seen/to become yellow' that we have discussed in Chapter~\ref{Chapter5}. First let us construct two frames that reflect two interpretations of the basic imperfective verb that probably follow two semantic schemes associated with deriving verbs from color terms. Under the first interpretation, the verb refers to a state of the theme. The color of the theme is (constantly) yellow and the state can be specified as \textit{be seen}. As for any other stative verb, the only available verbal dimension is the event (state) itself. 
+
+\begin{figure}\small
+\begin{tabular}[t]{@{}c@{}}
 \textit{to be yellow and be seen}\\
 \avm{
  \btag{e} [\type*{state}
   		\STATE & [\type*{be\_seen}]\\
   		\THEME & \1 [
-  			\COLOR & [\type*{yellow}]\\
+  			\COLOR & [\type*{yellow}]\relax\\
   		]\\
   		\VERBDIM & \btag{e}
   ]
 }
-\end{tabular}
-\hfill
-\begin{tabular}[t]{c}
+\end{tabular}\hfill\begin{tabular}[t]{@{}c@{}}
 \textit{to become yellow}\\
 \avm{
 \btag{e} [\type*{change-of-state}
@@ -754,32 +751,29 @@ The second interpretation is related to a different kind of event -- a change of
 Let us unify the frame for the prefix \textit{za-} with the frame representations of the verb. We will start with the interpretation of the derivational base that makes use of the event scale (`to be yellow and become seen'). Here everything proceeds exactly as in case of the verb \textit{begat'} `to run' and the frame obtained as a result of the unification describes an event of type \textit{transition} such that the posterior state of this transition corresponds to the initial stage of the event `be yellow and be seen', where `be yellow' is a constant property of the theme, so this means that the derived verb refers to a beginning of the `be seen' state.
 
 \begin{figure}
-\begin{tabular}[t]{l}
+\begin{minipage}[b]{.5\textwidth}\centering
 \textit{za(to be yellow and be seen)}\\
 \avm{
 \btag{f} [\type*{transition}
       \POST & [\type*{event}
          \MDIM & [\type*{proper-scale}
-            \MIN & deg ] \\
+            \MIN & deg ]
      ]
    ]
-}\\
-\end{tabular}
-\begin{footnotesize}
-\begin{tabular}[t]{l}
+}
+\end{minipage}%
+\begin{minipage}[b]{.5\textwidth}\centering
 \avm{
 \btag{e}[\type*{state $\und$ proper-scale}
   		\STATE & [\type*{be\_seen}]\\
   		\THEME & \2 [
-  			\COLOR & [\type*{yellow}]\\
+  			\COLOR & [\type*{yellow}]\relax\\
   		]\\
   		\VERBDIM & \btag{e}\\
   		\MDIM & \btag{e}
   ]
-}\\
-\end{tabular}
-\end{footnotesize}
-\vspace{0.2em}
+}
+\end{minipage}\medskip\\
 \begin{tabular}[t]{l}
 $\tuple{\btag{f}\BC\POST,\btag{e}}\D\type{esegm-of}$\\[1ex]
 $\tuple{\btag{f}\BC\POST\C\MDIM,\btag{e}\BC\MDIM}\D\type{segm-of}$\\
@@ -793,6 +787,7 @@ In sum, two representations of the verb combined with one prefix representation 
 
 \begin{figure}
 \textit{za(to become yellow)}\\
+\raggedright
 \avm{
 \btag{e} [\type*{transition}
       \POST & [\type*{event}
@@ -801,10 +796,9 @@ In sum, two representations of the verb combined with one prefix representation 
           ] \\
      ]
    ]
-}\\
-\begin{tabular}[t]{l}
+}\medskip\\
 \avm{
-\btag{f}[\type*{change-of-state}
+\btag{f} [\type*{change-of-state}
   \VERBDIM & \2 [\type*{property-scale $\und$ proper-scale $\und$ yellow} 
   	\MIN & \3\\
   	\MAX & \4  
@@ -812,15 +806,11 @@ In sum, two representations of the verb combined with one prefix representation 
   \MDIM & \2\\
   \THEME & \1
 ]
-}
-\end{tabular}
-\hfill
-\begin{footnotesize}
+}\medskip\\\centering
 \begin{tabular}[t]{l}
 $\tuple{\btag{f}\BC\POST,\btag{e}}\D\type{esegm-of}$\\[1ex]
 $\tuple{\btag{f}\BC\POST\C\MDIM,\btag{e}\BC\MDIM}\D\type{segm-of}$\\
 \end{tabular}
-\end{footnotesize}
 \caption{Frame representation of the verb \textit{za\v{z}eltet'} `to become yellow/to start becoming yellow' \label{frame:zazeltet:yellow}}
 \end{figure}
 
@@ -874,10 +864,10 @@ A similar mechanism applies in case another prefixed verb with an excessive inte
 \centering
 \avm{
 \btag{e} [\type*{change-of-state}
-	   \MANN & [\type*{heat}]\\
+	   \MANN & [\type*{heat}]\relax\\
        \ACTOR & \1\\
 	   \THEME & \2\\
-	   \VERBDIM & \3 [\type*{temperature}]\\
+	   \VERBDIM & \3 [\type*{temperature}]\relax\\
 	   \MDIM & \3
 ]
 }
@@ -887,7 +877,7 @@ A similar mechanism applies in case another prefixed verb with an excessive inte
 With this in mind let us see how the prefix is combined with some verbs that operate on different scales. We start with the verb \textit{gret'} `to heat' that has as the verbal dimension the temperature scale (that is also copied to the measure dimension attribute). When this verb combines with the prefix \textit{na-}, the resulting frame (provided on \figref{frame:nagret}) denotes a bounded change of state with manner \textit{heat}, some actor, and some theme that has a temperature attribute. The event starts at the temperature corresponding to the minimum of the scale and ends when the temperature is at or above the threshold value. Note that at this moment the minimum on the scale is an unbound variable that will acquire its value later. The threshold value will also be determined only by the pragmatic module that is as well used to block the ``above the threshold'' interpretation of the verb \textit{nagret'} `to warm up', as sketched above.
 
 \begin{figure}
-\begin{minipage}{0.50\textwidth}
+\begin{minipage}{0.6\textwidth}\centering
 \avm{
 \btag{e} [\type*{bounded-event $\und$ change-of-state}
 		\MANN & [\type*{heat}]\\
@@ -907,8 +897,8 @@ With this in mind let us see how the prefix is combined with some verbs that ope
 }\\
 \centering
 \svar{5} $\leq$ \svar{6}\\
-\end{minipage}\hspace{1cm}
-\begin{minipage}{0.33\textwidth}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}\centering
 % % \includegraphics[scale=0.8]{NaGret.pdf}
 \begin{forest}
 [S\textsuperscript{[E=\textbf{e}]}
@@ -926,7 +916,7 @@ With this in mind let us see how the prefix is combined with some verbs that ope
 \caption{Representation of the verb \textit{nagret'} `to warm up' \label{frame:nagret}}
 \end{figure}
 
-The next step that is relevant for understanding how prefix frames function is the combination of the verb and the direct object. In our case it is a combination of the verb \textit{nagret'} `to warm up' with some appropriate theme, e.g., \textit{sup} `soup'. Here we would need a similar mechanism of enriching noun representations with dimension information, as I have proposed above for the verbs that do not carry measure dimension information. In our case (see the frame on \figref{frame:soup:dic}) the object of type \textit{soup} has a temperature attribute, as well as an amount attribute, a kind attribute, and a taste attribute. At the same time \textit{amount} and \textit{temperature} can serve as scalar dimensions, which gives rise to the attributes \AMOUNTDIM and \TEMPDIM.  
+\pagebreak The next step that is relevant for understanding how prefix frames function is the combination of the verb and the direct object. In our case it is a combination of the verb \textit{nagret'} `to warm up' with some appropriate theme, e.g., \textit{sup} `soup'. Here we would need a similar mechanism of enriching noun representations with dimension information, as I have proposed above for the verbs that do not carry measure dimension information. In our case (see the frame on \figref{frame:soup:dic}) the object of type \textit{soup} has a temperature attribute, as well as an amount attribute, a kind attribute, and a taste attribute. At the same time \textit{amount} and \textit{temperature} can serve as scalar dimensions, which gives rise to the attributes \AMOUNTDIM and \TEMPDIM.  
 
 \begin{figure}
 \centering
@@ -937,7 +927,7 @@ The next step that is relevant for understanding how prefix frames function is t
 	   		\MUNIT & ml ] \\
        \TEMP & [\type*{temperature}
 	   		\VAL & \2\\
-	   		\MUNIT & degree Celsius ] \\
+	   		\MUNIT & °C ] \\
        \KIND & [\type*{soup-kind}]\\
        \TASTE & [\type*{taste}]\\
        \AMOUNTDIM & [\type*{amount $\und$ measure-of-change}
@@ -994,7 +984,7 @@ Objects in general may be associated with various measure dimensions, as in case
 	   		\MUNIT & ml ] \\
        \TEMP & [\type*{temperature}
 	   		\VAL & \2\\
-	   		\MUNIT & degree Celsius ] \\
+	   		\MUNIT & °C ] \\
        \KIND & [\type*{soup-kind}]\\
        \TASTE & [\type*{taste}]\\
        \AMOUNTDIM & [\type*{amount $\und$ measure-of-change}
@@ -1015,7 +1005,7 @@ Objects in general may be associated with various measure dimensions, as in case
 The second dimension constructor applicable in case of the noun \textit{sup} `soup' is the amount dimension constructor. It is similar to the temperature dimension constructor shown before, but it also imposes a syntactic requirement for a genitive case of the object. This constructor is shown on \figref{constructor:amount} and the result of the unification of its frame part with the representation of the noun \textit{sup} `soup' is provided on \figref{frame:soup:amount}.
 
 \begin{figure}
-\begin{minipage}{0.5\textwidth}
+\begin{minipage}{0.5\textwidth}\centering
 \avm{
 \btag{e} [\type*{event}
 	\THEME & \btag{f} [\type*{entity}
@@ -1024,7 +1014,7 @@ The second dimension constructor applicable in case of the noun \textit{sup} `so
 \NOUNDIM & \1
 ]
 }
-\end{minipage}\hspace{1em}\begin{minipage}{0.4\textwidth}
+\end{minipage}\begin{minipage}{0.5\textwidth}\centering
 % % \includegraphics[scale=1]{NPgen.pdf}
 \begin{tikzpicture}[baseline]
 \node at (0,0) (VP) {VP\textsuperscript{[E=\textbf{e}]}};
@@ -1047,7 +1037,7 @@ The second dimension constructor applicable in case of the noun \textit{sup} `so
 	   		\MUNIT & ml ] \\
        \TEMP & [\type*{temperature}
 	   		\VAL & \2\\
-	   		\MUNIT & degree Celsius ] \\
+	   		\MUNIT & °C ] \\
        \KIND & [\type*{soup-kind}]\\
        \TASTE & [\type*{taste}]\\
        \AMOUNTDIM & \4 [\type*{amount $\und$ measure-of-change}
@@ -1065,7 +1055,7 @@ The second dimension constructor applicable in case of the noun \textit{sup} `so
 \caption{Result of unification of the amount dimension constructor frame with the frame for the noun \textit{sup} `soup' \label{frame:soup:amount}}
 \end{figure}
 
-Now we can try combine the representations that emerge from the unification of the noun frame with the  frames of dimension constructors (\figref{constructor:amount} and \figref{constructor:temp}) with the frame for the verb \textit{nagret'} `to warm up' (\figref{frame:nagret}). First let us use the frame that is produced by the temperature dimension constructor (\figref{frame:soup:temp}). The result of inserting the noun representation into the theme slot of the verb in this case is shown on \figref{frame:nagret:soup}. As one can see, now the initial stage of the event corresponds to the initial (minimal) value of the temperature scale associated with the concrete portion of the soup. The final stage is defined as being at least at the threshold value, but not higher than the maximum value. This means that, for example, it would be not possible to heat the soup up to more than 100 degrees Celsius. 
+Now we can try combine the representations that emerge from the unification of the noun frame with the  frames of dimension constructors (\figref{constructor:amount} and \figref{constructor:temp}) with the frame for the verb \textit{nagret'} `to warm up' (\figref{frame:nagret}). First let us use the frame that is produced by the temperature dimension constructor (\figref{frame:soup:temp}). The result of inserting the noun representation into the theme slot of the verb in this case is shown on \figref{frame:nagret:soup}. As one can see, now the initial stage of the event corresponds to the initial (minimal) value of the temperature scale associated with the concrete portion of the soup. The final stage is defined as being at least at the threshold value, but not higher than the maximum value. This means that, for example, it would be not possible to heat the soup up to more than 100°C. 
 
 \begin{figure}
 \centering
@@ -1079,7 +1069,7 @@ Now we can try combine the representations that emerge from the unification of t
 	   			\MUNIT & ml ] \\
        		\TEMP & [\type*{temperature}
 	   			\VAL & \2\\
-	   			\MUNIT & degree Celsius ] \\
+	   			\MUNIT & °C ] \\
        		\KIND & [\type*{soup-kind}]\\
        		\TASTE & [\type*{taste}]\\
        		\AMOUNTDIM & [\type*{amount $\und$ measure-of-change}
@@ -1123,7 +1113,7 @@ What if we try to combine the frame for the verb \textit{nagret'} `to warm up' w
 	   			\MUNIT & ml ] \\
        		\TEMP & [\type*{temperature}
 	   			\VAL & \2\\
-	   			\MUNIT & degree Celsius ] \\
+	   			\MUNIT & °C ] \\
        		\KIND & [\type*{soup-kind}]\\
        		\TASTE & [\type*{taste}]\\
        		\AMOUNTDIM & \5[\type*{amount $\und$ measure-of-change}
@@ -1152,7 +1142,7 @@ What if we try to combine the frame for the verb \textit{nagret'} `to warm up' w
 \caption{Failure during the unification of the frames for \textit{nagret'} `to warm up and  \textit{sup} `soup' with amount dimension interpretation \label{frame:nagret:soup:amount}}
 \end{figure}
 
-The mechanism of type conflict is the main mechanism that prevents unwanted prefix stacking and inappropriate measure phrases or direct object interpretations. Note, however, that noun representations allow for different interpretations and the concrete interpretation is only selected relative to an event. This means that the same noun can be viewed as providing different dimensions when several event nodes are present in the semantic structure. This is even possible with one verb (secondary imperfective verb with habitual/iterative interpretation) due to different measure dimensions of the iterated subevent and the event that refers to the whole series of subevents.
+The mechanism of type conflict is the main mechanism that prevents un\-want\-ed prefix stacking and inappropriate measure phrases or direct object interpretations. Note, however, that noun representations allow for different interpretations and the concrete interpretation is only selected relative to an event. This means that the same noun can be viewed as providing different dimensions when several event nodes are present in the semantic structure. This is even possible with one verb (secondary imperfective verb with habitual/iterative interpretation) due to different measure dimensions of the iterated subevent and the event that refers to the whole series of subevents.
 
 Another way of implementing the same system of agreement between the dimensions of the verb and the noun is to formulate requirements (here, for example, a requirement for a temperature scale), but in the current version of the formalization of Frame Semantics within XMG 2 that I am using here it is not possible. For this reason such requirements have to appear implicitly as type or value incompatibilities. I leave it to future research to find out whether an approach that uses constructors and type conflicts is cognitively plausible.
 
@@ -1171,7 +1161,7 @@ If such constructor is used, the verbal representation acquires the correspondin
 \begin{tabular}[t]{l}
 \avm{
 \btag{e} [\type*{process}
-	   \MANN & [\type*{cook}]\\
+	   \MANN & [\type*{cook}]\relax\\
        \ACTOR & \2\\
 	   \THEME & [\type*{food}
 	   		\AMOUNT & \1 ]
@@ -1182,7 +1172,7 @@ If such constructor is used, the verbal representation acquires the correspondin
 \begin{tabular}[t]{l}
 \avm{
 \btag{e} [\type*{process}
-	   \MANN & [\type*{cook}]\\
+	   \MANN & [\type*{cook}]\relax\\
        \ACTOR & \2\\
 	   \THEME & [\type*{food}
 	   		\AMOUNT & \1 ]\\
@@ -1196,20 +1186,20 @@ If such constructor is used, the verbal representation acquires the correspondin
 \caption{Frame representation of the verb \textit{varit'} `to cook' before (left) and after (right) an enrichment with scalar information \label{frame:varit}}
 \end{figure}
 
-Now the verb has a \VERBDIM argument and can be combined with the prefix frame. The result of the unification of the frame on \figref{frame:na} with the frame on the right side of \figref{frame:varit} is shown on \figref{frame:navarit}. It describes a bounded process that starts with no food being cooked and ends when some amount of food that exceeds the threshold is cooked. The \textit{measure-of-change} type of the \textit{amount} scale ensures that there is no requirement for any intermediate event stage to correspond to some intermediate value on the amount scale, so no gradual cooking in terms of amount is required, which means that the soup may be prepared as one portion.
+Now the verb has a {\scshape\VERBDIM} argument and can be combined with the prefix frame. The result of the unification of the frame on \figref{frame:na} with the frame on the right side of \figref{frame:varit} is shown on \figref{frame:navarit}. It describes a bounded process that starts with no food being cooked and ends when some amount of food that exceeds the threshold is cooked. The \textit{measure-of-change} type of the \textit{amount} scale ensures that there is no requirement for any intermediate event stage to correspond to some intermediate value on the amount scale, so no gradual cooking in terms of amount is required, which means that the soup may be prepared as one portion.
 
 \begin{figure}
 \begin{tabular}{c}
 \avm{
 \btag{e}[\type*{bounded-event $\und$ process}
-		\MANN & [\type{cook}]\\
+		\MANN & [\type{cook}]\relax\\
        \ACTOR & \6\\
 	   \THEME & [\type*{food}
 	   		\AMOUNT & \1 ]\\
 	   \VERBDIM & \2 [\type*{amount $\und$ measure-of-change}
 	   		\MIN & 0 \\
 	   		\MAX & \1
-	   ]\\
+	   ]\relax\\
 	   \NOUNDIM & \2\\   
        \MDIM & \2[\type*{scale}
 			\MIN & \3\\	  
@@ -1233,19 +1223,19 @@ As a next step, we try to combine the representation of the verb \textit{navarit
 \begin{figure}
 \begin{tabular}{c}
 \avm{
- \btag{e} [\type*{bounded-event $\und$ process}
-		\MANN & [\type*{cook}]\\
+ \btag{e} [\type*{bounded-event $\wedge$ process}
+		\MANN & [\type*{cook}]\relax\\
        \ACTOR & \1\\
 	   \THEME & [\type*{soup}
 	   		\AMOUNT & [\type*{amount}
 	   			\VAL & \4\\
 	   			\MUNIT & ml ] \\
-       		\TEMP & \btag{f}[\type*{temperature}
+       		\TEMP & \btag{f} [\type*{temperature}
 	   			\VAL & 0\\
-	   			\MUNIT & degree Celsius ] \\
+	   			\MUNIT & °C ] \\
        		\KIND & [\type*{soup-kind}]\\
        		\TASTE & [\type*{taste}]\\
-       		\AMOUNTDIM & [\type*{amount $\und$ measure-of-change}
+       		\AMOUNTDIM & [\type*{amount $\wedge$ measure-of-change}
        			\MIN & 0\\
        			\MAX & \1
        		]\\
@@ -1253,7 +1243,7 @@ As a next step, we try to combine the representation of the verb \textit{navarit
 		]	\\
 	   \NOUNDIM & \3\\       
 	   \VERBDIM & \3\\
-       \MDIM & \3 [\type*{\textcolor{red}{\underline{amount $\und$ temperature  $\und$ measure-of-change $\und$ proper-scale}}}
+       \MDIM & \3 [\type*{\textcolor{red}{\underline{amount $\wedge$ temperature  $\wedge$ measure-of-change $\wedge$ proper-scale}}}
 				\MIN & 0\\
 				\MAX & 100\\       
        			\THRESHOLD & \5
@@ -1285,7 +1275,7 @@ Now, when we combine the appropriate amount-related representation of the noun \
 	   			\MUNIT & ml ] \\
        		\TEMP & [\type*{temperature}
 	   			\VAL & 0\\
-	   			\MUNIT & degree Celsius ] \\
+	   			\MUNIT & °C ] \\
        		\KIND & [\type*{soup-kind}]\\
        		\TASTE & [\type*{taste}]\\
        		\AMOUNTDIM & \3 \\
@@ -1492,7 +1482,7 @@ The second ``ingredient'' for the verbal phrase \textit{polopat' \v{s}ary} `to b
 
 The frame representation of the noun \textit{\v{s}ar} `balloon' is shown on the right side of \figref{frame:balloon}. The right side of the same figure shows the result of unification of the noun representation with the cardinality dimension constructor.
 
-\begin{figure}\small
+\begin{figure}
 % \begin{minipage}{0.4\textwidth}
 \avm{
 \btag{f} [\type*{balloon}
@@ -1529,7 +1519,7 @@ Now we are ready to combine the verbal and the nominal frames and obtain the rep
 \centering
 \avm{
 \btag{e} [\type*{bounded-event $\und$ iteration $\und$ cardinality}
-    \MANN & [\type*{burst}]\\
+    \MANN & [\type*{burst}]\relax\\
     \ACTOR & \5\\
     \THEME & [\type*{balloon}
 	   \CARD & [\type*{cardinality}
@@ -1558,7 +1548,7 @@ Note that the interpretation of the same phrase that describes the bursting even
 \centering
 \avm{
 \btag{e} [\type*{bounded-event $\und$ iteration $\und$ scale}
-    \MANN & [\type*{burst}]\\
+    \MANN & [\type*{burst}]\relax\\
     \ACTOR & \6\\
     \THEME & [\type*{balloon}
 	   \CARD & \1\\
@@ -1584,6 +1574,7 @@ The first representation accounts for spatial (crossing), time-related (passing 
 
 \subsection{Distributive, crossing and waiting interpretations}
 The first frame representation is, on the one hand, the most `ordinary', as it resembles a lot the frames we have already discussed. On the other hand, it covers three ``traditional'' usages. As we have already discussed a number of similar frames, I will now only point out what is special in this case (the frame is shown on \figref{frame:pere:distr}). As before, the key restrictive factor is the type of the measure dimension: a closed proper scale in this case. The source of this scale is the noun, if it is not already specified by the verb (in this case the noun has to offer an appropriate scale). The initial and final stages of the event correspond to the minimum and maximum points on the scale. 
+
 \begin{figure}
 \centering
 \avm{
@@ -1644,8 +1635,7 @@ Now we can combine the frame for the verb \textit{zimovat'} `to spend winter tim
 
 The second example is the case of the path scale. Consider a determinate motion verb \textit{be\v{z}at'} `to run'. The frame representation of this verb (on the left side of \figref{frame:bezhat}) differs from the frame representation of the indeterminate motion verb \textit{begat'} `to run' (shown on \figref{frame:begat}) in that it contains a \PATH attribute and the \textit{path} scale is selected as a measure dimension. 
 
-\begin{figure}
-\begin{minipage}{0.4\textwidth}
+\begin{figure}\small
 \avm{
 \btag{e} [\type*{transloc}
 	   \MANN & [\type*{run}]\\
@@ -1656,8 +1646,7 @@ The second example is the case of the path scale. Consider a determinate motion 
 	   \MDIM & \2
 ]
 }
-\end{minipage}
-\begin{minipage}{0.55\textwidth}
+\hfill
 \avm{
 \btag{e} [\type*{bounded-event $\und$ transloc}
 	   	\MANN & [ \type*{run} ]\\
@@ -1676,7 +1665,6 @@ The second example is the case of the path scale. Consider a determinate motion 
        		\POS & \3 ]
   ]
 }
-\end{minipage}
 \caption{Frame representations of the determinate motion verb \textit{be\v{z}at'} `to run' (left) and of the verb \textit{perebe\v{z}at'} `to run accross' (right) \label{frame:bezhat}}
 \end{figure}
 
@@ -1685,7 +1673,7 @@ When the verb \textit{be\v{z}at'} `to run' combines with the prefix \textit{pere
 What is still missing in this frame is the specification of the path that has to come from the noun. This has to be a closed path across the object the noun refers to. I propose to use a dimension constructor that takes as its input any object that has width or diameter (or, probably, some other attribute) and outputs a path across this object. This path is probably still underspecified, as information from the context is needed to find out at least on which ``side'' of the landmark the movement starts. So if we start with a dictionary noun representation, such as shown on the left side of \figref{frame:road}, it can be unified with the constructor shown on \figref{constructor:path}. This constructor is similar to those we have already seen. It specifies the \NOUNDIM attribute of the event as being of type \textit{path}. This path is located in the \LOC of the landmark. The extreme points of this path belong to the set of the edge points of the landmark. There should be an extra condition that ensures that the path goes to the ``opposite'' side, but this is hard (if possible) to formalize (at least in the purely semantic terms and especially for such objects that do not have distinct edges, e.g., a lake), so I will leave this problem for future research.  
 
 \begin{figure}\small
-\begin{minipage}{0.3\textwidth}
+\begin{minipage}{0.33\textwidth}\centering
 \avm{
 \btag{e} [ \type*{event}
 	\PATH & \1 [ \type*{path}
@@ -1694,7 +1682,7 @@ What is still missing in this frame is the specification of the path that has to
 	]
 ]
 }\end{minipage}\hfill%
-\begin{minipage}{0.3\textwidth}\centering
+\begin{minipage}{0.33\textwidth}\centering
 \avm{
 \btag{f} [\type*{landmark}
        	\EDGE & \4 \\
@@ -1702,7 +1690,7 @@ What is still missing in this frame is the specification of the path that has to
 }\\
 \svar{1} $\in$ \svar{5} $\und$ \svar{2} $\in$ \svar{4} $\und$ \svar{3} $\in$ \svar{4}
 \end{minipage}\hfill%
-\begin{minipage}{0.25\textwidth}
+\begin{minipage}{0.33\textwidth}\centering
 % \includegraphics[scale=.8]{NaTemp.pdf}
 \begin{tikzpicture}[baseline]
 \node at (0,0) (VP) {VP\textsuperscript{[E=\textbf{e}]}};
@@ -1741,8 +1729,7 @@ What is still missing in this frame is the specification of the path that has to
 	   \WIDTH & \1\\
 	    \LOC & \2\\
        	\EDGE & \3 ]
-}\\
-\vspace{0.3em}
+}\smallskip\\
 \svar{4} $\in$ \svar{3} $\und$ \svar{5} $\in$ \svar{3} $\und$ \svar{6} $\in$ \svar{2}
 \end{minipage}
 \caption{Frame representations of the noun \textit{doroga} `road' (left) and of its unification with the path dimension constructor (right) \label{frame:road}}
@@ -1755,7 +1742,7 @@ Now we are ready to combine the verbal frame that is shown on the right side of 
 \begin{minipage}{0.6\textwidth}
 \avm{
 \btag{e} [\type*{bounded-event $\und$ transloc}
-	   	\MANN & [ \type*{run} ]\\
+	   	\MANN & [ \type*{run} ]\relax\\
        	\ACTOR & \4\\
 	    \PATH & \1\\
 	   	\TRACE & [ \type*{trace} ]\\
@@ -1786,13 +1773,13 @@ Now we are ready to combine the verbal frame that is shown on the right side of 
 \end{figure}
 
 
-To illustrate how the distributive interpretation of the verb is obtained with the same prefix frame, let us take the verb \textit{lopat'} `to burst' and the noun \textit{\v{s}ar} `balloon' that we have already used to illustrate the distributive usage of the prefix \textit{po-}. The resulting frame representation of the phrase \textit{perelopat' \v{s}ary} `to burst all the balloons' is shown on \figref{frame:pereburst:balloon} and differs from the frame for the phrase \textit{polopat' \v{s}ary} `to burst the balloons' shown on \figref{frame:burst:balloon} only with respect to the type of the scale that represents the measure dimension. Now the type is not \textit{measure-of-change,} but \textit{proper-scale}. This means that the scale description now contains not only the extreme points, but also all the natural numbers between zero and the cardinality of the set of balloons. So the iteration of the bursting sub-events now has to proceed from zero burst balloons to one burst balloon, to two burst balloons, etc. No simultaneous bursting of two or more balloons is allowed. The \textit{proper-scale} type is a compact way to encode this difference between two distributive interpretations.
+To illustrate how the distributive interpretation of the verb is obtained with the same prefix frame, let us take the verb \textit{lopat'} `to burst' and the noun \textit{\v{s}ar} `balloon' that we have already used to illustrate the distributive usage of the prefix \mbox{\textit{po-}.} The resulting frame representation of the phrase \textit{perelopat' \v{s}ary} `to burst all the balloons' is shown on \figref{frame:pereburst:balloon} and differs from the frame for the phrase \textit{polopat' \v{s}ary} `to burst the balloons' shown on \figref{frame:burst:balloon} only with respect to the type of the scale that represents the measure dimension. Now the type is not \textit{measure-of-change,} but \textit{proper-scale}. This means that the scale description now contains not only the extreme points, but also all the natural numbers between zero and the cardinality of the set of balloons. So the iteration of the bursting sub-events now has to proceed from zero burst balloons to one burst balloon, to two burst balloons, etc. No simultaneous bursting of two or more balloons is allowed. The \textit{proper-scale} type is a compact way to encode this difference between two distributive interpretations.
 
 \begin{figure}
 \centering
 \avm{
 \btag{e} [\type*{bounded-event $\und$ iteration}
-    \MANN & [\type*{burst}]\\
+    \MANN & [\type*{burst}]\relax\\
     \ACTOR & \5\\
     \THEME & [\type*{balloon}
 	   \CARD & \1\\
@@ -1868,8 +1855,7 @@ Let us see what happens if this prefix usage is combined with the verb \textit{g
 
 Next we combine the frame for the verb \textit{peregret'} `to overheat' with the frame for the noun \textit{sup} `soup' that has been unified with the temperature dimension constructor. As a result, as expected, we obtain the frame that describes an event of heating of the soup that starts from the temperature lower than the marked temperature (marked temperature in this case is the same as the threshold value in case of the \textit{na-}prefixed verb) and ends when the temperature is greater than the marked temperature.
 
-\begin{figure}
-\begin{center}
+\begin{figure}[p]
 \begin{tabular}{c}
 \avm{
  \btag{e} [\type*{bounded-event $\und$ change-of-state}
@@ -1881,7 +1867,7 @@ Next we combine the frame for the verb \textit{peregret'} `to overheat' with the
 	   		\MUNIT & ml ] \\
        \TEMP & [\type*{temperature}
 	   		\VAL & \2\\
-	   		\MUNIT & degree Celsius ] \\
+	   		\MUNIT & °C ] \\
        \KIND & [\type*{soup-kind}]\\
        \TASTE & [\type*{taste}]\\
        \AMOUNTDIM & [\type*{amount $\und$ measure-of-change}
@@ -1907,7 +1893,6 @@ Next we combine the frame for the verb \textit{peregret'} `to overheat' with the
 }\\
 \svar{5} $<$ \svar{2} $<$ \svar{3}
 \end{tabular}
-\end{center}
 \caption{Frame representation of the verbal phrase \textit{peregret' sup} `to overheat the soup' \label{frame:pere:gret:soup}}
 \end{figure}
 
@@ -1979,7 +1964,7 @@ For this to be possible, the object has to be conceptualized as having an almost
 \caption{Frame representation of the noun \textit{doroga} `road' unified with the constructor of one point path \label{frame:road:point}}
 \end{figure}
 
-If the representation of the verb \textit{pereletet'} `to fly over', shown on \figref{frame:pere:letet}, is combined with the representation of the noun \textit{doroga} `road' that provides information about a one point scale, we obtain the frame shown on \figref{frame:pere:letet:road}. Note that the representation of the accusative noun does not become a value of any attribute and stays connected only through the relation of inclusion of the marked point into the path. Such representation of a relation between a path-related landmark and the motion along the path is also used in the analysis of English motion expressions proposed in \citealt{KallmeyerOsswald:13}, e.g., for the sentence \textit{John walked along the brook} \citep[Fig.~23, p. 32]{KallmeyerOsswald:13}.
+If the representation of the verb \textit{pereletet'} `to fly over', shown on \figref{frame:pere:letet}, is combined with the representation of the noun \textit{doroga} `road' that provides information about a one point scale, we obtain the frame shown on \figref{frame:pere:letet:road}. Note that the representation of the accusative noun does not become a value of any attribute and stays connected only through the relation of inclusion of the marked point into the path. Such representation of a relation between a path-related landmark and the motion along the path is also used in the analysis of English motion expressions proposed in \citealt{KallmeyerOsswald:13}, e.g., for the sentence \textit{John walked along the brook} \citep[32, Figure~23]{KallmeyerOsswald:13}.
 
 \begin{figure}
 \begin{minipage}{0.66\textwidth}
@@ -2019,7 +2004,8 @@ As in this case the measure dimension of the event is the noun dimension, the sa
 \ex.\label{const:one:closed}\textit{one-point-scale} $\und$ \textit{closed-scale} $\rightarrow \bot$
 
 \begin{figure}
-\begin{minipage}{0.7\textwidth}
+\small
+\begin{minipage}{0.7\textwidth}\centering
 \avm{
 \btag{e} [\type*{bounded-event $\und$ transloc}
   	\MANN & [\type*{fly}]\\
@@ -2041,7 +2027,7 @@ As in this case the measure dimension of the event is the noun dimension, the sa
   ]
 }
 \end{minipage}
-\begin{minipage}{0.25\textwidth}
+\begin{minipage}{0.25\textwidth}\centering
 \avm{
 \btag{f} [\type*{road}
 	   \WIDTH & \6\\
@@ -2057,13 +2043,13 @@ As in this case the measure dimension of the event is the noun dimension, the sa
 \caption{Failure of unification of the frames for the verb \textit{pereletet'} `to fly over' and for the noun \textit{doroga} `road' enriched with the information of a path accross it  \label{frame:pere:letet:road:red}}
 \end{figure}
 
-The last case I want to show with respect to the excessive interpretation of the prefix \textit{pere-} is the case where this prefix can be translated with the English prefix \textit{out-}, as in \textit{pere\v{z}it'} `to outlive'. So let us start with the frame for the verb \textit{\v{z}it'} `to live', that is shown on the right side of \figref{frame:live}. The event of living is measured in terms of time, therefore we use the event itself as a measure dimension. As a next step, we unify the frame for the verb \textit{\v{z}it'} `to live' with the frame for the prefix \textit{pere-} that makes use of a one point scale (Fig~\ref{frame:pere:over}) and obtain the frame shown on the right side of \figref{frame:live}.
+The last case I want to show with respect to the excessive interpretation of the prefix \textit{pere-} is the case where this prefix can be translated with the English prefix \textit{out-}, as in \textit{pere\v{z}it'} `to outlive'. So let us start with the frame for the verb \textit{\v{z}it'} `to live', that is shown on the right side of \figref{frame:live}. The event of living is measured in terms of time, therefore we use the event itself as a measure dimension. As a next step, we unify the frame for the verb \textit{\v{z}it'} `to live' with the frame for the prefix \textit{pere-} that makes use of a one point scale (\figref{frame:pere:over}) and obtain the frame shown on the right side of \figref{frame:live}.
 
-\begin{figure}
-\begin{minipage}{0.3\textwidth}
+\begin{figure}\small
+\begin{minipage}{0.3\textwidth}\centering
 \avm{
 \btag{e} [\type*{process}
-    \MANN & [\type*{live}]\\
+    \MANN & [\type*{live}]\relax\\
     \ACTOR & \tag{0}\\
     \VERBDIM & \btag{e}\\
     \MDIM & \btag{e}
@@ -2073,7 +2059,7 @@ The last case I want to show with respect to the excessive interpretation of the
 \begin{minipage}{0.55\textwidth}\centering
 \avm{
 \btag{e} [\type*{bounded-event $\und$ process} \type*{$\und$ proper-scale $\und$ one-marked-point}
-	\MANN & [\type*{live}]\\
+	\MANN & [\type*{live}]\relax\\
     \ACTOR & \tag{0}\\
     \VERBDIM & \btag{e}\\
   	\NOUNDIM & \btag{e}\\
@@ -2154,10 +2140,10 @@ Now the noun that is used as a direct object has to provide information about th
 If the enriched noun representation is combined with the representation of the verb \textit{pere\v{z}it'} `to outlive', the resulting frame describes a bounded process of living of the (yet unspecified) actor that started before the hurricane time and ended after it. This frame is shown on \figref{frame:outlive:hurricane}. As in the case of crossing the road, the hurricane is not an argument of the verb and the two frames are only connected via the identity of the values of the attributes \NOUNDIM.
 
 \begin{figure}
-\begin{minipage}{0.75\textwidth}
+\begin{minipage}{0.7\textwidth}\centering
 \avm{
 \btag{e} [\type*{bounded-event $\und$ process $\und$} \type*{proper-scale $\und$ one-marked-point $\und$ time}
-	\MANN & [\type*{live}]\\
+	\MANN & [\type*{live}]\relax\\
     \ACTOR & \tag{0}\\
     \VERBDIM & \btag{e}\\
   	\NOUNDIM & \btag{e}\\
@@ -2169,7 +2155,7 @@ If the enriched noun representation is combined with the representation of the v
   ]
 }
 \end{minipage}\hfill%
-\begin{minipage}{0.2\textwidth}\centering
+\begin{minipage}{0.3\textwidth}\centering
 \avm{
 \btag{f} [\type*{hurricane}
 	   \TIME & \2\\
@@ -2182,7 +2168,7 @@ If the enriched noun representation is combined with the representation of the v
 \caption{Frame representation of the verbal phrase \textit{pere\v{z}it' uragan} `to survive the hurricane': dictionary entry on the left and enriched representation on the right \label{frame:outlive:hurricane}}
 \end{figure}
 
-The extraction of the marked point on the time scale can be also performed with nouns that lack explicit time points, such as person names, e.g., \textit{Ma\v{s}a} `Masha'. Of course, such extraction requires a more complex procedure that cannot be described in detail here, but the idea is that some significant point related to the event type denoted by the verb is extracted using a special constructor. In case of the event of living and a person \textit{Ma\v{s}a} `Masha' this point should be the time of Masha's death. To obtain is, one can use the constructor that creates a representation of the event of living of Masha from the representation of the name \textit{Ma\v{s}a} (using the representation of the derivational base for the \textit{pere-}prefixed verb, so in our case the frame on \figref{frame:live}). The tentative result of an application of such a constructor is shown on \figref{frame:Masha:live}.
+The extraction of the marked point on the time scale can be also performed with nouns that lack explicit time points, such as person names like \textit{Ma\v{s}a} `Masha'. Of course, such extraction requires a more complex procedure that cannot be described in detail here, but the idea is that some significant point related to the event type denoted by the verb is extracted using a special constructor. In case of the event of living and a person \textit{Ma\v{s}a} `Masha' this point should be the time of Masha's death. To obtain is, one can use the constructor that creates a representation of the event of living of Masha from the representation of the name \textit{Ma\v{s}a} (using the representation of the derivational base for the \textit{pere-}prefixed verb, so in our case the frame on \figref{frame:live}). The tentative result of an application of such a constructor is shown on \figref{frame:Masha:live}.
 
 \begin{figure}
 \centering
@@ -2241,6 +2227,8 @@ To complete the picture, let us consider the verb \textit{igrat'} `to play'. Thi
 
 When the representation of the verb \textit{igrat'} is combined with the representation of the prefix \textit{pere-} that is compatible with a marked point  scale, we obtain the frame shown on the right side of \figref{frame:outplay} that represents the semantics of the verb \textit{pereigrat'} `to outplay': a bounded event of \MANN \textit{play} that ends at a point of the scale above the marked point. 
 
+The type of the scale and the marked point remain underspecified and need to be identified using the information about the direct object. I propose to use the same strategy as above: if the direct object is a referent of the name \textit{Ma\v{s}a}, the dimension constructor is based on the frame for the verb \textit{igrat'} `to play' to obtain an event of Masha playing that has some parameters, such as duration of the play or the quality of the play. As we have discussed in Section~\ref{subsection:semantics:pere}, such sentences as \textit{Vasja pereigral Ma\v{s}u} `Vasya outplayed Masha' are ambiguous and hard to interpret without the context that would provide the relevant parameter. The representations that can be obtained as a result of such complex scale extraction procedure are shown on \figref{frame:Masha:play}: the time-related interpretation on the left side and the quality-related interpretation on the right side.
+
 \begin{figure}\small
 \begin{minipage}{0.3\textwidth}
 \avm{
@@ -2271,8 +2259,6 @@ When the representation of the verb \textit{igrat'} is combined with the represe
 \end{minipage}
 \caption{Frame representations of the verbs \textit{igrat'} `to play' (left) and \textit{pereigrat'} `to outplay' (right) \label{frame:outplay}}
 \end{figure}
-
-The type of the scale and the marked point remain underspecified and need to be identified using the information about the direct object. I propose to use the same strategy as above: if the direct object is a referent of the name \textit{Ma\v{s}a}, the dimension constructor is based on the frame for the verb \textit{igrat'} `to play' to obtain an event of Masha playing that has some parameters, such as duration of the play or the quality of the play. As we have discussed in Section~\ref{subsection:semantics:pere}, such sentences as \textit{Vasja pereigral Ma\v{s}u} `Vasya outplayed Masha' are ambiguous and hard to interpret without the context that would provide the relevant parameter. The representations that can be obtained as a result of such complex scale extraction procedure are shown on \figref{frame:Masha:play}: the time-related interpretation on the left side and the quality-related interpretation on the right side.
 
 \begin{figure}
 \begin{minipage}{0.45\textwidth}
@@ -2504,7 +2490,7 @@ When the verb \textit{pereigrat'} `to replay' is used, an appropriate noun, prob
 \caption{Frame representations of the noun \textit{partija} `match' (left) and of an additional component that is obtained as a result of its unification with the dimension constructor (right) \label{frame:match}}
 \end{figure}
 
-As a final step, we can now combine the frames on \figref{frame:pere:igrat} and on \figref{frame:match} and obtain the frame shown on \figref{frame:pere:igrat:match}. This frame describes a bounded event of playing that is preceded with another such event and both events are measured out according to the duration of the match. 
+As a final step, we can now combine the frames on Figures~\ref{frame:pere:igrat} and~\ref{frame:match} and obtain the frame shown on \figref{frame:pere:igrat:match}. This frame describes a bounded event of playing that is preceded with another such event and both events are measured out according to the duration of the match. 
 
 \begin{figure}\small
 \avm{
