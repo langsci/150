@@ -26,40 +26,40 @@ In this chapter I will show fragments of the implementation and explain decision
 The code starts with the three unicity constraints shown on \figref{xmg:unicity} that prevent the appearance of some features more than once in the same elementary tree. The first constraint is a standard one, as it ensures that each tree has one lexical anchor. The second constraint has to be introduced because I use XMG not only for constructing the unanchored trees, but also for the insertion of the lexical anchors. This constraint allows to make sure that only one noun is inserted in the accusative noun slot.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 use unicity with (mark=anchor) dims (syn)
 use unicity with (mark=nounacc) dims (syn)
 use unicity with (iteration=yes) dims (syn)
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code: unicity constraints \label{xmg:unicity}}
 \end{figure}
 
 The third constraint restricts the appearance of the \textit{iteration} feature to one per tree. The nature of this constraint is semantic and the natural way would be to locate it in the semantic dimension. This is, however, not yet implemented, so I copy the feature to the syntactic level and apply the unicity constraint in the syntactic dimension.
 
-The next three sections introduce syntactic features, types associated with values of these features, and frame types. Here I want to note two more features that I had to `lift' to the syntactic level due to the fact that such feature checking inside the semantic dimension of XMG is not yet supported: \textit{bounded} and \textit{limited}. The feature \textit{bounded} appears at those nodes that are associated with frames of \textit{event} type. It gets the value \textit{yes} if there is a path from the central node of the frame to an attribute \FIN that can proceed through the \PARTOF attributes. If there is no such path, the value of the feature is \textit{no}. The feature \textit{limited} is a stronger version of a similar constraint: for \textit{limited} to get the value \textit{yes}, the central node has to have an attribute \FIN and its value has to be specific (concrete value or a bound variable). In all other cases the feature \textit{limited} gets value the \textit{no}.
+The next three sections introduce syntactic features, types associated with values of these features, and frame types. Here I want to note two more features that I had to ``lift'' to the syntactic level due to the fact that such feature checking inside the semantic dimension of XMG is not yet supported: \textit{bounded} and \textit{limited}. The feature \textit{bounded} appears at those nodes that are associated with frames of \textit{event} type. It gets the value \textit{yes} if there is a path from the central node of the frame to an attribute \FIN that can proceed through the \PARTOF attributes. If there is no such path, the value of the feature is \textit{no}. The feature \textit{limited} is a stronger version of a similar constraint: for \textit{limited} to get the value \textit{yes}, the central node has to have an attribute \FIN and its value has to be specific (concrete value or a bound variable). In all other cases the feature \textit{limited} gets value the \textit{no}.
 
 We have discussed the crucial fragments of the type hierarchy in Section~\ref{section:types}. Now all those restrictions plus some more constraints that are related to the nominal domain and were left out from the previous discussion, have to be formalized. Figure~\ref{xmg:types} shows a part of type constraints that state that \textit{length} is a type of \textit{scale}, in particular \textit{property-scale}. This type is not compatible with a \textit{cardinality} scale type which is always a \textit{closed-scale}. The rest of the hierarchy is written in a similar way.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 property-scale -> scale,
 length -> property-scale,
 cardinality property-scale -> -,
 closed-scale -> scale
 cardinality -> closed-scale,
-\end{verbatim}
+\end{lstlisting}
 \caption{A fragment of type hierarchy \label{xmg:types}}
 \end{figure}
 
-\section{Lexical anchors}
+\section{Lexical anchors}\largerpage[-1]
 In a proper implementation that would separate the metagrammar level from the syntactic level the following elements would not belong to the metagrammar, but would be used as lexical anchors for the appropriate tree families. The first entry is the noun that will be used to fill the object slot. I have selected the plural form of the noun \textit{rasskaz} `story' that has some length and also cardinality. The constraint on the unicity of the feature \textit{nounacc} that I have shown above is used here to prevent multiple insertions of the accusative noun lexical anchor.
 
-The description of the noun is straightforward: on the syntactic side, it is a daughter of the N category node and on the semantic side it contains relevant attributes. The two nodes (?N and ?Story) are declared in the first two lines of the syntactic domain description and connected via an immediate dominance relation in the third line. Both nodes are characterized with feature \texttt{i=?X0} which connects them to the semantic frame characterized in the frame dimension. The frame description states that the type of the frame ?X0 is \texttt{story} and it has two attributes: The label of the central node of the frame (?X0) as well as the syntactic nodes and relevant dimension-related variables are exported for future use. 
+The description of the noun is straightforward: on the syntactic side, it is a daughter of the N category node and on the semantic side it contains relevant attributes. The two nodes (\texttt{?N} and \texttt{?Story}) are declared in the first two lines of the syntactic domain description and connected via an immediate dominance relation in the third line. Both nodes are characterized with feature \texttt{i=?X0} which connects them to the semantic frame characterized in the frame dimension. The frame description states that the type of the frame \texttt{?X0} is \texttt{story} and it has two attributes: The label of the central node of the frame (\texttt{?X0}) as well as the syntactic nodes and relevant dimension-related variables are exported for future use. 
 
-The code for the class is shown on \figref{xmg:noun}. Note that I do not distinguish between top and bottom feature structures in the provided descriptions, as due to the absence of the adjunction in the implemented fragment the division into top and bottom parts is not relevant. Figure~\ref{story:tree:frame} shows the tree and the frame that are described by the code for the class Story (features of the syntactic dimension are omitted).
+The code for the class is shown on \figref{xmg:noun}. Note that I do not distinguish between top and bottom feature structures in the provided descriptions, as due to the absence of the adjunction in the implemented fragment the division into top and bottom parts is not relevant. Figure~\ref{story:tree:frame} shows the tree and the frame that are described by the code for the class \texttt{Story} (features of the syntactic dimension are omitted).
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class Story
 export ?Length ?Card ?N
 declare ?N ?Story ?X0 ?Length ?Card
@@ -76,7 +76,7 @@ declare ?N ?Story ?X0 ?Length ?Card
     ]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code: noun that is used to fill the accusative NP slot \label{xmg:noun}}
 \end{figure}
 
@@ -101,7 +101,7 @@ declare ?N ?Story ?X0 ?Length ?Card
 Later this noun can enter one of the two dimension constructors: length or cardinality. The cardinality constructor code is shown on \figref{xmg:cardinality}. It should be available for all nouns that have a cardinality attribute with an additional restriction for plural number. The constructor creates a NP node that dominates the N node exported from the description of the noun, and a VP node that linearly precedes the NP node. The output of the class is a discontinuous tree, as shown by the tree on \figref{card:tree:frame}. On the semantic side an \MDIM attribute is created and the event description bounded to the VP node also acquires the type \textit{iteration}. This is, as announced before, doubled via the iteration attribute on the syntactic side. The frame described by the frame part of the code is provided on the right side of \figref{card:tree:frame}.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class NounCardinal
 export ?N ?NP ?VP
 declare ?NCard ?X0 ?Card ?N ?NP ?VP ?Dim ?Theme ?Case ?Num 
@@ -126,7 +126,7 @@ declare ?NCard ?X0 ?Card ?N ?NP ?VP ?Dim ?Theme ?Case ?Num
     ]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code: constructor of the cardinality dimension \label{xmg:cardinality}}
 \end{figure}
 
@@ -154,12 +154,11 @@ declare ?NCard ?X0 ?Card ?N ?NP ?VP ?Dim ?Theme ?Case ?Num
 \caption{Tree and frame representation of the code provided on \figref{xmg:cardinality}\label{card:tree:frame}}
 \end{figure}
 
-Another dimension constructor that I use, implemented in the class NounLength,  is organised in a similar way with a difference that it creates a \NOUNDIM, not an \MDIM attribute of the event, is available for nouns that have a \LENGTH attribute independently of their number, and does not specify the event type. 
+Another dimension constructor that I use, implemented in the class \texttt{NounLength},  is organised in a similar way with a difference that it creates a \NOUNDIM, not an \MDIM attribute of the event, is available for nouns that have a \LENGTH attribute independently of their number, and does not specify the event type.\pagebreak 
 
-The second group of lexical items consists of two verbs: \textit{pisat'} `to write' and \textit{zapisat'} `to write down'. The second verb contains the prefix \textit{za-}, but its semantic contribution is not transparent, so the whole verb must be stored in the dictionary. The class that represents the verb \textit{pisat'} `to write' has a simple syntactic structure of two nodes (see \figref{xmg:pisat}): the node of category V and the node that contains the verb itself, where the V node inherits all syntactic properties of the verb, except for the category. The \textit{aspect} feature, in contrast with the features \textit{limited} and \textit{bounded}, is a syntactic feature and carries information about the syntactic aspect of the verb represented by the respective node. For the frame semantic side, I use a simple representation that serves the purposes of the current analysis. I acknowledge that the fully elaborated representation may be more complex or just differ in details, but this should not influence the results of the current study.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class Pisat
 export ?V
 declare ?V ?Pisat ?X0 ?Actor ?Theme ?Mean
@@ -181,14 +180,17 @@ declare ?V ?Pisat ?X0 ?Actor ?Theme ?Mean
     ]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code for representation of the verb \textit{pisat'} `to write' \label{xmg:pisat}}
 \end{figure}
 
+The second group of lexical items consists of two verbs: \textit{pisat'} `to write' and \textit{zapisat'} `to write down'. The second verb contains the prefix \textit{za-}, but its semantic contribution is not transparent, so the whole verb must be stored in the dictionary. The class that represents the verb \textit{pisat'} `to write' has a simple syntactic structure of two nodes (see \figref{xmg:pisat}): the node of category V and the node that contains the verb itself, where the V node inherits all syntactic properties of the verb, except for the category. The \textit{aspect} feature, in contrast with the features \textit{limited} and \textit{bounded}, is a syntactic feature and carries information about the syntactic aspect of the verb represented by the respective node. For the frame semantic side, I use a simple representation that serves the purposes of the current analysis. I acknowledge that the fully elaborated representation may be more complex or just differ in details, but this should not influence the results of the current study.
+
+
 The syntactic structure of the prefixed verb \textit{zapisat'} `to write down/record' is more complex: the highest node is of category VP and under it a prefix node and another VP node are located. The internal VP node (VPInt in the code) is needed to make the structure of the dictionary-stored prefixed verb similar to the structure of prefixed verbs assembled in the metagrammar. On the semantic side this verb also differs from the verb \textit{pisat'} `to write' a lot: it includes information about the measure dimension as well as about the initial and final stages of the event. The XMG code of the class that represents the verb \textit{zapisat'} `to write down/record' is shown on \figref{xmg:zapisat} and the result of the compilation of the class is provided on \figref{fig:zapisat}.
  
- \begin{figure}\small
-\begin{verbatim}
+ \begin{figure}
+\begin{lstlisting}[style=xmg,basicstyle=\footnotesize\ttfamily]
 class Zapisat
 export ?VP ?VPInt ?VPBase
 declare ?V ?Pisat ?Za ?ZaLex ?X0 ?Actor ?Theme ?ScMin ?ScMax ?AGR ?VP 
@@ -236,13 +238,13 @@ declare ?V ?Pisat ?Za ?ZaLex ?X0 ?Actor ?Theme ?ScMin ?ScMax ?AGR ?VP
   }
 }
 
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code for representation of the verb \textit{zapisat'} `to write down/record' \label{xmg:zapisat}}
 \end{figure}
 
 \begin{sidewaysfigure}
 \includegraphics[width=\textwidth]{Zapisat.pdf}
-\caption{Result of the compilation of the class Zapisat \label{fig:zapisat}}
+\caption{Result of the compilation of the class \texttt{Zapisat}\label{fig:zapisat}}
 \end{sidewaysfigure}
 
 \section{Prefixes}
@@ -251,7 +253,7 @@ As we have already discussed the frames for all individual prefix usages in the 
 Figure \ref{code:po} shows the XMG description of the class for the prefix \textit{po-}. In this code, the syntactic part represents a VP that consists of a prefix head and another (internal) VP that carries information about the derivational base. The agreement information as well as the semantic frame are then passed to the higher VP node. This node is also characterized by having perfective aspect (one may not call this aspect and consider aspect appearing at a later stage, but then this feature stores the value that will appear as soon as the aspect feature is initialized) independently of the value of the aspect feature of the internal VP node. Following the definitions provided above, the feature \textit{limited} is assigned the value \textit{yes} because the semantic frame contains the attribute \FIN, but the feature \textit{bounded} is assigned the value \textit{no}, as the value of the attribute \FIN is a free variable.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class PoVerb
 export ?VP ?VPInt
 declare ?VP ?VPInt ?Po ?PoLex ?AGR ?X0 ?Init ?Fin ?VDim
@@ -278,7 +280,7 @@ declare ?VP ?VPInt ?Po ?PoLex ?AGR ?X0 ?Init ?Fin ?VDim
     ]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code for the class describing the `delimitative' usage of the prefix \textit{po-}\label{code:po}}
 \end{figure}
 
@@ -303,7 +305,7 @@ To make sure that the code not only looks similar to the frame, but also produce
 
 \begin{sidewaysfigure}
 \includegraphics[width=\textwidth]{PoVerb.pdf}
-\caption{Result of the compilation of the class PoVerb \label{fig:poverb}}
+\caption{Result of the compilation of the class \texttt{PoVerb} \label{fig:poverb}}
 \end{sidewaysfigure}
 
 %When one contemplates the frame description of the prefix \textit{po-} it becomes clear that this prefix rarely can be used in combination with other prefixes or before the attachment of the secondary imperfective suffix. If immediately after the attachment of the prefix \textit{po-} another prefix is attached, the first step can be just skipped, as it increases the morphological complexity and does not influence the resulting semantic representation of the verb. Similar considerations apply if the \textit{po-}prefixed verb is to be suffixed with the imperfective suffix: normally, the basic imperfective verbs would denote the same events as the prefixed and suffixed verb. So even for the presence of some semantic difference, the price of adding two morphemes is too high and such verbs (as \textit{popisyvat'} `to write occasionally, non-seriously') would be used in a restricted number of situations when their meaning is pragmatically enriched. 
@@ -312,10 +314,10 @@ To make sure that the code not only looks similar to the frame, but also produce
 %
 %The distributive interpretation of the prefix \textit{po-} is acquired when the measure dimension is the cardinality scale. 
 
-Encoding of other prefix usages proceeds in the similar way: the syntactic part does not vary much from prefix to prefix and semantic descriptions can be directly obtained from the frame descriptions I have proposed in Chapter~\ref{Chapter7}. However, there are a couple of difficulties I want to discuss. First let us consider the prefix \textit{pere-} in the repetitive usage. There are several things that are different compared to the case of the `delimitative' usage of the prefix \textit{po-}. First, the value of the features \textit{aspect} and \textit{bounded} is inherited from the  lower VP and the value of the \textit{limited} feature of the derivational base has to be \textit{yes}. Second, at the moment of prefix attachment the central node of the frame shifts: derived VP (node ?VP on \figref{code:pere}) is related to the frame ?X1 whereas the semantics of the derivational base is represented by the frame ?X0 (subframe of ?X1 on \figref{code:pere}). This realizes the solution proposed in the previous chapter. 
+Encoding of other prefix usages proceeds in the similar way: the syntactic part does not vary much from prefix to prefix and semantic descriptions can be directly obtained from the frame descriptions I have proposed in Chapter~\ref{Chapter7}. However, there are a couple of difficulties I want to discuss. First let us consider the prefix \textit{pere-} in the repetitive usage. There are several things that are different compared to the case of the `delimitative' usage of the prefix \textit{po-}. First, the value of the features \textit{aspect} and \textit{bounded} is inherited from the  lower VP and the value of the \textit{limited} feature of the derivational base has to be \textit{yes}. Second, at the moment of prefix attachment the central node of the frame shifts: derived VP (node \texttt{?VP} on \figref{code:pere}) is related to the frame \texttt{?X1} whereas the semantics of the derivational base is represented by the frame \texttt{?X0} (subframe of \texttt{?X1} on \figref{code:pere}). This realizes the solution proposed in the previous chapter. 
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class PereIterVerb
 export ?VP ?VPInt 
 declare ?VP ?VPInt ?Pere ?PereLex ?AGR ?X0 ?X1 ?Deg1 ?Deg2 ?Scale ?NounDim
@@ -347,14 +349,14 @@ declare ?VP ?VPInt ?Pere ?PereLex ?AGR ?X0 ?X1 ?Deg1 ?Deg2 ?Scale ?NounDim
     ]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code for the class that describes the repetitive usage of the prefix \textit{pere-}\label{code:pere}}
 \end{figure}
 
-In order to perform the coercion that is needed when the prefix \textit{pere-} is attached to a simplex imperfective verb, a separate step is required. It is realised by the class NDimCoercedVerb (see \figref{xmg:coersion}) that transforms a non-bounded event into a bounded event using the nominal scale.
+In order to perform the coercion that is needed when the prefix \textit{pere-} is attached to a simplex imperfective verb, a separate step is required. It is realised by the class \texttt{NDimCoercedVerb} (see \figref{xmg:coersion}) that transforms a non-bounded event into a bounded event using the nominal scale.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class NDimCoercedVerb
 export ?VP ?VPInt
 declare ?VP ?AGR ?X0 ?ScMin ?ScMax ?NounDim ?VPInt
@@ -378,7 +380,7 @@ declare ?VP ?AGR ?X0 ?ScMin ?ScMax ?NounDim ?VPInt
     ]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code for the class that implements coersion of an unbounded event into a bounded event\label{xmg:coersion}}
 \end{figure}
 
@@ -388,7 +390,7 @@ I use two separate classes to produce two interpretations of secondary imperfect
 The habitual interpretation of the imperfective suffix, realised by the code shown on \figref{xmg:habitual}, produces an unlimited event that is a series of limited events. The \NOUNDIM of the new event necessarily is of type \textit{cardinality} and does not need to correspond to the respective attribute of the derivational base. The verbal dimension is copied from the individual event level to the series level. This interpretation of the imperfective suffix is also associated with the introduction of the \textit{iteration} type of the event and the respective syntactic feature. The result of the compilation of this class is shown on \figref{fig:iter}.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class IterVerb
 export ?VP ?VPInt
 declare ?VP ?VPInt ?Suf ?Iva ?AGR ?X0 ?X1 ?VDim
@@ -414,22 +416,22 @@ declare ?VP ?VPInt ?Suf ?Iva ?AGR ?X0 ?X1 ?VDim
      ]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code for the habitual interpretation of the imperfective suffix \label{xmg:habitual}}
 \end{figure}
 
 \begin{sidewaysfigure}
 \includegraphics[width=\textwidth]{IterImp.pdf}
-\caption{Result of the compilation of the class IterVerb \label{fig:iter}}
+\caption{Result of the compilation of the class \texttt{IterVerb}\label{fig:iter}}
 \end{sidewaysfigure}
 
-The second interpretation of the imperfective suffix is progressive: on the semantic side I represent it as a creation of a new event that is a \PARTOF the event denoted by the derivational base. Due to the \PARTOF relation the new event remains limited. On \figref{graph:pf} and \figref{graph:ipf} in Chapter~\ref{Chapter1} I have realised \textit{part of} as a relation, as in this case (in contrast to the prefix \textit{do-}) it is not functional. As relations are currently not implemented in XMG, for the sake of the implementation I use \PARTOF as an attribute when representing the progressive interpretation of the imperfective suffix.
+The second interpretation of the imperfective suffix is progressive: on the semantic side I represent it as a creation of a new event that is a \PARTOF the event denoted by the derivational base. Due to the \PARTOF relation the new event remains limited. On Figures~\ref{graph:pf} and~\ref{graph:ipf} in Chapter~\ref{Chapter1} I have realised \textit{part of} as a relation, as in this case (in contrast to the prefix \textit{do-}) it is not functional. As relations are currently not implemented in XMG, for the sake of the implementation I use \PARTOF as an attribute when representing the progressive interpretation of the imperfective suffix.
 
 \section{Assembling the parts}
-The last part of the code assembles the verbal phrases from the components described above. As the resource has to be finite, recursion is not allowed in the XMG class descriptions.  Due to this restriction, it is not possible to define a single class that would allow an arbitrary number of prefixes to be stacked (by the possibility of attaching a new prefix to the output of the same class). This means that each prefixation level has to be described separately. First three classes do the job of assembling verbs with one prefix: the first class (\textit{OneBasePrefixedVerb}) combines a simplex verb and one of the prefixes; the second class (\textit{OneCoercedPrefixedVerb}) combines a coerced verb with one of the prefixes \textit{pere-} (repetitive interpretation) and \textit{do-}; the last class (\textit{VerbWithOnePrefix}) assembles under one name the results of the first two classes and all prefixed verbs that are stored in the dictionary. 
+The last part of the code assembles the verbal phrases from the components described above. As the resource has to be finite, recursion is not allowed in the XMG class descriptions.  Due to this restriction, it is not possible to define a single class that would allow an arbitrary number of prefixes to be stacked (by the possibility of attaching a new prefix to the output of the same class). This means that each prefixation level has to be described separately. First three classes do the job of assembling verbs with one prefix: the first class (\texttt{OneBasePrefixedVerb}) combines a simplex verb and one of the prefixes; the second class (\texttt{OneCoercedPrefix\-edVerb}) combines a coerced verb with one of the prefixes \textit{pere-} (repetitive interpretation) and \textit{do-}; the last class (\texttt{VerbWithOnePrefix}) assembles under one name the results of the first two classes and all prefixed verbs that are stored in the dictionary. 
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class TwoPrefixedVerb
 export ?VP ?VPInt ?VPBase
 declare ?VP ?VPpref ?V ?VSp ?VPInt ?VP ?VPBase
@@ -442,18 +444,18 @@ declare ?VP ?VPpref ?V ?VSp ?VPInt ?VP ?VPBase
   ?VPInt = ?VPpref.?VPInt;
   ?VPBase = ?VSp.?VPBase
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code for the verbs with two prefixes \label{xmg:2pref}}
 \end{figure}
 
-On the next step (class \textit{TwoPrefixedVerb}, shown on \figref{xmg:2pref}) the resulting models of the first part are combined again with all available prefix descriptions. This piece of code illustrates how class descriptions are reused: the variable ?VPpref gets identified with one of the prefix classes (DoVerb, PereVerb, PereIterVerb, or PoVerb). This is possible only in case all the disjoint classes export the same set of variables. Due to such requirement it is possible to access the exported variables: for example, a ?VP variable gets identified with the ?VP variable of the ?VPpref class (?VPpref.?VP). Similarly the variable ?VSp gets identified with a VerbWithOnePrefix class (which, in turn, contains all possible models of verbs with one prefix) and the ?VPInt variable is then linked to both the ?VPInt node of the ?VPpref class and the ?VP node of the ?VSp class. 
+On the next step (class \texttt{TwoPrefixedVerb}, shown on \figref{xmg:2pref}) the resulting models of the first part are combined again with all available prefix descriptions. This piece of code illustrates how class descriptions are reused: the variable \texttt{?VPpref} gets identified with one of the prefix classes (\texttt{DoVerb}, \texttt{PereVerb}, \texttt{PereIterVerb}, or \texttt{PoVerb}). This is possible only in case all the disjoint classes export the same set of variables. Due to such requirement it is possible to access the exported variables: for example, a \texttt{?VP} variable gets identified with the \texttt{?VP} variable of the \texttt{?VPpref} class (\texttt{?VPpref.?VP}). Similarly the variable \texttt{?VSp} gets identified with a \texttt{VerbWithOnePrefix} class (which, in turn, contains all possible models of verbs with one prefix) and the \texttt{?VPInt} variable is then linked to both the \texttt{?VPInt} node of the \texttt{?VPpref} class and the \texttt{?VP} node of the \texttt{?VSp} class. 
 
-Both types of verbs (with one prefix, VerbWithOnePrefix class, and with two prefixes, TwoPrefixedVerb class) then serve as an input to the class \textit{SuffVerb}. This class uses the results of nominal dimension constructors, as the dimension of the noun can be changed after the attachment of the suffix and it still has to agree with the requirements of the previously attached prefixes. The exported variable VPBase is used to keep track of the attachment point of the semantic representation of the noun. On the syntactic level the noun stays to the right of the verb and will be always attached higher than all the verbal morphemes. 
+Both types of verbs (with one prefix, \texttt{VerbWithOnePrefix} class, and with two prefixes, \texttt{TwoPrefixedVerb} class) then serve as an input to the class \texttt{SuffVerb}. This class uses the results of nominal dimension constructors, as the dimension of the noun can be changed after the attachment of the suffix and it still has to agree with the requirements of the previously attached prefixes. The exported variable \texttt{VPBase} is used to keep track of the attachment point of the semantic representation of the noun. On the syntactic level the noun stays to the right of the verb and will be always attached higher than all the verbal morphemes. 
 
-After the suffixed verbs are assembled, the type matching has to be performed. In the current version of XMG type copying is performed not via creating a connection between two types (as it is done with attributes), but by copying the value that is there at the moment the operation is performed. As the noun is attached later, the type of the scale it is associated with is not passed to the higher level if the central node of the frame shifts. To ensure correct typing, I have introduced a class \textit{TypeMatcher} (code shown on \figref{xmg:typemather}) that identifies all types of the measure dimensions between the higher and the embedded frames (\MDIM, \NOUNDIM, \VERBDIM). The class \textit{SuffTyped} uses the \textit{TypeMatcher} class together with the \textit{SuffVerb} class. In sum, as the VP that contains the scalar interpretation of the noun is identified with the lowest VP available, the type matching mechanism allows to pass the types to a higher level. If the central node of the frame was not changed in the course of prefix attachments, variables ?X1 and ?X0 refer to the same frame node.
+After the suffixed verbs are assembled, the type matching has to be performed. In the current version of XMG type copying is performed not via creating a connection between two types (as it is done with attributes), but by copying the value that is there at the moment the operation is performed. As the noun is attached later, the type of the scale it is associated with is not passed to the higher level if the central node of the frame shifts. To ensure correct typing, I have introduced a class \texttt{TypeMatcher} (code shown on \figref{xmg:typemather}) that identifies all types of the measure dimensions between the higher and the embedded frames (\MDIM, \NOUNDIM, \VERBDIM). The class \texttt{SuffTyped} uses the \texttt{TypeMatcher} class together with the \texttt{SuffVerb} class. In sum, as the VP that contains the scalar interpretation of the noun is identified with the lowest VP available, the type matching mechanism allows to pass the types to a higher level. If the central node of the frame was not changed in the course of prefix attachments, variables \texttt{?X1} and \texttt{?X0} refer to the same frame node.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class TypeMatcher
 export ?VPOut ?VPInt
 declare ?VPInt ?X0 ?X1 ?NDimType ?VDimType ?MDim ?VPOut
@@ -475,13 +477,13 @@ declare ?VPInt ?X0 ?X1 ?NDimType ?VDimType ?MDim ?VPOut
      ]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code for the operation of type matching \label{xmg:typemather}}
 \end{figure}
 
-I allow for one more derivational step in the described fragment: attachment of a prefix after suffixation. This is performed by the class \textit{TwoPrefixedSuffixedVerb} that uses the result of the compilation of the \textit{SuffTyped} class and all available prefix classes. At this moment all possible verbal models are created. Then the next step of combining those models with various interpretations of the direct object is performed.
+I allow for one more derivational step in the described fragment: attachment of a prefix after suffixation. This is performed by the class \texttt{TwoPrefixedSuffixedVerb} that uses the result of the compilation of the \texttt{SuffTyped} class and all available prefix classes. At this moment all possible verbal models are created. Then the next step of combining those models with various interpretations of the direct object is performed.
 
-This step is done by two classes: \textit{PrefixedVerbDirObj} and \textit{PrefixedSuffixedVerbDirObj} that take, respectively, prefixed and prefixed-suffixed verbs, and all available dimension constructors. An output of those classes are models of all possible VPs that use all the available scalar interpretations of the direct objects. This output is again combine with the \textit{TypeMatcher} class to ensure proper type inheritance.
+This step is done by two classes: \texttt{PrefixedVerbDirObj} and \texttt{PrefixedSuffixedVerbDirObj} that take, respectively, prefixed and prefixed-suffixed verbs, and all available dimension constructors. An output of those classes are models of all possible VPs that use all the available scalar interpretations of the direct objects. This output is again combine with the \texttt{TypeMatcher} class to ensure proper type inheritance.
 
 Before discussing the produced output I would like to note that the architecture of the program is such that as soon as there is a TAG parser that is compatible with frame semantic representation, lexical anchors can be removed and the rest of the code would produce unanchored trees with prefixed verbs and appropriate dimension constraints on the argument slot.
 
@@ -489,7 +491,7 @@ Before discussing the produced output I would like to note that the architecture
 %For the piece I present I need two dimension constructors: one referring to the length of the story and another to the cardinality of the set of stories. Both constructors are based on the attributes that are present in the object description: e.g., if there is no \textit{length} attribute in the object frame, the maximum value of the measure dimension will be undefined. This is controlled by selecting only appropriate nouns (with a relevant attribute) as those that can undergo the enrichment procedure. Again, as I have to delegate all work to the metagrammar compiler, I have to describe such restrictions in the metagrammar (see the first line in the class specification), but normally they would be realised as separate metagrammar classes and elementary trees for nouns would be accompanied with the information about the possibility of being inserted as lexical anchors in such classes.
 %
 %\begin{figure}
-%\begin{verbatim}
+%\begin{lstlisting}[style=xmg]
 %%%Creating appropriate dimensions for objects
 %
 %class NounLength
@@ -532,14 +534,14 @@ Before discussing the produced output I would like to note that the architecture
 %      ]
 %  }
 %}
-%\end{verbatim}
+%\end{lstlisting}
 %\caption{Nominal dimension constructors: length and cardinality}
 %\end{figure}
 %
 %After all the constructors are applied, in my implementation they are assembled in one class called \texttt{NDim}. This class creates a VP head and information about \THEME gets included into the newly created event frame. Information about the dimension of the noun is copied to the \NOUNDIM attribute of the event. Note that the case is not specified: this is done in order to account for the possibility of genitive objects and expresses the idea that it is the verb that governs the case assignment and the semantic operation of dimension construction is related but not always governed by the morphological form of the noun. 
 %
 %\begin{figure}
-%\begin{verbatim}
+%\begin{lstlisting}[style=xmg]
 %class NDim
 %export ?NP ?N ?VP
 %declare ?VP ?NP ?X0 ?Theme ?Dim ?Case ?N ?Noun ?Num
@@ -563,13 +565,13 @@ Before discussing the produced output I would like to note that the architecture
 %    ]
 %  }
 %}
-%\end{verbatim}
+%\end{lstlisting}
 %\end{figure}
 
-\section{Output}
+\section{Output}\largerpage
 The compilation of the code produces 88 verbal phrases. The full xml of the output is provided in Section~\ref{B:Tat} of Appendix~\ref{AppendixB}. Here I will show and provide a brief analysis of all the obtained models.
 
-The first group of models consists of verbs with one or two prefixes. A total of 16 models is produced (see Table~\ref{table:prefverbs}). Six of these models are models of verbs with one prefix. They all exist, but this is partially due to the selection of the prefixes and the base verb. The upper part of Table~\ref{table:prefverbs} shows these verbs with their English translations and the dimension interpretation of the argument. The last two columns indicate whether the verb exists and if not, whether it will be filtered out by pragmatic module as described in Chapter~\ref{Chapter6}.
+The first group of models consists of verbs with one or two prefixes. A total of 16 models is produced (see Table~\ref{table:prefverbs}). Six of these models are models of verbs with one prefix. They all exist, but this is partially due to the selection of the prefixes and the base verb. The upper part of Table~\ref{table:prefverbs} shows these verbs with their English translations and the dimension interpretation of the argument. The last two columns indicate whether the verb exists and if not, whether it will be filtered out by pragmatic module as described in Chapter~\ref{Chapter6}.\largerpage
 
 \begin{table}
 \caption{Output of the XMG processing for the class of one- or two-prefixed verbs\label{table:prefverbs}}
@@ -597,11 +599,11 @@ doperepisat' & to finish writing all of & cardinal & yes & -- \\
 \end{tabular}}
 \end{table}
 
-In the second part of the table 10 verbs that contain two prefixes are present. Out of those verbs three must be filtered out for pragmatic reasons since their semantics is equivalent to the semantics of simpler verbs: two variant of the verb \textit{popopisat'} are associated with exactly the same frames as two variants of the verb \textit{popisat'} `to write for some time/to write all of' that can be found in the upper part of the Table~\ref{table:prefverbs}. The third verb that also needs to be discarded is the verb \textit{perepopisat'} that has exactly the same representation as the verb \textit{perepisat'}`to write all of'. 
+In the second part of \tabref{table:prefverbs} verbs that contain two prefixes are present. Out of those verbs three must be filtered out for pragmatic reasons since their semantics is equivalent to the semantics of simpler verbs: two variant of the verb \textit{popopisat'} are associated with exactly the same frames as two variants of the verb \textit{popisat'} `to write for some time/to write all of' that can be found in the upper part of the Table~\ref{table:prefverbs}. The third verb that also needs to be discarded is the verb \textit{perepopisat'} that has exactly the same representation as the verb \textit{perepisat'}`to write all of'. 
 
 Note that already at this stage XMG reduces 40 possible models (five variants of the first prefix, four variants of the second prefix, and two interpretations of the noun) to only 10 (seven correct and three non-existent) by an appropriate combination of constraints. 
 
-Now let us have a look at the next step: when the verbs from the list above get suffixed with the imperfective suffix (in one of two interpretations). The output of this part consists of 23 verbs out of which only two must be filtered out as they are produced on the basis of the verbs that, as we have discussed above, do not exist: \textit{perepopisat'} `to write all of' and \textit{popopisat'} `to write for some time'. It is interesting to note that the second interpretation of the last verb does not get suffixed, so the number of wrong models on the new level does not get multiplied (by the two possible interpretations of the suffix). Instead of the six potential incorrect models just on the basis of the wrong predictions of the previous level we obtain only two. All the verbs produced by this part of the implementation are shown in Table~\ref{table:suffverbs} together with their English translations, interpretation of the imperfective suffix, and information about existence.
+Now let us have a look at the next step: when the verbs from the list above get suffixed with the imperfective suffix (in one of two interpretations). The output of this part consists of 23 verbs out of which only two must be filtered out as they are produced on the basis of the verbs that, as we have discussed above, do not exist: \textit{perepopisat'} `to write all of' and \textit{popopisat'} `to write for some time'. It is interesting to note that the second interpretation of the last verb does not get suffixed, so the number of wrong models on the new level does not get multiplied (by the two possible interpretations of the suffix). Instead of the six potential incorrect models just on the basis of the wrong predictions of the previous level we obtain only two. All the verbs produced by this part of the implementation are shown in Table~\ref{table:suffverbs} together with their English translations, interpretation of the imperfective suffix, and information about existence.\largerpage
 
 \begin{table}
  \caption{Output of the XMG processing for the class of prefixed and then suffixed verbs\label{table:suffverbs}}
@@ -709,7 +711,7 @@ By now we have seen all the models that my implementation produces. Out of 88 mo
 In order to compare the predictions of my model to that of earlier theories, I have implemented the system proposed in \citet{Tatevosov:09} for exactly the same fragment (one verbal stem, one `lexical' prefix, five prefix-interpretation pairs, the imperfective suffix). For this part I have omitted the lexical entries for direct objects as they do not influence the interpretation of the prefixed verbs. As the approach is syntactic, all restrictions are formulated in syntactic terms and the frame dimension is used to represent the order of attachment of affixes with different semantics. In this implementation, for example, the class for the distributive interpretation of the prefix \textit{pere-} looks as shown on \figref{xmg:Tat:pere}. The restriction on this prefix attachment is the imperfective aspect of the base verb, which is reflected via a syntactic constraint on the feature \textit{aspect} here.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg]
 class PereVerb
 export ?VP ?VPInt 
 declare ?VP ?VPInt ?Pere ?PereLex ?AGR ?X0 ?X1 
@@ -729,7 +731,7 @@ declare ?VP ?VPInt ?Pere ?PereLex ?AGR ?X0 ?X1
        of: ?X0]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG implementation for the distributive interpretation of the prefix \textit{pere-} according to the theory of \citet{Tatevosov:09}\label{xmg:Tat:pere}}
 \end{figure}
 
@@ -769,7 +771,7 @@ Table~\ref{table:twopref} shows the full list of verbs produced by two implement
 
 \begin{table}
 \caption{Verbs with two prefixes produced by two implementations \label{table:twopref}}
-\resizebox{\textwidth}{!}{\begin{tabular}{ll c c c}
+\begin{tabular}{ll c c c}
 \lsptoprule
 verb  & semantics & exists & this   & \citeauthor{Tatevosov:09}\\
       &           &        &     account           &  (\citeyear{Tatevosov:09})\\\midrule
@@ -792,16 +794,16 @@ popopisat' & to write for some time & no & + & \textminus \\
 perepopisat' & to write all of & no & + & \textminus \\  
 popopisat' & to write all of & no & + & \textminus \\ 
 \lspbottomrule 
-\end{tabular}}
+\end{tabular}
 \end{table}
 %7 exist, predicted by both accounts
 %5 false + 3 questionable predicted by Tatevosov 
 %3 false predicted by the current approach (to be discarded by the pragmatics module)
 
-These three verbs are verbs that contain the distributive prefix \textit{po-} stacked over some other prefix (with non-distributive interpretation): \textit{podopisat'} `to finish writing all of', \textit{poperepisat'} `to rewrite all of', and  \textit{pozapisat'} `to rewrite all of'. They are, according to the theory proposed in \citet{Tatevosov:09}, possible, but not extensively discussed in the paper (a manuscript by the same author, dedicated to this usage of the prefix and cited among the references, never appeared). I personally do not find them acceptable and \citet[143]{Tatevosov:09} himself marks such verbs as `interpretable with difficulty'. They could be accommodated in my account if the distributive interpretation of the prefix \textit{po-} is represented separately and is two-layered, effectively combining in itself the semantics of the imperfective suffix (iterative/habitual interpretation) and the current representation of the prefix \textit{po-}. The piece of code shown on \figref{xmg:podistr} implements this solution and allows to produce exactly those three verbs (if the class is combined with verbs that are already prefixed once). One would probably want to associate this representation with a higher cost in comparison with the initial representation I offer if a subsequent pragmatic module is used.
+These three verbs are verbs that contain the distributive prefix \textit{po-} stacked over some other prefix (with non-distributive interpretation): \textit{podopisat'} `to finish writing all of', \textit{poperepisat'} `to rewrite all of', and  \textit{pozapisat'} `to rewrite all of'. They are, according to the theory proposed in \citet{Tatevosov:09}, possible, but not extensively discussed in the paper (a manuscript by the same author, dedicated to this usage of the prefix and cited among the references, never appeared). I personally do not find them acceptable and \citet[143]{Tatevosov:09} himself marks such verbs as ``interpretable with difficulty''. They could be accommodated in my account if the distributive interpretation of the prefix \textit{po-} is represented separately and is two-layered, effectively combining in itself the semantics of the imperfective suffix (iterative/habitual interpretation) and the current representation of the prefix \textit{po-}. The piece of code shown on \figref{xmg:podistr} implements this solution and allows to produce exactly those three verbs (if the class is combined with verbs that are already prefixed once). One would probably want to associate this representation with a higher cost in comparison with the initial representation I offer if a subsequent pragmatic module is used.
 
 \begin{figure}
-\begin{verbatim}
+\begin{lstlisting}[style=xmg,basicstyle=\ttfamily\small]
 class PoDistrVerb
 export ?VP ?VPInt
 declare ?VP ?VPInt ?Po ?PoLex ?AGR ?X0 ?X1 ?Init ?Fin ?VDim
@@ -827,7 +829,7 @@ declare ?VP ?VPInt ?Po ?PoLex ?AGR ?X0 ?X1 ?Init ?Fin ?VDim
     ]
   }
 }
-\end{verbatim}
+\end{lstlisting}
 \caption{XMG code for implementing the `coerced' distributive interpretation of the prefix \textit{po-}\label{xmg:podistr}}
 \end{figure}
 
@@ -839,7 +841,7 @@ The comparison becomes more interesting when  we consider the most complex verbs
 
 The second group of complex verbs that is not produced by the implementation of the analysis offered in \citealt{Tatevosov:09} is formed by the verbs with the outermost prefix \textit{do-}. They follow the pattern we have extensively discussed in Chapter~\ref{Chapter2}.
 
-Among the rest of the models produced by the second implementation are such verbs as \textit{pereperepopisyvat'} with a semantic structure of a distributive interpretation over imperfective of the repetition of a delimited event. Such semantic structures are hardly conceivable and the corresponding verbs do not exist\footnote{This judgement is mostly based on introspection and personal communication with other native speakers, as any such verb would be rare and the absence of data in the Internet is not a reliable indicator of the non-existence. I plan to conduct additional experiments in future to get statistically reliable evidence about the existence of such complex verbs.}.
+Among the rest of the models produced by the second implementation are such verbs as \textit{pereperepopisyvat'} with a semantic structure of a distributive interpretation over imperfective of the repetition of a delimited event. Such semantic structures are hardly conceivable and the corresponding verbs do not exist.\footnote{This judgement is mostly based on introspection and personal communication with other native speakers, as any such verb would be rare and the absence of data in the Internet is not a reliable indicator of the non-existence. I plan to conduct additional experiments in future to get statistically reliable evidence about the existence of such complex verbs.}
 
 %\begin{tabular}{p{3cm} | p{6cm} | p{2cm}} 
 %verb  & semantics & aspect\\ \hline

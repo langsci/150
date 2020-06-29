@@ -28,6 +28,10 @@
 \renewbibmacro*{index:name}[5]{%
   \usebibmacro{index:entry}{#1}
     {\iffieldundef{usera}{}{\thefield{usera}\actualoperator}\mkbibindexname{#2}{#3}{#4}{#5}}}
+    
+\makeatletter % Spacing in verbatim env, following https://tex.stackexchange.com/a/43336
+\preto{\@verbatim}{\topsep=0pt }
+\makeatother
 
 % \newcommand{\noop}[1]{}
 

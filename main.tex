@@ -9,9 +9,9 @@
 % Some lines start with %. Remove the % to include them
 
 \documentclass[output=book,
-	draftmode,
+% 	draftmode,
 	arseneau,
-	colorlinks,
+% 	colorlinks,
 %    showindex
 		  ]{./langscibook/langscibook}    
  
@@ -30,7 +30,9 @@
 \input{localhyphenation.tex}
 \addbibresource{localbibliography.bib} 
 \graphicspath{{figures/}}
-\input{localcommands.tex} 
+\input{localcommands.tex}
+
+% % \includeonly{}
 
 \begin{document}
 
@@ -57,7 +59,7 @@
 %%%                                              %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\nocite{*}
+% \nocite{*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                                              %%%
@@ -65,18 +67,18 @@
 %%%                                              %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
-%\include{chapters/Chapter1} % Introduction
-%\include{chapters/Chapter2} % Getting data right || A novel approach to the analysis of Russian complex verbs
-%\include{chapters/Chapter4} % Limitations of existing approaches
-%\include{chapters/Chapter5} %Semantics of individual prefixes  %% label: section:semantics
-%\include{chapters/Chapter6} % Pragmatics
-%\include{chapters/Chapter7} % Formal analysis 
-%\include{chapters/Chapter8} % XMG
-%\include{chapters/Chapter9} % Conclusion
+\include{chapters/chapter1} % introduction
+\include{chapters/chapter2} % getting data right || a novel approach to the analysis of russian complex verbs
+\include{chapters/chapter4} % limitations of existing approaches
+\include{chapters/chapter5} %semantics of individual prefixes  %% label: section:semantics
+\include{chapters/chapter6} % pragmatics
+\include{chapters/chapter7} % formal analysis 
+\include{chapters/chapter8} % xmg
+\include{chapters/chapter9} % conclusion
 
 \appendix
-%\input{chapters/AppendixA}	% Appendix Title
-%\input{chapters/AppendixB} % Appendix Title
+\include{chapters/appendixa}	% appendix title
+\include{chapters/appendixb} % appendix title
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                                              %%%
