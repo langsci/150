@@ -6,13 +6,13 @@
 
 As I have shown in the previous chapters, Russian verbal prefixation is a complex system that cannot be successfully modelled by means of one linguistic layer. In order to simplify individual components of the system and allow for the observed flexibility without massive overgeneration, one needs to coordinate the work of the morphological, syntactic, semantic, and pragmatic representations, as well as describe the interfaces between them. In the fragment I describe here I limit myself to the first three systems, leaving pragmatic strengthening at the level of a tentative proposal provided in Chapter~\ref{Chapter6}. Even with this limitation there are not a lot of formalisms that would be suitable for such a representation.
 
-Following \citet{KallmeyerOsswald:12, KallmeyerOsswald:13}, I will adopt a combination of frame semantics \citep{Fillmore:82} and Lexicalized Tree Adjoining Grammars\linebreak (LTAG, \citealt{JoshiSchabes:97}, \citealt{Frank:92}, \citealt{AbeilleRambow:00}, \citealt{Abeille:02}, \citealt{Frank:02}). This framework has various benefits, such as a transparent syntax-se\-man\-tics interface, numerous factorisation possibilities within the lexicon (especially important for modelling of the derivational morphology), and cognitive plausibility. More information about the advantages of frame-based LTAG semantics can be found in \citet{KallmeyerOsswald:13}. 
+Following \citet{KallmeyerOsswald:12, KallmeyerOsswald:13}, I will adopt a combination of frame semantics \citep{Fillmore:82} and Lexicalized Tree Adjoining Grammars\linebreak (LTAG, \citealt{JoshiSchabes:97}; \citealt{Frank:92}; \citealt{AbeilleRambow:00}; \citealt{Abeille:02}; \citealt{Frank:02}). This framework has various benefits, such as a transparent syntax-se\-man\-tics interface, numerous factorisation possibilities within the lexicon (especially important for modelling of the derivational morphology), and cognitive plausibility. More information about the advantages of frame-based LTAG semantics can be found in \citet{KallmeyerOsswald:13}. 
 
 In this chapter, I concentrate on the semantic side of the analysis and show semantic composition that is triggered by operations at the morphological and syntactic levels. I also provide trees and tree fragments that are associated with the proposed semantic frames, but the presentation is kept on a level suitable also for those readers that are not familiar with LTAG and XMG 2 \citep{Petitjean:16}. In Chapter~\ref{Chapter8} I will provide more technical details about the syntactic part of the analysis, metagrammar decomposition, and specific implementation problems. As for the material that I present in this chapter, the number of decisions motivated by the framework restrictions is small and I discuss all of them. Thus, the proposed frames can be easily adapted to be used within some other framework or even translated into another language of semantic description, e.g. Neo-Davidsonian event representation.
 
 \section{LTAG and frame semantics}
 \subsection{TAG}\label{section:tag}
-Tree Adjoining Grammar (TAG, \citealt{JoshiSchabes:97}, \citealt{AbeilleRambow:00}) is a tree-rewriting grammar formalism. A TAG consists of a finite set of \textit{elementary trees} with labelled nodes with two operations on them: \textit{substitution} and \textit{adjunction}. 
+Tree Adjoining Grammar (TAG, \citealt{JoshiSchabes:97}; \citealt{AbeilleRambow:00}) is a tree-rewriting grammar formalism. A TAG consists of a finite set of \textit{elementary trees} with labelled nodes with two operations on them: \textit{substitution} and \textit{adjunction}. 
 
 All elementary trees are either \textit{auxiliary trees} or \textit{initial trees}. An \textit{auxiliary tree} is a tree which has exactly one \textit{foot node} -- a leaf that is marked with an asterisk. Leaf nodes can be labelled with terminals and other nodes are labelled only with non-terminals. The derivation process starts from an initial tree and in the final \textit{derived tree} all the leaves must be labelled by terminals.
 
@@ -349,7 +349,7 @@ as a \emph{model} of the formula shown on the upper left of \figref{fig-frame-ex
 
 For the purposes of a metagrammar specification we need another way of description of frames: attribute-value logic that is defined in \citealt[Section~3.3.2]{KallmeyerOsswald:13}. It is constructed as a language of general attribute-value descriptions and then complemented by base labels.\pagebreak
 
-The primitive general attribute-value descriptions over a signature $\langle A, T, R \rangle$ are expressions of the form: \[t, r, p : t, p \doteq q, p \triangleq q, (p_1, \ldots , p_n) : r\] and \[\langle p_1, \ldots , p_n \rangle : r \text{, with } p, p_i, q \in A^*, t \in T \text{, and }r \in R\text{.}\] For a feature structure $F = \langle V, \delta, \tau, \pi \rangle$ over a signature $\langle A, T, R \rangle$ with $v,w, v_i \in V$ the satisfaction relation $\models$ between attribute-value descriptions and nodes/node tuples of $F$ is defined as shown in \ref{def:satisfaction} (Def.~(3) in \citealt{KallmeyerOsswald:13}).
+The primitive general attribute-value descriptions over a signature $\langle A, T, R \rangle$ are expressions of the form: \[t, r, p : t, p \doteq q, p \triangleq q, (p_1, \ldots , p_n) : r\] and \[\langle p_1, \ldots , p_n \rangle : r \text{, with } p, p_i, q \in A^*, t \in T \text{, and }r \in R\text{.}\] For a feature structure $F = \langle V, \delta, \tau, \pi \rangle$ over a signature $\langle A, T, R \rangle$ with $v,w, v_i \in V$ the satisfaction relation $\models$ between attribute-value descriptions and nodes/node tuples of $F$ is defined as shown in \ref{def:satisfaction} (Def.~3 in \citealt{KallmeyerOsswald:13}).
 
 \ex.\label{def:satisfaction}
 \begin{tabular}[t]{@{}llll@{}}
@@ -362,7 +362,7 @@ f. & $v \models (p_1, \ldots , p_n ) : r$   & iff &  $\langle \delta (v, p_1), \
 g. & $\langle v_1, \ldots , v_n \rangle \models \langle p_1, \ldots , p_n \rangle : r$   & iff &  $\langle \delta (v, p_1), \ldots , \delta (v, p_n) \rangle \models r$
 \end{tabular}
 
-Labelled attribute-value descriptions are of the form $l \cdot \phi, l \cdot p \triangleq k \cdot q$, and $\langle l_1 \cdot p_1, \ldots , l_n \cdot p_n \rangle : r$, with $k, l, l_i \in B$. The satisfaction conditions are listed in \ref{def:labelled} (Def.~(4) in \citealt{KallmeyerOsswald:13}).
+Labelled attribute-value descriptions are of the form $l \cdot \phi, l \cdot p \triangleq k \cdot q$, and $\langle l_1 \cdot p_1, \ldots , l_n \cdot p_n \rangle : r$, with $k, l, l_i \in B$. The satisfaction conditions are listed in \ref{def:labelled} (Def.~4 in \citealt{KallmeyerOsswald:13}).
 
 \ex.\label{def:labelled}
 \begin{tabular}[t]{@{}llll@{}}
@@ -587,7 +587,7 @@ The frame on \figref{frame:zabegat} can be read as follows: the verb \textit{zab
 
 Now I would like to spell out two processes: the process of selection of a subpart of the scale that is used as a measure dimension of the new event and the process of obtaining the minimum degree on this scale. The first step is to recall that self-scaling means to consider the event as being itself a scale. From this we can derive a general rule that the minimum of the event scale is always the start of the event and the maximum of the event scale is always the end of the event, so those attribute-value pairs get equated. As a consequence, for this type of the scale the interpretation of the \textit{za-}prefixed verb is inchoative, as the posterior state is associated with the initial portion of the event.
 
-I would like to pay attention to one more detail of the analysis: the type of the scale that is used as a measure dimension. As defined by the prefix frame, this scale has to be a \textit{proper} scale. As I have proposed in Chapter~\ref{Chapter5}, proper scales carry more information than measure of change scales and those two types are incompatible (as stated in the type hierarchy and repeated as a constrain in \ref{const:proper}). With this assumption we can show why sentences as \ref{ex:zabegat:time} are not acceptable, but first we need to construct the frame for the time measure expression \textit{2 \v{c}asa} `for two hours'. 
+I would like to pay attention to one more detail of the analysis: the type of the scale that is used as a measure dimension. As defined by the prefix frame, this scale has to be a \textit{proper} scale. As I have proposed in Chapter~\ref{Chapter5}, proper scales carry more information than measure of change scales and those two types are incompatible (as stated in the type hierarchy and repeated as a constraint in \ref{const:proper}). With this assumption we can show why sentences as \ref{ex:zabegat:time} are not acceptable, but first we need to construct the frame for the time measure expression \textit{2 \v{c}asa} `for two hours'. 
 
 \ex.\label{const:proper}\textit{proper-scale} $\und$ \textit{measure-of-change} $\rightarrow \bot$
 
@@ -752,7 +752,7 @@ Let us unify the frame for the prefix \textit{za-} with the frame representation
 
 \begin{figure}
 \begin{minipage}[b]{.5\textwidth}\centering
-\textit{za(to be yellow and be seen)}\\
+\textit{za- (to be yellow and be seen)}\\
 \avm{
 \btag{f} [\type*{transition}
       \POST & [\type*{event}
@@ -1218,7 +1218,7 @@ Now the verb has a {\scshape\VERBDIM} argument and can be combined with the pref
 \caption{Frame representation of the verb \textit{navarit'} `to cook a lot of' \label{frame:navarit}}
 \end{figure}
 
-As a next step, we try to combine the representation of the verb \textit{navarit'} `to cook a lot of' with two possible interpretations of the noun \textit{sup} `soup' that we have discussed above (see \figref{frame:soup:temp} and \figref{frame:soup:amount}). Here the result is opposite to that with the verb \textit{nagret'} `to warm up': the temperature-related interpretation of the noun fails to serve as the theme of the event, while the amount interpretation can be successfully used. The unification failure in the first case is due to the type conflict that is marked on \figref{frame:navarit:soup:temp}. The type compatibility constraints are violated two times: \textit{amount} conflicts with \textit{temperature} (see \ref{const:temp:amount}) and \textit{proper-scale} conflicts with \textit{measure-of-change} (see \ref{const:proper}).
+As a next step, we try to combine the representation of the verb \textit{navarit'} `to cook a lot of' with two possible interpretations of the noun \textit{sup} `soup' that we have discussed above (see \figref{frame:soup:temp} and \figref{frame:soup:amount}). Here the result is opposite to that with the verb \textit{nagret'} `to warm up': the temperature-related interpretation of the noun fails to serve as the theme of the event, while the amount interpretation can be successfully used. The unification failure in the first case is due to the type conflict that is marked on \figref{frame:navarit:soup:temp}. The type compatibility constraints are violated two times: \textit{amount} conflicts with \textit{temperature} \ref{const:temp:amount} and \textit{proper-scale} conflicts with \textit{measure-of-change} \ref{const:proper}.
 
 \begin{figure}
 \begin{tabular}{c}
