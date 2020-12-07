@@ -16,7 +16,7 @@
 %%% The Current Maintainer of this work is Sebastian Nordhoff.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\ProvidesFile{sp-authoryear-comp.cbx}
+\ProvidesFile{langsci-unified.cbx}
 
 % For backward compatibility: choose labeldate or labeldateparts depending on the biblatex version
 \@ifpackagelater{biblatex}{2016/09/09}
@@ -321,6 +321,18 @@
    \printtext[bibhyperref]{\bibopenparen\printnames{labelname}\addspace\printfield{year}}}
   {\multicitedelim}
   {\printtext[bibhyperref]{\usebibmacro{postnote}\addspace[this volume]\bibcloseparen}}
+  
+% A cite command to produce the full reference in the footer of the landing page of 
+% a paper in an edited volume
+
+\DeclareCiteCommand{\fullciteFooter}
+  {\defcounter{maxnames}{\blx@maxbibnames}%
+    \usebibmacro{prenote}}
+  {\usedriver
+     {\DeclareNameAlias{sortname}{default}}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
 
 \DeclareMultiCiteCommand{\cites}{\cite}{\setunit{\multicitedelim}}
 \DeclareMultiCiteCommand{\parencites}[\mkbibparens]{\parencite}{\setunit{\multicitedelim}}
@@ -329,26 +341,6 @@
 \DeclareMultiCiteCommand{\smartcites}[\iffootnote\mkbibparens\mkbibfootnote]{\smartcite}
                                      {\setunit{\multicitedelim}}
 \DeclareMultiCiteCommand{\textcites}{\textcite}{}
-
-\renewcommand*{\nameyeardelim}{\addspace}
-
-\let\citealt\cite
-\let\citet\textcite
-\let\citep\parencite
-\let\citepv\parencitetv
-\let\Citet\Textcite
-\newcommand{\pgcitep}[2]{(\cite{#1}:~#2)}
-\newcommand{\pgcitealt}[2]{\cite{#1}:~#2}
-\newcommand{\pgcitet}[2]{\citeauthor{#1} (\citeyear{#1}:~#2)}
-\newcommand{\pgposscitet}[2]{\citeauthor{#1}'s (\citeyear{#1}:~#2)}
-\newcommand{\seccitealt}[2]{\cite{#1}:~$\S$#2}
-\newcommand{\seccitep}[2]{(\cite{#1}:~$\S$#2)}
-\newcommand{\seccitet}[2]{\citeauthor{#1} (\citeyear{#1}:~$\S$#2)}
-\newcommand{\secposscitet}[2]{\citeauthor{#1}'s (\citeyear{#1}:~$\S$#2)}
-
-\renewcommand*{\postnotedelim}{\addcolon\space}
-\DeclareFieldFormat{postnote}{#1}
-\DeclareFieldFormat{multipostnote}{#1}
 
 \DeclareCiteCommand{\citeauthor}
   {\boolfalse{citetracker}%
@@ -398,12 +390,12 @@
   {}
   {}
 
-\renewcommand*{\multicitedelim}{\addcomma\space}
-
 %% changes of citestyle (cbx) (FIXME: documentation missing)
-\renewcommand{\postnotedelim}{: }%
+\renewcommand*{\nameyeardelim}{\addspace}
+\renewcommand*{\postnotedelim}{\addcolon\space}
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
 \renewcommand{\multicitedelim}{\addsemicolon\space}%
 \renewcommand{\compcitedelim}{\multicitedelim}
-% \renewcommand{\nameyeardelim}{ }%
 
 \endinput
