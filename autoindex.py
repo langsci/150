@@ -5,6 +5,7 @@ Find occurrences of terms listed in *txt files and add indexing markup in corres
 import glob
 import re
 import os
+import sre_constants
 
 if __name__  ==  "__main__":
     #no indexing will take place in lines with the following keywords and {. section also matches subsection.
@@ -16,7 +17,8 @@ if __name__  ==  "__main__":
     print("found %i subject terms for autoindexing" % len(terms))
 
     files  =  glob.glob('chapters/*tex')
- 
+
+    problematic_terms_dic = {}
     for f in files:
         print("indexing %s" % f)
         #strip preamble of edited volume chapters to avoid indexing there
@@ -48,7 +50,14 @@ if __name__  ==  "__main__":
                     if term  ==  '':
                         continue
                     #substitute "term" with "\isi{term}"
-                    line  =  re.sub('(?<!isi{|...[A-Za-z])%s(?![-_\w}])'%term, '\isi{%s}'%term, line) 
+                    try:
+                        line  =  re.sub('(?<!isi{|...[A-Za-z])%s(?![-_\w}])'%term, '\isi{%s}'%term, line)
+                    except sre_constants.error:
+                        if term in problematic_terms_dic:
+                            continue
+                        else:
+                            print("***ERROR*** %s cannot be indexed" %term)
+                            problematic_terms_dic[term] = True
             newlines.append(line)
         #reassemble body
         content  =  "\n".join(newlines)  
