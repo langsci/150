@@ -1,0 +1,362 @@
+absence of the perfectivization
+accomplishment
+accusative noun phrase
+accusative noun phrases
+accusative temporal adverbials
+accusative time measure phrase
+activity verb
+activity verbs
+adjunction
+affirmative declarative sentence
+affirmative sentence
+alternation of the thematic vowel
+alternatives
+ambiguous with respect to grammatical aspect
+amount dimension
+amount scale
+argument structure
+aspect change
+aspect-high theory
+aspectless verbal
+aspect-low theory
+aspectual change
+aspectually paired verbs
+aspectual pair
+aspectual pairs
+aspectual restriction
+aspectual restrictions
+atemporal
+atemporality
+attenuative
+attribute-value description
+auxiliary tree
+Background
+backgrounded information
+Background relation
+base labels
+biaspectual affixed verbs
+biaspectual nature
+biaspectual verbs
+borrowed biaspectual verbs
+bounded-event
+bounded events
+bounded reading events
+cardinality constructor
+cardinality scale
+Cause
+closed-scale
+cluster model
+coerced into 
+colour intensity
+common ground
+common tests that delimit imperfective
+communicative status
+comparison
+comparison class
+complete situation
+completive
+complex type
+complex verbs
+compositionality
+compositionally
+compositional semantic
+compositional semantics
+conditional
+conjunction
+context
+contextually provided
+Continuation relation
+Contrast relation
+coordinating relation
+cumulative
+de-
+degree achievement
+degree achievements
+degree of the property
+degrees on a scale
+delimitative
+derivational base
+derivational chain
+derivational chains
+derivational graph
+derived tree
+determinate verb
+determinate verbs
+determine the aspect
+diachronical perspective
+dimension constructors
+dimension is constructed
+dis-
+discourse relation 
+discourse relations
+discourse structure
+distance
+distributional
+do-
+duration
+duration modifiers
+easily cancelled
+economy principle
+elementary tree
+embedded event
+empty prefix 
+empty prefixes 
+entailment
+events culminated
+events that have culminated
+excess
+excessive
+existential inference
+expectation value
+external
+foot node
+for a certain group of Russian speakers
+frame-based semantics
+frame representation
+frame semantics
+functional categories
+functional category
+future
+genitive noun phrase
+genitive noun phrases
+gradable adjective
+gradable adjectives
+habitual intepretation
+habitual reading
+habitual situation
+habitual situations
+historical present
+homographs
+homonymy
+imperfective paradox
+imperfective suffix
+imperfective verbs
+imperfectivization
+inchoative
+inchoatively
+incremental change
+incremental theme
+indeterminate verb
+indeterminate verbs
+\index{neutral perfective|see {aspect, aspectual pair}}
+inference
+informationally stronger
+information structure
+initial tree
+intermediate prefixes
+internal
+internal argument
+internal scale
+-irova-
+iterative interpretation
+iterative meaning
+-iva-/-yva-
+iz-
+left periphery
+left periphery prefix
+lexical anchor
+lexical anchors
+lexical head
+lexicalised scale
+lexicalises a scale
+lexicalized tree adjoining grammar
+lexical prefix
+lexical prefixes
+loaned
+locomotion
+low degree on
+lower closed
+LTAG
+marked on this scale
+Maslov criterion
+maximum point
+means of prefixation
+measure dimension
+measure of change scale
+metagrammar
+minimum of the scale
+Monotonicity Hypothesis
+morphological complexity
+morphological distance
+morphologically simpler
+morphological operation
+motion verb
+multiple affixes
+na-
+Narration relation
+narrative sequence
+natural endpoint
+negated
+neutral perfective 
+neutral perfective s
+nominal dimension
+nominal dimensions
+non-affixed
+non-binary
+non-past
+non-perfectivizing
+non-prefixed
+not become perfective
+-nu-
+obligatory transitive verb
+obligatory transitive verbs
+one delimitation per event
+one-marked-point
+one-place predicate
+ongoing interpretation
+open scale
+Optimality Theory
+optionally transitive verb
+optionally transitive verbs
+ot-
+OT
+-ova-
+-ovat’
+overgeneraion
+Parallel relation
+partial situation
+part of the hierarchy
+past
+past passive participle
+path scale
+perdurative
+pere-
+perfective verbs
+perfectiviy markers
+perfectivization
+phasal verb
+phasal verbs
+phonological restriction
+po-
+pod-
+polysemy
+positionally limited prefixes
+postfix
+pragmatic competition
+pragmatic principle
+pragmatic strengthening
+prefixation
+prefix combinatorics
+prefixed noun
+prefix stacking
+preparation step
+preparatory phase
+prepositional time measure phrase
+present active participle
+present participle
+present participles
+presuppose
+presupposed event
+presupposition
+presuppositional approach
+presupposition trigger
+pri-
+pro-
+productive patterns
+progressive interpretation
+progressive one
+progressive reading
+projection properties
+proper scale
+property-scale
+punctual event
+punctual events
+punctual time
+quantisation
+raz-
+re-
+remain imperfective
+repetition
+repetitive
+restriction on its attachment site
+resultative
+resultatively
+Result relation
+result state
+s-
+scalar approach
+scalar expression
+scalar expressions
+(scalar) implicatures
+scales
+secondary imperfective
+select for imperfective stems
+selectionally limited prefixes
+selects for imperfective stems
+semantic analysis
+semantic constraints
+semantic restriction
+semantic restrictions
+semelfactive
+series of
+spatial
+standard amount
+standard degree
+standard of comparison
+state verbs
+stress position
+stress shift
+structural ambiguity
+subevents
+substitution
+suffixation
+superlexical
+suppletive
+syncretic paradigm
+syncretic paradigms
+syntactic accounts of
+syntactic differences
+syntactic positions
+syntactic restrictions
+syntactic structure
+syntactic theories
+syntactic tree
+syntactic trees
+syntax-semantics interface
+telicity test
+telic verb
+telic verbs
+temperature dimension
+temporal argument
+temporal extent
+tenseless predicate
+terminative
+test for perfectivity
+tests are commonly used
+tests for determining the verbal aspect
+tests for perfectivity
+tests used to identify telic
+the aspect of a complex verb is determined
+three-way classification
+time frame adverbials
+time measure expression
+time scale
+to cross
+to redo
+totally closed
+totally open
+transitive verb
+transitive verbs
+translocation
+two-place predicate
+type hierarchy
+u-
+underspecification of the scale
+unification
+unification failure
+uniform semantics
+universal and
+universal inference
+universal quantifier
+unprefixed verbs
+upper-closed
+upper inclusion
+variability of
+verbal cluster
+verbal dimension
+verbal dimensions
+vy-
+weight scale
+wetness scale
+XMG
+-yva-
