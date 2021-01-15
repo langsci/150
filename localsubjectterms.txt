@@ -14,6 +14,7 @@ alternatives
 ambiguous with respect to grammatical aspect
 amount dimension
 amount scale
+anew
 argument structure
 aspect change
 aspect-high theory
@@ -92,6 +93,7 @@ discourse relations
 discourse structure
 distance
 distributional
+distributive 
 do-
 duration
 duration modifiers
@@ -138,7 +140,6 @@ incremental change
 incremental theme
 indeterminate verb
 indeterminate verbs
-\index{neutral perfective|see {aspect, aspectual pair}}
 inference
 informationally stronger
 information structure
@@ -182,13 +183,15 @@ morphologically simpler
 morphological operation
 motion verb
 multiple affixes
+multiple times
 na-
 Narration relation
 narrative sequence
 natural endpoint
 negated
+neutral perfective
 neutral perfective 
-neutral perfective s
+neutral perfectives
 nominal dimension
 nominal dimensions
 non-affixed
@@ -235,6 +238,7 @@ postfix
 pragmatic competition
 pragmatic principle
 pragmatic strengthening
+predefined time
 prefixation
 prefix combinatorics
 prefixed noun
@@ -360,3 +364,4 @@ weight scale
 wetness scale
 XMG
 -yva-
+za-
