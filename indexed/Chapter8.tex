@@ -42,11 +42,11 @@ We have discussed the crucial fragments of the \isi{type hierarchy} in Section~\
 
 \begin{figure}
 \begin{lstlisting}[style=xmg]
-\isi{property-scale} -> scale,
-length -> \isi{property-scale},
-cardinality \isi{property-scale} -> -,
-\isi{closed-scale} -> scale
-cardinality -> \isi{closed-scale},
+property-scale -> scale,
+length -> property-scale,
+cardinality property-scale -> -,
+closed-scale -> scale
+cardinality -> closed-scale,
 \end{lstlisting}
 \caption{A fragment of type hierarchy \label{xmg:types}}
 \end{figure}
@@ -215,16 +215,16 @@ declare ?V ?Pisat ?Za ?ZaLex ?X0 ?Actor ?Theme ?ScMin ?ScMax ?AGR ?VP
   }
   ;
   <frame>{
-    ?X0[\isi{bounded-event} & process,
+    ?X0[bounded-event & process,
         actor:?Actor,
         theme:?Theme,
         manner:[record],
         verb-dim:?X0,
-        noun-dim:[\isi{property-scale},
+        noun-dim:[property-scale,
           min: ?ScMin,
           max: ?ScMax
         ],
-        m-dim:[\isi{property-scale},
+        m-dim:[property-scale,
           min: ?ScMin,
           max: ?ScMax
         ],
@@ -270,7 +270,7 @@ declare ?VP ?VPInt ?Po ?PoLex ?AGR ?X0 ?Init ?Fin ?VDim
     ?Po >> ?VPInt
   } ;
   <frame>{
-    ?X0[\isi{bounded-event},
+    ?X0[bounded-event,
        m-dim: ?VDim,
        verb-dim: ?VDim,
        init: [stage, 
@@ -337,7 +337,7 @@ declare ?VP ?VPInt ?Pere ?PereLex ?AGR ?X0 ?X1 ?Deg1 ?Deg2 ?Scale ?NounDim
   };
   <frame>{
     ?X1[?EventType,
-       m-dim:?Scale[\isi{property-scale}],
+       m-dim:?Scale[property-scale],
        noun-dim:?NounDim,
        init: ?Init,
        fin: ?Fin,
@@ -368,8 +368,8 @@ declare ?VP ?AGR ?X0 ?ScMin ?ScMax ?NounDim ?VPInt
     ?VP -> ?VPInt
   };
   <frame>{
-    ?X0[\isi{bounded-event},
-       m-dim: ?NounDim[\isi{property-scale} & \isi{closed-scale},
+    ?X0[bounded-event,
+       m-dim: ?NounDim[property-scale & closed-scale,
           min: ?ScMin,
           max: ?ScMax],
        noun-dim:?NounDim,
@@ -408,8 +408,8 @@ declare ?VP ?VPInt ?Suf ?Iva ?AGR ?X0 ?X1 ?VDim
   };
   <frame>{
     ?X1[event & iteration,
-       segment:?X0[\isi{bounded-event},
-         noun-dim:[\isi{property-scale}],
+       segment:?X0[bounded-event,
+         noun-dim:[property-scale],
          verb-dim: ?VDim],
        verb-dim: ?VDim,
        noun-dim:[cardinality] 
@@ -727,7 +727,7 @@ declare ?VP ?VPInt ?Pere ?PereLex ?AGR ?X0 ?X1
     ?Pere >> ?VPInt
   };
   <frame>{
-    ?X1[\isi{distributive},
+    ?X1[distributive,
        of: ?X0]
   }
 }
@@ -820,11 +820,11 @@ declare ?VP ?VPInt ?Po ?PoLex ?AGR ?X0 ?X1 ?Init ?Fin ?VDim
     ?Po >> ?VPInt
   };
   <frame>{
-    ?X1[\isi{bounded-event} & iteration,
+    ?X1[bounded-event & iteration,
        m-dim:?VDim[cardinality],
        verb-dim: ?VDim,
        segment:?X0[event,
-         m-dim:[\isi{property-scale}]
+         m-dim:[property-scale]
        ]
     ]
   }
