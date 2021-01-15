@@ -1535,59 +1535,50 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 %    Indexes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{index} %% Wie im Stylefile, aber ohne \MakeUppercase
-\renewenvironment{theindex}{%
-  \edef\indexname{\the\@nameuse{idxtitle@\@indextype}}%
-  \if@twocolumn
-	  \@restonecolfalse
-  \else
-	  \@restonecoltrue
-  \fi
-  \columnseprule \z@
-  \columnsep 35\p@
-  \twocolumn[%
-	  \@makeschapterhead{\indexname}%
-	  \ifx\index@prologue\@empty\else
-		  \index@prologue
-		  \bigskip
-	  \fi
-  ]%        \@mkboth{\MakeUppercase\indexname}%                {\MakeUppercase\indexname}%
-  \@mkboth{\indexname}%
-		  {\indexname}%
-  \thispagestyle{plain}%
-  \parindent\z@
-  \parskip\z@ \@plus .3\p@\relax
-  \let\item\@idxitem
-  \providecommand*\seealso[2]{\emph{see also} ##1}
-}{%
-  \if@restonecol
-	  \onecolumn
-  \else
-	  \clearpage
-  \fi
-}
+\usepackage[xindy]{imakeidx}
 
-% \AtBeginDocument{% FK 16-Jan-19: It is unclear why this was set. It conflicts with TikZ externalisation.
-	\makeindex
-	\newindex{lan}{ldx}{lnd}{\lsLanguageIndexTitle}
-	\newindex{sbj}{sdx}{snd}{\lsSubjectIndexTitle}
-	\renewindex{default}{adx}{and}{\lsNameIndexTitle} %biblatex can only deal with the default index
-% 	\newindex{wrd}{wdx}{wnd}{Expression index}
-% 	\newindex{rwrd}{rdx}{rnd}{Reverse expression index}
-% }
+\makeindex[title=\lsNameIndexTitle,intoc,columns=2]
+\makeindex[name=subject,title=\lsSubjectIndexTitle,intoc,columns=2]
+\makeindex[name=languages,title=\lsLanguageIndexTitle,intoc,columns=2]
 
-\indexproofstyle{\setlength{\overfullrule}{0pt}\raggedright\footnotesize}
+\indexsetup{headers={\indexname}{\indexname},toclevel=section}
 
+
+\newcommand{\footnote@index}{\if@noftnote0\else\@currentlabel\fi}
+
+\newcommand{\formatloc}[1]{\formatlocc #1}
+\def\formatlocc #1 #2{\ifnumequal{#2}{0}{\hyperpage{#1}}{\hyperpage{#1}n#2}}
+
+% http://tex.stackexchange.com/questions/20894/make-index-entries-refer-to-something-other-than-the-page-numbers/20910#20910
+\let\@indexfn\@index
+\patchcmd{\@indexfn}{\@wrindex}{\@Wrindex}{}{}
+\let\@Wrindex\@wrindex
+\patchcmd{\@Wrindex}{\thepage}{\thepage\space\footnote@index}{}{}
+\let\xindexfn\index
+\patchcmd{\xindexfn}{\@index}{\@indexfn}{}{}
+\patchcmd{\xindexfn}{\@index}{\@indexfn}{}{}
+
+% % \AtBeginDocument{% FK 16-Jan-19: It is unclear why this was set. It conflicts with TikZ externalisation.
+% 	\makeindex
+% 	\newindex{lan}{ldx}{lnd}{\lsLanguageIndexTitle}
+% 	\newindex{sbj}{sdx}{snd}{\lsSubjectIndexTitle}
+% 	\renewindex{default}{adx}{and}{\lsNameIndexTitle} %biblatex can only deal with the default index
+% % 	\newindex{wrd}{wdx}{wnd}{Expression index}
+% % 	\newindex{rwrd}{rdx}{rnd}{Reverse expression index}
+% % }
+% 
+% \indexproofstyle{\setlength{\overfullrule}{0pt}\raggedright\footnotesize}
+% 
 %% \index inside footnote
 \def\infn#1#2{% 	\hyperpage{#2}n#1%  99n2
 % 	\hyperpage{#2}*%   99*
 	\hyperpage{#2}\textsuperscript{#1}%  99²
 }%
 \newcommand{\footnoteindex}[2]{\index{#2|infn{#1}}}
-\newcommand{\footnoteindex@sbj}[2]{\index[sbj]{#2|infn{#1}}}
-\newcommand{\footnoteindex@lan}[2]{\index[lan]{#2|infn{#1}}}
-\newcommand{\footnoteindex@wrd}[2]{\index[wrd]{#2|infn{#1}}}
-
+\newcommand{\footnoteindex@sbj}[2]{\index[subject]{#2|infn{#1}}}
+\newcommand{\footnoteindex@lan}[2]{\index[languages]{#2|infn{#1}}}
+% \newcommand{\footnoteindex@wrd}[2]{\index[wrd]{#2|infn{#1}}}
+% 
 
 % Author index
 \newcommand{\ia}[1]{%
@@ -1601,20 +1592,13 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 }
 
 % Subject index
-\newcommand{\is}[1]{%
-  \if@noftnote%
-    \index[sbj]{#1}%
-    \else%
-    \edef\tempnumber{\thefootnote}%
-    \expandafter\footnoteindex@sbj\expandafter{\tempnumber}{#1}%
-    %\indexftn{#1}{\value{footnotemark}}%
-  \fi%
-}
+\newcommand{\is}[1]{\index[subject]{#1}}
+% \newcommand{\is}[1]{\xindexfn[subject]{#1|formatloc}}
 
 % Language index
 \newcommand{\il}[1]{%
   \if@noftnote
-    \index[lan]{#1}%
+    \index[languages]{#1}%
     \else%
     \edef\tempnumber{\thefootnote}%
     \expandafter\footnoteindex@lan\expandafter{\tempnumber}{#1}%
@@ -1627,7 +1611,7 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 
 %% this is required by authorindex
 % \newif\ifshowindex \showindexfalse
-\usepackage{authorindex}
+% \usepackage{authorindex}
 
 \providecommand{\isi}[1]{\is{#1}#1}
 \providecommand{\iai}[1]{\ia{#1}#1}
@@ -1640,7 +1624,7 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
     \let\isold\is
     \let\ilold\il
     \let\iaold\ia
-    \renewcommand{\isi}[1]{\sethlcolor{lsSoftGreen}\hl{#1}\isold{#1}}
+    \renewcommand{\isi}[1]{\ifmmode#1\isold{#1}\else\sethlcolor{lsSoftGreen}\hl{#1}\isold{#1}\fi}
     \renewcommand{\is}[1]{{\tikzstyle{notestyleraw} += [text width=1.5cm]\todo[color=lsSoftGreen,size=\scriptsize]{\tiny#1}\isold{#1}}}
     \renewcommand{\ili}[1]{\sethlcolor{yellow}\hl{#1}\ilold{#1}}
     \renewcommand{\il}[1]{{\tikzstyle{notestyleraw} += [text width=1.5cm]\todo[color=yellow,size=\scriptsize]{\tiny#1}\ilold{#1}}}
@@ -1649,11 +1633,11 @@ Storage and cataloguing done by \storageinstitution\\[3ex]
 }{}
 
 % integrate see also in multiple indexes
-\def\igobble#1 {}
-\newcommand{\langsciseealso}{\par\addvspace{.1\baselineskip}\hspace*{1.4cm}\hangindent=1.4cm\seealso}
-\newcommand{\ilsa}[2]{\il{#1@\igobble | langsciseealso{#2}}}
-\newcommand{\issa}[2]{\is{#1@\igobble | langsciseealso{#2}}}
-\newcommand{\iasa}[2]{\ia{#1{}@\igobble | langsciseealso{#2}}}
+% \def\igobble#1 {}
+% \newcommand{\langsciseealso}{\par\addvspace{.1\baselineskip}\hspace*{1.4cm}\hangindent=1.4cm\seealso}
+% \newcommand{\ilsa}[2]{\il{#1@\igobble | langsciseealso{#2}}}
+% \newcommand{\issa}[2]{\is{#1@\igobble | langsciseealso{#2}}}
+% \newcommand{\iasa}[2]{\ia{#1{}@\igobble | langsciseealso{#2}}}
 
 
 \newcommand{\name}[3][]{%add person names to text and author index
