@@ -1,0 +1,77 @@
+;; $Id: makeidx.xdy,v 1.1 1997/02/07 14:17:31 kehr Exp $
+;;
+;; This file implements the Output Style Specifiers for plain
+;; makeindex (see manpage of makeindex 2.x) in conjuction with
+;; TeX/LaTeX.
+;;
+;; The Input Style Specifiers of makeindex cannot de defined in a
+;; `xindy' style file. Use an appropriate version of the program
+;; `tex2xindy' which should be included with this distribution.
+;;
+;; Since `xindy' uses a different specification language than
+;; makeindex and some of the command-line options of makeindex are now
+;; only available as style-file commands, this file can only serve as
+;; a template that produces the default-markup of makeindex. However,
+;; it may be used as a starting point for further modification and
+;; specialization.
+;;
+;; The following values are taken from the source of the makeindex
+;; distribution (see file scanst.h and the manpage) for further
+;; details.
+;;
+
+;; Define all attributes appearing in your document. Your attributes
+;; are all encapsulators you use in your \index commands following the
+;; vertical bar sign `|'. For example `foo' is the attribute in the
+;; command \index{...|foo}. Here you specify the set of attributes
+;; that appear in your document, the order in which they appear in the
+;; index and which one superdes the other.
+;;
+;; Example: a) (define-attibutes (("default") ("bf") ("it")))
+;;          b) (define-attibutes (("bf" "default")))
+;;
+
+;(define-attributes (("formatloc")) )
+
+;; The initial command is (change it accordingly):
+
+;(define-attributes ("langsci"))
+
+;; The most frequently used cross reference class "see". Add more, if
+;; necessary.
+
+;(define-crossref-class "see")
+;(markup-crossref-list :open "\see{" :close "}{}" :class "see")
+
+
+;; preamble <string>        "\\begin{theindex}\n"
+;; postamble <string>       "\n\n\\end{theindex}\n"
+
+(markup-index :open  "\begin{theindex}~n
+             \providecommand*\lettergroupDefault[1]{}
+             \providecommand*\lettergroup[1]{%
+             \par}"
+          :close "~n~n\end{theindex}~n"
+          :tree)
+
+          
+;; Define Footnotes
+
+
+;(markup-locref :attr "formatloc" :open "\formatloc{" :close "}")
+;
+;(define-location-class "pagefn" :var :min-range-length 2
+;     ("arabic-numbers" :sep " "  "arabic-numbers"))
+;
+;(markup-range :class "pagefn" :sep "--")
+;
+;(define-location-class-order ("pagefn"))
+
+;; That's all ;-)
+
+
+;; End
+
+;; Local Variables:
+;; mode: lisp
+;; End:
