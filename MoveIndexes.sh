@@ -301,13 +301,14 @@ sed -i -e 's/indexentry{selects for imperfective stems|hyperpage/indexentry{stem
 sed -i -e 's/indexentry{stress position|hyperpage/indexentry{stress position|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{subevents|hyperpage/indexentry{subevent|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{substitution|hyperpage/indexentry{substitution|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{-irova-|hyperpage/indexentry{Suffix!-ova-|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{-ovat’|hyperpage/indexentry{Suffix!-ova-|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{-ova-|hyperpage/indexentry{Suffix!-ova-|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{imperfective suffix|hyperpage/indexentry{Suffix!imperfective suffix|hyperpage/g' subject.idx
-sed -i -e 's@indexentry{-iva-/-yva-|hyperpage@indexentry{Suffix!imperfective suffix|hyperpage@g' subject.idx
-sed -i -e 's/indexentry{-yva-|hyperpage/indexentry{Suffix!imperfective suffix|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{-nu-|hyperpage/indexentry{Suffix!semelfactive suffix|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{-irova-|hyperpage/indexentry{suffix!-ova-|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{-ovat’|hyperpage/indexentry{suffix!-ova-|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{-ova-|hyperpage/indexentry{suffix!-ova-|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{suffix!-ova-|hyperpage/indexentry{suffix!-ova-@\\textit{-ova-}|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{imperfective suffix|hyperpage/indexentry{suffix!imperfective suffix|hyperpage/g' subject.idx
+sed -i -e 's@indexentry{-iva-/-yva-|hyperpage@indexentry{suffix!imperfective suffix|hyperpage@g' subject.idx
+sed -i -e 's/indexentry{-yva-|hyperpage/indexentry{suffix!imperfective suffix|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{-nu-|hyperpage/indexentry{suffix!semelfactive suffix|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{left periphery|hyperpage/indexentry{superlexical prefixes!left periphery prefix|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{left periphery prefix|hyperpage/indexentry{superlexical prefixes!left periphery prefix|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{positionally limited prefixes|hyperpage/indexentry{superlexical prefixes!positionally limited prefixes|hyperpage/g' subject.idx
