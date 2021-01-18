@@ -10,7 +10,7 @@
 
 \documentclass[output=book,
 	draftmode,
-% 	colorlinks,
+	colorlinks,
 %   showindex
     ]{langscibook}
  
@@ -31,8 +31,6 @@
 \graphicspath{{figures/}}
 \input{localcommands.tex}
 
-% % \includeonly{}
-
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,22 +41,12 @@
 
 \maketitle                
 \frontmatter
-% %% uncomment if you have preface and/or acknowledgements
 
 \currentpdfbookmark{Contents}{name} % adds a PDF bookmark
 \tableofcontents
-% % % \include{chapters/preface}
 \include{chapters/acknowledgments}
 \include{chapters/abbreviations} 
-\mainmatter  
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%                                              %%%
-%%%             Debug                            %%%
-%%%                                              %%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \nocite{*}
+\mainmatter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%                                              %%%
@@ -66,17 +54,17 @@
 %%%                                              %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
-\include{indexed/chapter1} % introduction
-\include{indexed/chapter2} % getting data right || a novel approach to the analysis of russian complex verbs
-\include{indexed/chapter4} % limitations of existing approaches
-\include{indexed/chapter5} %semantics of individual prefixes  %% label: section:semantics
-\include{indexed/chapter6} % pragmatics
-\include{indexed/chapter7} % formal analysis 
-\include{indexed/chapter8} % xmg
-\include{indexed/chapter9} % conclusion
+\include{chapters/chapter1} % introduction
+\include{chapters/chapter2} % getting data right || a novel approach to the analysis of russian complex verbs
+\include{chapters/chapter4} % limitations of existing approaches
+\include{chapters/chapter5} %semantics of individual prefixes  %% label: section:semantics
+\include{chapters/chapter6} % pragmatics
+\include{chapters/chapter7} % formal analysis 
+\include{chapters/chapter8} % xmg
+\include{chapters/chapter9} % conclusion
 
 \appendix
-\include{chapters/appendixa}	% appendix title
+\include{chapters/appendixa} % appendix title
 \include{chapters/appendixb} % appendix title
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
