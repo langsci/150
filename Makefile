@@ -24,8 +24,8 @@ main.bbl:  $(SOURCE) localbibliography.bib
 
 main.snd: main.bbl
 	bash MoveIndexes.sh
-	texindy -C utf8 subject.idx
-	texindy -C utf8 main.idx
+	texindy -C utf8 -M langsci subject.idx
+	texindy -C utf8 -M langsci main.idx
 	xelatex main 
  
 

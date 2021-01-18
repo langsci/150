@@ -145,13 +145,13 @@ sed -i -e 's/indexentry{suffixation|hyperpage/indexentry{morphological operation
 sed -i -e 's/indexentry{suppletive|hyperpage/indexentry{morphological operation!suppletion|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{alternation of the thematic vowel|hyperpage/indexentry{morphological operation!thematic vowel alternation|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{morphological operation|hyperpage/indexentry{morphological operation|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{determinate verb|hyperpage/indexentry{Motion verb!determinate verb|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{determinate verbs|hyperpage/indexentry{Motion verb!determinate verb|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{indeterminate verb|hyperpage/indexentry{Motion verb!indeterminate verb|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{indeterminate verbs|hyperpage/indexentry{Motion verb!indeterminate verb|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{motion verb|hyperpage/indexentry{Motion verb|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{locomotion|hyperpage/indexentry{Motion verb|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{translocation|hyperpage/indexentry{Motion verb|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{determinate verb|hyperpage/indexentry{motion verb!determinate verb|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{determinate verbs|hyperpage/indexentry{motion verb!determinate verb|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{indeterminate verb|hyperpage/indexentry{motion verb!indeterminate verb|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{indeterminate verbs|hyperpage/indexentry{motion verb!indeterminate verb|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{motion verb|hyperpage/indexentry{motion verb|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{locomotion|hyperpage/indexentry{motion verb|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{translocation|hyperpage/indexentry{motion verb|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{narrative sequence|hyperpage/indexentry{narrative sequence|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{negated|hyperpage/indexentry{negation|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{nominal dimension|hyperpage/indexentry{nominal dimension|hyperpage/g' subject.idx
@@ -366,8 +366,8 @@ sed -i -e 's/indexentry{universal quantifier|hyperpage/indexentry{universal quan
 sed -i -e 's/indexentry{upper inclusion|hyperpage/indexentry{upper inclusion|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{verbal dimension|hyperpage/indexentry{verbal dimension|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{verbal dimensions|hyperpage/indexentry{verbal dimension|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{complex verbs|hyperpage/indexentry{Verbs!complex verbs|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{multiple affixes|hyperpage/indexentry{Verbs!complex verbs|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{non-affixed|hyperpage/indexentry{Verbs!unprefixed verbs|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{unprefixed verbs|hyperpage/indexentry{Verbs!unprefixed verbs|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{non-prefixed|hyperpage/indexentry{Verbs!unprefixed verbs|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{complex verbs|hyperpage/indexentry{verbs!complex verbs|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{multiple affixes|hyperpage/indexentry{verbs!complex verbs|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{non-affixed|hyperpage/indexentry{verbs!unprefixed verbs|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{unprefixed verbs|hyperpage/indexentry{verbs!unprefixed verbs|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{non-prefixed|hyperpage/indexentry{verbs!unprefixed verbs|hyperpage/g' subject.idx
