@@ -15,7 +15,7 @@ sed -i -e 's/indexentry{tests are commonly used|hyperpage/indexentry{aspect!test
 sed -i -e 's/indexentry{tests for determining the verbal aspect|hyperpage/indexentry{aspect!test|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{common tests that delimit imperfective|hyperpage/indexentry{aspect!test|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{tests used to identify telic|hyperpage/indexentry{aspect!test|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{imperfectivization|hyperpage/indexentry{aspectual change!imperfectivization|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{imperfectivisation|hyperpage/indexentry{aspectual change!imperfectivisation|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{aspect change|hyperpage/indexentry{aspectual change|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{aspectual change|hyperpage/indexentry{aspectual change|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{neutral perfective |hyperpage/indexentry{aspectual pair!aspectual pair|hyperpage/g' subject.idx
@@ -124,7 +124,7 @@ sed -i -e 's/indexentry{lexical prefix|hyperpage/indexentry{lexical prefixes|hyp
 sed -i -e 's/indexentry{lexical prefixes|hyperpage/indexentry{lexical prefixes|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{borrowed biaspectual verbs|hyperpage/indexentry{loaned verbs|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{loaned|hyperpage/indexentry{loaned verbs|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{lexicalized tree adjoining grammar|hyperpage/indexentry{LTAG|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{lexicalised tree adjoining grammar|hyperpage/indexentry{LTAG|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{LTAG|hyperpage/indexentry{LTAG|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{Maslov criterion|hyperpage/indexentry{Maslov criterion|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{metagrammar|hyperpage/indexentry{metagrammar|hyperpage/g' subject.idx
@@ -132,13 +132,13 @@ sed -i -e 's/indexentry{Monotonicity Hypothesis|hyperpage/indexentry{Monotonicit
 sed -i -e 's/indexentry{morphological complexity|hyperpage/indexentry{morphological complexity|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{morphologically simpler|hyperpage/indexentry{morphological complexity|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{morphological distance|hyperpage/indexentry{morphological distance|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{not become perfective|hyperpage/indexentry{morphological operation!non-perfectivizing prefixation|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{non-perfectivizing|hyperpage/indexentry{morphological operation!non-perfectivizing prefixation|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{absence of the perfectivization|hyperpage/indexentry{morphological operation!non-perfectivizing prefixation|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{remain imperfective|hyperpage/indexentry{morphological operation!non-perfectivizing prefixation|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{not become perfective|hyperpage/indexentry{morphological operation!non-perfectivising prefixation|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{non-perfectivising|hyperpage/indexentry{morphological operation!non-perfectivising prefixation|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{absence of the perfectivisation|hyperpage/indexentry{morphological operation!non-perfectivising prefixation|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{remain imperfective|hyperpage/indexentry{morphological operation!non-perfectivising prefixation|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{prefixation|hyperpage/indexentry{morphological operation!prefixation|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{means of prefixation|hyperpage/indexentry{morphological operation!prefixation|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{perfectivization|hyperpage/indexentry{morphological operation!prefixation|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{perfectivisation|hyperpage/indexentry{morphological operation!prefixation|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{productive patterns|hyperpage/indexentry{morphological operation!productive pattern|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{stress shift|hyperpage/indexentry{morphological operation!stress shift|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{suffixation|hyperpage/indexentry{morphological operation!suffixation|hyperpage/g' subject.idx
