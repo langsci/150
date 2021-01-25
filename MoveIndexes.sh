@@ -169,7 +169,7 @@ sed -i -e 's/indexentry{past passive participle|hyperpage/indexentry{participle!
 sed -i -e 's/indexentry{present active participle|hyperpage/indexentry{participle!present active participle|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{present participle|hyperpage/indexentry{participle!present participle|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{present participles|hyperpage/indexentry{participle!present participle|hyperpage/g' subject.idx
-sed -i -e 's/indexentry{perfective verbs|hyperpage/indexentry{perfective aspect!perfective verbs|hyperpage/g' subject.idx
+sed -i -e 's/indexentry{perfective verbs|hyperpage/indexentry{perfective aspect|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{perfectiviy markers|hyperpage/indexentry{perfective aspect!perfectiviy markers|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{phasal verb|hyperpage/indexentry{phasal verb|hyperpage/g' subject.idx
 sed -i -e 's/indexentry{phasal verbs|hyperpage/indexentry{phasal verb|hyperpage/g' subject.idx

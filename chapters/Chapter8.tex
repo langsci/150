@@ -56,9 +56,27 @@ In a proper implementation that would separate the \isi{metagrammar} level from 
 
 The description of the noun is straightforward: on the syntactic side, it is a daughter of the N category node and on the semantic side it contains relevant attributes. The two nodes (\texttt{?N} and \texttt{?Story}) are declared in the first two lines of the syntactic domain description and connected via an immediate dominance relation in the third line. Both nodes are characterised with feature \texttt{i=?X0} which connects them to the semantic frame characterised in the frame dimension. The frame description states that the type of the frame \texttt{?X0} is \texttt{story} and it has two attributes: The label of the central node of the frame (\texttt{?X0}) as well as the syntactic nodes and relevant dimension-related variables are exported for future use. 
 
-The code for the class is shown on \figref{xmg:noun}. Note that I do not distinguish between top and bottom feature structures in the provided descriptions, as due to the absence of the \isi{adjunction} in the implemented fragment the division into top and bottom parts is not relevant. Figure~\ref{story:tree:frame} shows the tree and the frame that are described by the code for the class \texttt{Story} (features of the syntactic dimension are omitted).
+The code for the class is shown on \figref{xmg:noun}. Note that I do not distinguish between top and bottom feature structures in the provided descriptions, as due to the absence of the \isi{adjunction} in the implemented fragment the division into top and bottom parts is not relevant. Figure~\ref{story:tree:frame} shows the tree and the frame that are described by the code for the class \texttt{Story} (features of the syntactic dimension are omitted).\largerpage
 
-\begin{figure}[p]
+\begin{figure}[H]
+\begin{minipage}{.5\textwidth}
+\centering
+% % \includegraphics[scale=1]{StoryTree.pdf}
+\begin{forest}
+[?N [?Story]]
+\end{forest}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+\avm[types=\normalfont,values=\normalfont,attributes=\normalfont]{
+?X0 [\type*{story}
+      length & ?Length\\
+      cardinality & ?Card
+   ]}
+\end{minipage}
+\caption{Tree and frame representation of the code in \figref{xmg:noun}\label{story:tree:frame}}
+\end{figure}
+
+\begin{figure}
 \begin{lstlisting}[style=xmg,basicstyle=\small\ttfamily]
 class Story
 export ?Length ?Card ?N
@@ -80,27 +98,8 @@ declare ?N ?Story ?X0 ?Length ?Card
 \caption{XMG code: noun that is used to fill the accusative NP slot \label{xmg:noun}}
 \end{figure}
 
-\begin{figure}[p]
-\begin{minipage}{.5\textwidth}
-\centering
-% % \includegraphics[scale=1]{StoryTree.pdf}
-\begin{forest}
-[?N [?Story]]
-\end{forest}
-\end{minipage}%
-\begin{minipage}{0.5\textwidth}
-\avm[types=\normalfont,values=\normalfont,attributes=\normalfont]{
-?X0 [\type*{story}
-      length & ?Length\\
-      cardinality & ?Card
-   ]}
-\end{minipage}
-\caption{Tree and frame representation of the code provided on \figref{xmg:noun}\label{story:tree:frame}}
-\end{figure}\clearpage
-
 Later this noun can enter one of the two \isi{dimension constructors}: length or cardinality. The \isi{cardinality constructor} code is shown on \figref{xmg:cardinality}. It should be available for all nouns that have a cardinality attribute with an additional restriction for plural number. The constructor creates a NP node that dominates the N node exported from the description of the noun, and a VP node that linearly precedes the NP node. The output of the class is a discontinuous tree, as shown by the tree on \figref{card:tree:frame}. On the semantic side an \MDIM attribute is created and the event description bounded to the VP node also acquires the type \textit{iteration}. This is, as announced before, doubled via the iteration attribute on the syntactic side. The frame described by the frame part of the code is provided on the right side of \figref{card:tree:frame}.
 
-\vfil
 \begin{figure}
 \begin{lstlisting}[style=xmg,basicstyle=\small\ttfamily]
 class NounCardinal
@@ -130,8 +129,6 @@ declare ?NCard ?X0 ?Card ?N ?NP ?VP ?Dim ?Theme ?Case ?Num
 \end{lstlisting}
 \caption{XMG code: constructor of the cardinality dimension \label{xmg:cardinality}}
 \end{figure}
-\vfil
-\pagebreak
 
 \begin{figure}
 % \begin{minipage}{0.5\textwidth}
@@ -249,7 +246,7 @@ declare ?V ?Pisat ?Za ?ZaLex ?X0 ?Actor ?Theme ?ScMin ?ScMax ?AGR ?VP
 \caption{Result of the compilation of the class \texttt{Zapisat}\label{fig:zapisat}}
 \end{sidewaysfigure}
 
-\section{Prefixes}
+\section{Prefixes}\largerpage[2]
 As we have already discussed the frames for all individual prefix usages in the previous chapter, I will not go through the code for all of them (it can be found in Appendix~\ref{AppendixB}), but show how frames correspond to the \isi{XMG} descriptions and what happens on the syntactic side, taking one prefix as an example.
 
 Figure \ref{code:po} shows the \isi{XMG} description of the class for the prefix \Prefix{po-}. In this code, the syntactic part represents a VP that consists of a prefix head and another (\isi{internal}) VP that carries information about the \isi{derivational base}. The agreement information as well as the semantic frame are then passed to the higher VP node. This node is also characterised by having perfective aspect (one may not call this aspect and consider aspect appearing at a later stage, but then this feature stores the value that will appear as soon as the aspect feature is initialised) independently of the value of the aspect feature of the \isi{internal} VP node. Following the definitions provided above, the feature \textit{limited} is assigned the value \textit{yes} because the semantic frame contains the attribute \FIN, but the feature \textit{bounded} is assigned the value \textit{no}, as the value of the attribute \FIN is a free variable.
@@ -316,7 +313,9 @@ To make sure that the code not only looks similar to the frame, but also produce
 %
 %The \isi{distributive} interpretation of the prefix \Prefix{po-} is acquired when the \isi{measure dimension} is the \isi{cardinality scale}. 
 
-Encoding of other prefix usages proceeds in the similar way: the syntactic part does not vary much from prefix to prefix and semantic descriptions can be directly obtained from the frame descriptions I have proposed in Chapter~\ref{Chapter7}. However, there are a couple of difficulties I want to discuss. First let us consider the prefix \Prefix{pere-} in the \isi{repetitive} usage. There are several things that are different compared to the case of the ``\isi{delimitative}'' usage of the prefix \Prefix{po-}. First, the value of the features \textit{aspect} and \textit{bounded} is inherited from the  lower VP and the value of the \textit{limited} feature of the \isi{derivational base} has to be \textit{yes}. Second, at the moment of prefix attachment the central node of the frame shifts: derived VP (node \texttt{?VP} on \figref{code:pere}) is related to the frame \texttt{?X1} whereas the semantics of the \isi{derivational base} is represented by the frame \texttt{?X0} (subframe of \texttt{?X1} on \figref{code:pere}). This realises the solution proposed in the previous chapter. 
+Encoding of other prefix usages proceeds in the similar way: the syntactic part does not vary much from prefix to prefix and semantic descriptions can be directly obtained from the frame descriptions I have proposed in Chapter~\ref{Chapter7}. However, there are a couple of difficulties I want to discuss. First let us consider the prefix \Prefix{pere-} in the \isi{repetitive} usage. There are several things that are different compared to the case of the ``\isi{delimitative}'' usage of the prefix \Prefix{po-}. First, the value of the features \textit{aspect} and \textit{bounded} is inherited from the  lower VP and the value of the \textit{limited} feature of the \isi{derivational base} has to be \textit{yes}. Second, at the moment of prefix attachment the central node of the frame shifts: derived VP (node \texttt{?VP} on \figref{code:pere}) is related to the frame \texttt{?X1} whereas the semantics of the \isi{derivational base} is represented by the frame \texttt{?X0} (subframe of \texttt{?X1} on \figref{code:pere}). This realises the solution proposed in the previous chapter.
+
+In order to perform the coercion that is needed when the prefix \Prefix{pere-} is attached to a simplex imperfective verb, a separate step is required. It is realised by the class \texttt{NDimCoercedVerb} (see \figref{xmg:coersion}) that transforms a non-bounded event into a bounded event using the nominal scale.\pagebreak
 
 \begin{figure}
 \begin{lstlisting}[style=xmg]
@@ -354,8 +353,6 @@ declare ?VP ?VPInt ?Pere ?PereLex ?AGR ?X0 ?X1 ?Deg1 ?Deg2 ?Scale ?NounDim
 \end{lstlisting}
 \caption{XMG code for the class that describes the repetitive usage of the prefix \Prefix{pere-}\label{code:pere}}
 \end{figure}
-
-In order to perform the coercion that is needed when the prefix \Prefix{pere-} is attached to a simplex imperfective verb, a separate step is required. It is realised by the class \texttt{NDimCoercedVerb} (see \figref{xmg:coersion}) that transforms a non-bounded event into a bounded event using the nominal scale.
 
 \begin{figure}
 \begin{lstlisting}[style=xmg]
@@ -454,7 +451,7 @@ On the next step (class \texttt{TwoPrefixedVerb}, shown on \figref{xmg:2pref}) t
 
 Both types of verbs (with one prefix, \texttt{VerbWithOnePrefix} class, and with two prefixes, \texttt{TwoPrefixedVerb} class) then serve as an input to the class \texttt{SuffVerb}. This class uses the results of \isi{nominal dimension} constructors, as the dimension of the noun can be changed after the attachment of the suffix and it still has to agree with the requirements of the previously attached prefixes. The exported variable \texttt{VPBase} is used to keep track of the attachment point of the semantic representation of the noun. On the syntactic level the noun stays to the right of the verb and will be always attached higher than all the verbal morphemes. 
 
-After the suffixed verbs are assembled, the type matching has to be performed. In the current version of \isi{XMG} type copying is performed not via creating a connection between two types (as it is done with attributes), but by copying the value that is there at the moment the operation is performed. As the noun is attached later, the type of the scale it is associated with is not passed to the higher level if the central node of the frame shifts. To ensure correct typing, I have introduced a class \texttt{TypeMatcher} (code shown on \figref{xmg:typemather}) that identifies all types of the measure dimensions between the higher and the embedded frames (\MDIM, \NOUNDIM, \VERBDIM). The class \texttt{SuffTyped} uses the \texttt{TypeMatcher} class together with the \texttt{SuffVerb} class. In sum, as the VP that contains the scalar interpretation of the noun is identified with the lowest VP available, the type matching mechanism allows to pass the types to a higher level. If the central node of the frame was not changed in the course of prefix attachments, variables \texttt{?X1} and \texttt{?X0} refer to the same frame node.
+After the suffixed verbs are assembled, the type matching has to be performed. In the current version of \isi{XMG} type copying is performed not via creating a connection between two types (as it is done with attributes), but by copying the value that is there at the moment the operation is performed. As the noun is attached later, the type of the scale it is associated with is not passed to the higher level if the central node of the frame shifts. To ensure correct typing, I have introduced a class \texttt{TypeMatcher} (code shown on \figref{xmg:typemather}) that identifies all types of the measure dimensions between the higher and the embedded frames (\MDIM, \NOUNDIM, \VERBDIM). The class \texttt{SuffTyped} uses the \texttt{TypeMatcher} class together with the \texttt{SuffVerb} class. In sum, as the VP that contains the scalar interpretation of the noun is identified with the lowest VP available, the type matching mechanism allows to pass the types to a higher level. If the central node of the frame was not changed in the course of prefix attachments, variables \texttt{?X1} and \texttt{?X0} refer to the same frame node.\largerpage
 
 \begin{figure}
 \begin{lstlisting}[style=xmg]
@@ -570,7 +567,7 @@ Before discussing the produced output I would like to note that the architecture
 %\end{lstlisting}
 %\end{figure}
 
-\section{Output}\largerpage
+\section{Output}
 The compilation of the code produces 88 verbal phrases. The full xml of the output is provided in Section~\ref{B:Tat} of Appendix~\ref{AppendixB}. Here I will show and provide a brief analysis of all the obtained models.
 
 The first group of models consists of verbs with one or two prefixes. A total of 16 models is produced (see Table~\ref{table:prefverbs}). Six of these models are models of verbs with one prefix. They all exist, but this is partially due to the selection of the prefixes and the base verb. The upper part of Table~\ref{table:prefverbs} shows these verbs with their English translations and the dimension interpretation of the argument. The last two columns indicate whether the verb exists and if not, whether it will be filtered out by pragmatic module as described in Chapter~\ref{Chapter6}.\largerpage
@@ -605,42 +602,9 @@ In the second part of \tabref{table:prefverbs} verbs that contain two prefixes a
 
 Note that already at this stage \isi{XMG} reduces 40 possible models (five variants of the first prefix, four variants of the second prefix, and two interpretations of the noun) to only 10 (seven correct and three non-existent) by an appropriate combination of constraints. 
 
-Now let us have a look at the next step: when the verbs from the list above get suffixed with the \isi{imperfective suffix} (in one of two interpretations). The output of this part consists of 23 verbs out of which only two must be filtered out as they are produced on the basis of the verbs that, as we have discussed above, do not exist: \textit{perepopisat'} `to write all of' and \textit{popopisat'} `to write for some time'. It is interesting to note that the second interpretation of the last verb does not get suffixed, so the number of wrong models on the new level does not get multiplied (by the two possible interpretations of the suffix). Instead of the six potential incorrect models just on the basis of the wrong predictions of the previous level we obtain only two. All the verbs produced by this part of the implementation are shown in Table~\ref{table:suffverbs} together with their English translations, interpretation of the \isi{imperfective suffix}, and information about existence.\largerpage
+Now let us have a look at the next step: when the verbs from the list above get suffixed with the \isi{imperfective suffix} (in one of two interpretations). The output of this part consists of 23 verbs out of which only two must be filtered out as they are produced on the basis of the verbs that, as we have discussed above, do not exist: \textit{perepopisat'} `to write all of' and \textit{popopisat'} `to write for some time'. It is interesting to note that the second interpretation of the last verb does not get suffixed, so the number of wrong models on the new level does not get multiplied (by the two possible interpretations of the suffix). Instead of the six potential incorrect models just on the basis of the wrong predictions of the previous level we obtain only two. All the verbs produced by this part of the implementation are shown in Table~\ref{table:suffverbs} (page~\pageref{table:suffverbs}) together with their English translations, interpretation of the \isi{imperfective suffix}, and information about existence.
 
-\begin{table}
- \caption{Output of the XMG processing for the class of prefixed and then suffixed verbs\label{table:suffverbs}}
-\resizebox{\textwidth}{!}{\begin{tabular}{llll}
-\lsptoprule
-verb  & semantics & imperfective & exists \\ 
-      &      &    interpretation\\\midrule
-perepisyvat' & to be writing all of & progressive & yes\\ 
-popisyvat' & to be writing for some time habitually & habitual & yes \\ 
-dopisyvat' & to be finishing writing & progressive & yes \\ 
-dopisyvat' & to finish writing habitually & habitual & yes \\ 
-perepisyvat' & to be rewriting & progressive & yes \\ 
-perepisyvat' & to rewrite habitually & habitual & yes \\ 
-zapisyvat' & to be writing down & progressive & yes \\ 
-zapisyvat' & to write down habitually & habitual & yes \\ 
-doperepisyvat' & to be finishing writing all of & progressive & yes\\ 
-dodopisyvat' & to be finishing writing the final part & progressive & yes \\ 
-dodopisyvat' & to finish writing the final part habitually & habitual & yes \\ 
-doperepisyvat' & to be finishing rewriting & progressive & yes \\ 
-doperepisyvat' & to finish rewriting habitually & habitual & yes \\ 
-dozapisyvat' & to be finishing writing down & progressive & yes \\ 
-dozapisyvat' & to finish writing down habitually & habitual & yes \\ 
-perepopisyvat' & to be writing all of & progressive & no\\ 
-peredopisyvat' & to be rewriting the final part & progressive & yes \\ 
-peredopisyvat' & to rewrite the final part habitually & habitual & yes \\ 
-pereperepisyvat' & to be rewriting again & progressive & yes \\ 
-pereperepisyvat' & to rewrite again habitually & habitual & yes \\ 
-perezapisyvat' & to be writing down again & progressive & yes \\ 
-perezapisyvat' & to write down again habitually & habitual & yes \\ 
-popopisyvat' & to be writing for some time habitually & habitual & no\\ 
- \lspbottomrule
- \end{tabular}}
-\end{table}
-
-The last group of verbs consists of 49 models that contain at least one prefix attached before the \isi{imperfective suffix} and at least one prefix attached after it. They are shown in Table~\ref{table:prefsuffverbs} together with English translations (not always exact) and the aspect (as here some of the verbs, despite being prefixed on the last derivation step, are imperfective). This part is harder to evaluate as many of the verbs cannot be found on the internet. A possible evaluation method would be to test the unanchored models with various \isi{lexical anchors} against corpus data, but this requires both the parser that supports \isi{frame semantics} (to work efficiently with different verbs) and a large corpus that contains \isi{complex verbs}. I leave these tasks for future research.\largerpage[-1]
+The last group of verbs consists of 49 models that contain at least one prefix attached before the \isi{imperfective suffix} and at least one prefix attached after it. They are shown in Table~\ref{table:prefsuffverbs} together with English translations (not always exact) and the aspect (as here some of the verbs, despite being prefixed on the last derivation step, are imperfective). This part is harder to evaluate as many of the verbs cannot be found on the internet. A possible evaluation method would be to test the unanchored models with various \isi{lexical anchors} against corpus data, but this requires both the parser that supports \isi{frame semantics} (to work efficiently with different verbs) and a large corpus that contains \isi{complex verbs}. I leave these tasks for future research.
  
 \begin{longtable}{lll}
 \caption{Output of the XMG processing for the class of verbs that are prefixed, then possibly suffixed, and then prefixed again \label{table:prefsuffverbs}}\\
@@ -701,7 +665,40 @@ popereperepisyvat' & to spend some time rewriting again & perfective \\
 poperezapisyvat' & to spend some time writing down again & perfective \\  
 \end{longtable}
 
-\pagebreak According to the available data and introspection, out of 49 models four must be discarded. Two of them (\textit{popopopisyvat'} and \textit{perepopopisyvat'}) are formed from the derivational bases that need to be discarded (discussed above). Other two must be discarded by the pragmatic module.
+\begin{table}[H]
+ \caption{Output of the XMG processing for the class of prefixed and then suffixed verbs\label{table:suffverbs}}
+\resizebox{\textwidth}{!}{\begin{tabular}{llll}
+\lsptoprule
+verb  & semantics & imperfective & exists \\ 
+      &      &    interpretation\\\midrule
+perepisyvat' & to be writing all of & progressive & yes\\ 
+popisyvat' & to be writing for some time habitually & habitual & yes \\ 
+dopisyvat' & to be finishing writing & progressive & yes \\ 
+dopisyvat' & to finish writing habitually & habitual & yes \\ 
+perepisyvat' & to be rewriting & progressive & yes \\ 
+perepisyvat' & to rewrite habitually & habitual & yes \\ 
+zapisyvat' & to be writing down & progressive & yes \\ 
+zapisyvat' & to write down habitually & habitual & yes \\ 
+doperepisyvat' & to be finishing writing all of & progressive & yes\\ 
+dodopisyvat' & to be finishing writing the final part & progressive & yes \\ 
+dodopisyvat' & to finish writing the final part habitually & habitual & yes \\ 
+doperepisyvat' & to be finishing rewriting & progressive & yes \\ 
+doperepisyvat' & to finish rewriting habitually & habitual & yes \\ 
+dozapisyvat' & to be finishing writing down & progressive & yes \\ 
+dozapisyvat' & to finish writing down habitually & habitual & yes \\ 
+perepopisyvat' & to be writing all of & progressive & no\\ 
+peredopisyvat' & to be rewriting the final part & progressive & yes \\ 
+peredopisyvat' & to rewrite the final part habitually & habitual & yes \\ 
+pereperepisyvat' & to be rewriting again & progressive & yes \\ 
+pereperepisyvat' & to rewrite again habitually & habitual & yes \\ 
+perezapisyvat' & to be writing down again & progressive & yes \\ 
+perezapisyvat' & to write down again habitually & habitual & yes \\ 
+popopisyvat' & to be writing for some time habitually & habitual & no\\ 
+ \lspbottomrule
+ \end{tabular}}
+\end{table}
+
+According to the available data and introspection, out of 49 models four must be discarded. Two of them (\textit{popopopisyvat'} and \textit{perepopopisyvat'}) are formed from the derivational bases that need to be discarded (discussed above). Other two must be discarded by the pragmatic module.
 
 The first of the two verbs, \textit{*perepopisyvat'}, that could have been translated as `to write all of for some time' would be blocked because the interpretation of the prefix \Prefix{pere-} related with the \isi{cardinality scale} is `performing the action completely with each item in the set'. Now, if the interpretation of the prefix \Prefix{po-} does not get strengthened (some time $\rightarrow$ all context-specified time), we obtain a contradiction.  If it does get strengthened (every writing event is maximal with respect to the corresponding member of the set), then the same semantics can be expressed by the simpler verb \textit{perepisat'} `to write all of'. 
 
@@ -709,7 +706,7 @@ The second verb, \textit{*popopisyvat'}, has a similar semantic structure and al
 
 By now we have seen all the models that my implementation produces. Out of 88 models nine should be discarded, but what is harder to evaluate is the recall of the model (fraction of the number of correct models in the output to the number of correct models), as there is no standard that would provide the later number (the total of correct models for the described grammar fragment). I will approach this problem in the next section.
 
-\section{Result evaluation and comparison}
+\section{Result evaluation and comparison}\largerpage
 In order to compare the predictions of my model to that of earlier theories, I have implemented the system proposed in \citet{Tatevosov:09} for exactly the same fragment (one verbal stem, one ``lexical'' prefix, five prefix-interpretation pairs, the \isi{imperfective suffix}). For this part I have omitted the lexical entries for direct objects as they do not influence the interpretation of the prefixed verbs. As the approach is syntactic, all restrictions are formulated in syntactic terms and the frame dimension is used to represent the order of attachment of affixes with different semantics. In this implementation, for example, the class for the \isi{distributive} interpretation of the prefix \Prefix{pere-} looks as shown on \figref{xmg:Tat:pere}. The restriction on this prefix attachment is the imperfective aspect of the base verb, which is reflected via a syntactic constraint on the feature \textit{aspect} here.
 
 \begin{figure}
@@ -934,7 +931,8 @@ Among the rest of the models produced by the second implementation are such verb
 %51 + 17 + 3 = 71
 %+9
 
-To quantify precision and recall, I decided to do the following:
+To quantify precision and recall, I decided to do the following:\largerpage[2]
+
 \begin{itemize}
 \item count 79 models instead of 88 for my analysis by removing such models that differ only with respect to the interpretation of the \isi{secondary imperfective};
 \item count the models for the existence of which I argue in Chapter~\ref{Chapter2} as correct (\isi{imperfective verbs} formed when the last affix attached is the \isi{repetitive} \Prefix{pere-} and perfective \Prefix{do-}prefixed verbs)
