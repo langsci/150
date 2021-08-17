@@ -1,0 +1,59 @@
+\ex.\label{ex:biaspectual:borrowed}\ag.Stranno, 10 let reformirovali\textsuperscript{\IPF}, i opjat' v na\v{c}ale?\\
+strange 10 year.\glb{pl.gen} reform.\glb{pst.pl} and again in beginning.\glb{sg.prep}\\
+\trans `It's strange, they have reformed it for 10 years and are again in the beginning of this process?'
+\hfill \url{https://iz.ru/news/260299}, accessed on 21.07.21
+
+\bg.My reformirovali\textsuperscript{\PF} sistemu gosudarstvennoj slu\v{z}by, proveli pensionnuju reformu.\\
+we reform.\glb{pst.pl} system.\glb{sg.acc} public service, conduct.\glb{pst.pl} pensionary.\glb{sg.f.acc} reform.\glb{sg.acc}\\
+\trans `We have reformed the public service system, conducted a pensionary reform.'
+\hfill \url{https://iz.ru/news/268085}, accessed on 21.07.21
+
+\ex.\ag.\label{ex:dopereimp}Ja skol'ko ni doperestraival, ljudi v itoge tratili bol'\v{s}e, \v{c}em na novuju postrojku.\\
+I how.much ever do.pere.build.imp.\glb{pst.sg.m}, people in total spent more then on new bulding.\\
+\trans `Every time I was rebuilding something, in the end the clients spent more than they would have paid for the new building.'\\
+\hfill\hbox{\url{https://www.kharkovforum.com/showthread.php?t=1227045}, accessed on 21.07.21}
+
+\exg.\label{ex:dovysh}Planiruju pristupit' k rabote \v{c}erez dve nedeli, kak tol'ko dovy\v{s}ivaju ``Lesnuju zarju''.\\
+plan.\glb{pres.1.sg} start.inf to work over two weeks, as only do.vy.sew.imp.\glb{pres.1.sg} ``Forest dawn''\\
+\trans `I plan to start the work in two weeks' time; as soon as I will have finished embroidering ``Dawn in the forest''.'
+\hfill \url{eva.ru/R1kYl}, accessed on 21.07.21
+
+\exg.\label{ex:PFP}vy mo\v{z}ete samostojatel'no zapisat'sja i pose\v{s}\v{c}at' zainteresuju\v{s}\v{c}ij vas kurs\\
+you.\glb{nom} can {on your own} za.write.\glb{inf.refl} and visit.\glb{inf} za.interest.\glb{pap.sg.m} you.\glb{acc} course.\glb{acc}\\
+\trans `you can on your own inscribe and visit a course that you will find interesting'\\\hbox{} \hfill \hbox{\url{https://www.nstu.ru/entrance/answers/view?num=39005}}, accessed on 21.07.21
+
+\ex.\ag.\label{ex:perekvalificirovat:perf}Krome togo, vynosja prigovor, sud'ja perekvalificiroval\textsuperscript{\PF} obvinenie i snizil s ``osobo krupnogo'' na ``krupnyj'' objem nefti, v xi\v{s}\v{c}enii kotoroj obvinjajutsja podsudimye.\\
+apart this, vy.carry.\glb{part.pres} sentence.\glb{sg.acc} judge.\glb{sg.nom} pere.classify.\glb{pst.sg.m} accusation.\glb{sg.acc} and lower.\glb{pst.sg.m} from ``particularly large'' on ``large'' volume.\glb{sg.acc} oil.\glb{gen} in theft.\glb{sg.prep} which.\glb{f.sg.prp} accuse.\glb{pres.3.pl.}refl defendant.\glb{pl.nom}\\
+\trans `Apart from this, when pronouncing the sentence, the judge reclassified the accusation, changing the amount of oil that the defendants are accused of stealing from ``particularly large'' into ``large''.'\\
+\hbox{}\hfill\hbox{\url{https://www.vesti.ru/article/2093393}, accessed on 03.08.2021}
+
+\ex.\label{ex:qualify}\ag.\label{ex:qualify1}V dannyj moment on perekvalificiruet\textsuperscript{\IPF} svoju {``Armiju Maxdi''} v politi\v{c}eskoe dvi\v{z}enie.\\
+in given moment he pere.qualify.\glb{pres.3.sg} his {``Armija Maxdi''} in political movement\\
+\trans `Right now he is re-categorising his ``Armija Maxdi'' into a political movement.'\hbox{}\hfill\hbox{\url{https://www.km.ru/glavnoe/2005/06/14/politika/rossiiskii-posol-v-irake-vstretilsya-s-muktadoi-sadrom}, accessed on 03.08.2021}
+
+
+\bg.\label{ex:qualify2}Sej\v{c}as advokaty na\v{c}nut perekvalificirovat'\textsuperscript{\IPF} delo v politi\v{c}eskoje.\\
+now advocates start.\glb{pres.3.pl} iter.qualify.\glb{inf} case in political\\
+\trans `Now the advocates will start to re-classify this case as a political one.'\hfill\hbox{\url{https://pikabu.ru/story/v_polshe_zaderzhali_prokurora_ignatenko_396297/author}, accessed on 03.08.2021}
+
+\bg.\label{ex:qualify3}Policejskix budut perekvalificirovat'\textsuperscript{\IPF} v buxgalterov.\\	
+policemen will.be pere.qualify\glb{.inf} in accountant.\glb{pl.acc}\\
+\trans `Policemen will be re-trained and become accountants.'\hbox{}\hfill\hbox{\url{https://pikabu.ru/story/politseyskikh_budut_perekvalifitsirovat_v_bukhgalterov_169505}, accessed on 03.08.2021}
+
+\bg.\label{ex:qualify4}Ne pozvoljaetsja smotret’ na perekvalificiruemye sdelki s pozicii togo, \v{c}to nalogoplatel’\v{s}\v{c}ik mog sdelat’ v tex uslovijax.\\
+not allow look on pere.qualify.\glb{part.pres.pl.acc} deals from position that, that tax.payer can.\glb{pst.sg.m} s.do.\glb{inf} in that conditions\\
+\trans `We cannot view the deals which are subject to reclassification on the basis of what a tax-payer would have done under the same circum\-stances.'\hbox{}\hfill\hbox{\url{http://lesregion.ru/main/1455-osobennosti-rascheta-summy-nds-iznutri-summy-sdelki-pri-ee-nalogovoy-perekvalifikacii.html}, accessed on 03.08.202}
+
+\exg.\label{ex:kvalifikacija}Process trudoustrojstva mo\v{z}et uprostit' perekvalifikacija.\\
+process.\glb{sg.acc} placement.\glb{sg. gen} can.\glb{pres.3.sg} simplify.\glb{inf} pere.qualification.\glb{sg.nom}\\
+\trans `The re-training can simplify the process of placement.'\\\hbox{}\hfill\hbox{\url{http://worldofscience.ru/menedzhment.html?start=120}, accessed on 03.08.2021}
+
+\exg.\label{ex:dokvalifikacija}Avtoservis primet na rabotu avto\`{e}lektrika. V perspektive vozmo\v{z}na dokvalifikacija.\\
+{auto.service} take.\glb{pres.3.sg} on work {auto.electrician.\glb{sg.acc}} in perspective possible do.qualification.\glb{sg.nom}\\
+\trans `Auto service is hiring an auto electrician. Future additional training possible.' \hfill\hbox{\url{https://forum.novgorod.ru/q92686.html}, accessed on 03.08.2021}
+
+
+\exg.\label{ex:dokvalificirovat':perf}Ja okon\v{c}il Veterinarnuju akademiju, a armija dokvalificirovala menja do normal'nogo medika.\\
+I finish.\glb{pst.sg.m} veterinary.\glb{f.sg.acc} academy.\glb{sg.acc}, but army.\glb{sg.nom} do.qualify.\glb{pst.sg.f} me.\glb{acc} to normal.\glb{m.sg.gen} physician.\glb{sg.gen}\\
+\trans `I graduated from the vererinary academy and in the army I improved my qualification enough to become a physician.'\hbox{}\hfill\hbox{\url{https://www.kommersant.ru/doc/2288059}, accessed on 03.08.2021}
+
