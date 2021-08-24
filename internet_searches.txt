@@ -8,6 +8,11 @@ we reform.\glb{pst.pl} system.\glb{sg.acc} public service, conduct.\glb{pst.pl} 
 \trans `We have reformed the public service system, conducted a pensionary reform.'
 \hfill \url{https://iz.ru/news/268085}, accessed on 21.07.21
 
+\ex. \ag. \label{ex:doperezaimp}V dannyj moment doperezapisyvaju e\v{s}\v{c}e 2 pesni.\\
+in given moment do.pere.za.write.imp.\glb{1.sg} also 2 songs\\
+\trans `I'm currently finishing rerecording two more songs.'
+\hbox{}\hfill\hbox{\url{http://metalrus.ru/forum/index.php?topic=1362.0}, accessed on 24.08.2021}
+
 \ex.\ag.\label{ex:dopereimp}Ja skol'ko ni doperestraival, ljudi v itoge tratili bol'\v{s}e, \v{c}em na novuju postrojku.\\
 I how.much ever do.pere.build.imp.\glb{pst.sg.m}, people in total spent more then on new bulding.\\
 \trans `Every time I was rebuilding something, in the end the clients spent more than they would have paid for the new building.'\\
@@ -57,3 +62,129 @@ process.\glb{sg.acc} placement.\glb{sg. gen} can.\glb{pres.3.sg} simplify.\glb{i
 I finish.\glb{pst.sg.m} veterinary.\glb{f.sg.acc} academy.\glb{sg.acc}, but army.\glb{sg.nom} do.qualify.\glb{pst.sg.f} me.\glb{acc} to normal.\glb{m.sg.gen} physician.\glb{sg.gen}\\
 \trans `I graduated from the vererinary academy and in the army I improved my qualification enough to become a physician.'\hbox{}\hfill\hbox{\url{https://www.kommersant.ru/doc/2288059}, accessed on 03.08.2021}
 
+\ex.\label{ex:dokvalificirovat':imperf}\ag.\label{ex:dokvalificirovat':ongoing}My vs\"{e} vremja u\v{c}im, pereobu\v{c}aem na\v{s}i kadry, dokvalificiruem, perekvalificiruem.\\
+we all time teach.\glb{pres.3.sg}, pere.ob.teach.\glb{pres.3.sg} our personnel.\glb{pl.acc}, do.qualify.\glb{pres.3.sg}, pere.quaify.\glb{pres.3.sg}\\
+\trans `We always teach and reteach our personnel, train them to the new levels, re-train them.'\hbox{}\hfill\hbox{\url{http://rus-yaz.niv.ru/doc/gallism-dictionary/fc/slovar-202-15.htm}, accessed on 03.08.2021}
+\bg.\label{ex:dokvalificirovat':part}Pri \`{e}tom kak nastavnikam novoprinjatyx kolleg, tak i dokvalificiruemyx proizvoditsja premial'naja oplata za rabo\v{c}ee vremja, posvja\v{s}\v{c}ennoe obu\v{c}eniju.\\
+with this as mentor.\glb{pl.dat} new.accepted.\glb{pl.gen} colleague.\glb{pl.gen}, so and do.qualify.\glb{part.pass.pres.pl.gen} make.\glb{pres.3.sg.}refl premium payment.\glb{sg.nom} behind work.\glb{sg.n.acc} time.\glb{sg.acc}, dedicate.\glb{part.pass.pst.sg.n.nom} education.\glb{dat}\\
+\trans `Wherein both mentors of the new recruits as well as mentors of those workers that are being given extra-trained are paid additionally for the working time they spend on educational purposes.'\\\hbox{}\hfill\hbox{\url{https://kurs.znate.ru/docs/index-170298.html?page=5}, accessed on 03.08.2021}
+\bg.\label{ex:dokvalificirovat':future}Kto budet dokvalificirovat' kadry?\\
+Who will do.qualify.\glb{inf} personnel.\\
+\trans `Who will train the personnel to the new level?'\\\hbox{}\hfill\hbox{\url{https://twitter.com/hashtag/smartcitykazan}, last accessed in 2016}
+
+\exg.\label{ex:dokvalificirovyvat}Vodil nado dokvalificirovyvat' v vy\v{s}ibal, \v{c}tob oni prinimali v takix slu\v{c}ajax kardinal'nye mery.\\
+driver.\glb{pl.acc} need do.qualify.imp.\glb{inf} in doorman.\glb{pl.acc}, that they take.\glb{pst.pl} in such case.\glb{pl.prp} drastic measure.\glb{pl.acc}\\
+\trans `Drivers should be re-trained as bouncers, so that they could take drastic measures.'\hbox{}\hfill\hbox{\url{journals.ru}, last accessed in 2016}
+
+\ex.\label{ex:cushion}\ag.\label{ex:cushion1}…krome togo, mo\v{z}no e\v{s}\v{c}e snizu porolon\v{c}ikom \v{z}\"{e}stkim podamortizirovat'\textsuperscript{\PF}\\		
+…aside that, possible also below {foam rubber} hard pod.cushion.\glb{inf}\\
+\trans `it is also possible to put some hard foam rubber below as a cushion'\\\hbox{}\hfill\hbox{\url{https://guitarplayer.ru/equipment-others/kreplenie-zvukosnimatelya-243681/}, accessed on 24.08.2021}
+\bg.\label{ex:cushion2}\v{C}to tolku podamortizirovat'\textsuperscript{\IPF} perednee koleso, esli zadnie \v{z}estko sidjat na rame.\\
+what sense pod.cushion.\glb{inf} front wheel if back hardly sit.\glb{pres.pl} on frame\\
+\trans `What's the point to cushion the front wheel when the back ones are sitting hard on the frame?'\hbox{}\hfill\hbox{\url{https://pnevmohod.ru/forum/index.php?topic=739.20}, accessed on 24.08.2021}
+
+\exg.\label{ex:podamortizacija}Ili, ska\v{z}em, v BTR-ax su\v{s}\v{c}estvuet podamortizacija sidenij: dlja togo, \v{c}toby v slu\v{c}ae naezda na minu desantnika ne tak sil'no trjaxnulo.\\
+Or, say.\glb{pres.1.pl}, in BTR.\glb{pl.prep} exist.\glb{pres.3.sg} pod.cushioning.\glb{sg.nom} seat.\glb{pl.gen}: for that, that in case hitting on bomb paratrooper not as strongly shake.\glb{pst.sg.n}\\
+\trans `Or, say, BTRs have a slight seat cushioning: so if it drives over a bomb the paratrooper won't be shaken so much.'\hbox{}\hfill\hbox{\url{https://www.liveinternet.ru/users/657082/post340646018/}, accessed on 24.08.2021}
+
+
+\exg.\label{ex:otkvalificirovat'}Ja li\v{s} otkvalificiroval na osnovanii tipi\v{c}nyx voprosov.\\
+I only ot.qualify.\glb{pst.sg.m} on basis typical question.\glb{pl.gen}\\
+\trans `I only got re-qualified on the basis of the typical questions.'\\\hbox{}\hfill\hbox{\url{https://forum.nag.ru/index.php?/topic/18454-cisco-d-link/}, accessed on 24.08.2021}
+
+\exg.\label{ex:organizovat1}Pervyj kanal organizoval\textsuperscript{\PF} v Tule grandioznyj prazdnik dlja detej.\\
+first channel organise.\glb{pst.sg.m} in Tula.\glb{prp} colossal celebration for children.\glb{gen}\\
+\trans `Channel 1 organised a colossal celebration for children in Tula.'\\\hbox{}\hfill\hbox{\url{https://www.1tv.ru/actions/stan-pervym/pervyy-kanal-organizoval-v-tule-grandioznyy-prazdnik-dlya-detey}, accessed on 24.08.2021}
+
+\exg.\label{ex:organizovat}Kak ja organizuju\textsuperscript{\IPF} informaciju pri prodvi\v{z}enii sajtov.\\
+how I organise.\glb{pres.1.sg} information.\glb{acc} at promotion.\glb{sg.prp} website.\glb{pl.gen}\\
+\trans `How do I organise information when promoting a website.'\hbox{}\hfill\hbox{\url{https://shakin.ru/seo/how-i-organize-seo-data.html}, accessed on 24.08.2021}
+
+\ex.\label{ex:doorganizovyvat}\ag.sam budu doorganizovyvat'\textsuperscript{\IPF} obu\v{c}enie\\
+myself will do.organise.imp.\glb{inf} education.\glb{acc}\\
+\trans `I will finish organising the education process myself'\\\hbox{}\hfill\hbox{\url{deco-house.ru}, last accessed in 2016}
+\bg.Ja da\v{z}e svoju gil'diju do six por ne doorganizovyval\textsuperscript{\PF}, ne to, \v{c}to celoe kom'juniti\\
+I also my guild.\glb{sg.acc} until this time not do.organise.imp.\glb{pst.sg.m}, not that, that whole community\\
+\trans `I still have not finished organising my guild, let alone the whole community.'\hbox{}\hfill\hbox{\url{https://forum.tera-online.ru/topic/706/?page=2?}, accessed on 24.08.2021}
+
+Ch2 line 938:
+\exg.\label{ex:pereplanirovat'}Odnako vposledstvii arendator samovol'no pereplaniroval\textsuperscript{\PF} pome\v{s}\v{c}enije v proizvodstvennye cexa.\\
+nevertheless later tenant.\glb{sg.nom} {without permit} pere.plan.\glb{pst.sg.m} room.\glb{pl.acc} in production hall.\glb{pl.acc}\\
+\trans `The tenant nevertheless later replanned the space without permission into a production hall.'\\\hbox{}\hfill\hbox{\url{https://www.uralinform.ru/news/crime/94439-v-ekaterinburge-glava-mebelnoi-phirmy-otvetit-za-gibel-12-chelovek/}, accessed on 24.08.2021}
+
+\ex.\label{ex:pereplanirovat:imperf}\ag.\label{ex:pereplanirovat:future1}A poka budu pereplanirovat'\textsuperscript{\IPF} u\v{c}astok pod budu\v{s}\v{c}uju posadku.\\
+but now will pere.plan.\glb{inf} {garden plot} under future planting\\
+\trans `In the meanwhile I will replan the garden plot for future planting.'\hbox{}\hfill\hbox{\url{https://forum.vinograd.info/archive/index.php?t-1935-p-3.html}, accessed on 24.08.2021}
+\bg.\label{ex:pereplanirovat:future2}Budu pereplanirovat' mar\v{s}rut s u\v{c}\v{e}tom ostanovok i vylazok s mesta dislokacii po radiusu.\\
+will pere.plan.\glb{inf} route with accounting stop.\glb{pl.gen} and outing.\glb{pl.gen} with place location.\glb{sg.gen} on radius\\
+\trans `I will replan the route, taking into account the stops and radial outings from our location.'\hbox{}\hfill\hbox{\url{https://forum.awd.ru/viewtopic.php?f=1081&t=202383&start=20}, accessed on 24.08.2021}
+\bg.\label{ex:pereplanirovat:start}Soglasilsja. Na\v{c}al pereplanirovat' svoi dela na vyxodnye.\\
+agree.\glb{pst.sg.m.refl} start.\glb{pst.sg.m} pere.plan.\glb{inf} my affairs on weekend\\
+\trans `I agreed. I started replanning my weekend activities.'\\\hbox{}\hfill\hbox{\url{https://market.yandex.ru/user/1h3d4n5av25qe6tq1bh7jzx5zg/reviews}, accessed on 24.08.2021}
+\bg.\label{ex:pereplanirovat:prog}Imeetsja kvartira (5 komnat), kotoruju v dannyj moment pereplanirujut i pereoformljajut, kak 2 i 3.\\
+have.\glb{pres.3.sg.refl} flat.\glb{sg.nom} (5 room\glb{.pl.gen}) that in given moment pere.plan.\glb{pres.3.pl} and pere.register.\glb{pres.3.pl} as 2 and 3\\
+\trans `There is a flat (5 rooms) that is now being replanned and reregistered, as one 2-room and one 3-room flat.'\hbox{}\hfill\hbox{\url{m.disput.az}, last accessed in 2016}
+\bg.\label{ex:pereplanirovat:part}Tol'ko ja svoju pereplanirovku sdala v \`{e}kspluataciju v 2004 godu i polu\v{c}ila pravo sobstvennosti na pereplaniruemyj ob'ekt.\\
+only I my pere.planning.glb{sg.acc} s.give.\glb{pst.sg.f} in operation in 2004 year and receive.\glb{pst.sg.f} right property on pere.plan.\glb{part.pass.pres.sg.m.acc} object\\
+`But my replanning was put into operation in 2004 and I received the right of property for the replanned site.'
+\hbox{}\hfill\hbox{\url{https://www.zonazakona.ru/forum/topic/59929-kakova-summa-shtrafa-za-nezakonnuyu-pereplanirovku/}, accessed on 24.08.2021}
+
+\exg.\label{ex:pereplanirovanie}\`{E}ksperty pristupili k pereplanirovaniju territorij ob''edinennogo stoli\v{c}nogo regiona.\\
+expert.\glb{pl.nom} start.\glb{pst.pl} to pere.planning.\glb{sg.dat} territory.\glb{pl.gen} joint capital region\\
+\trans `Experts started to replan the area of the joint capital region.'\\\hbox{}\hfill\hbox{\url{https://txt.newsru.com/realty/13Jul2011/drops.html}, accessed on 24.08.2021}
+
+\exg.\label{ex:krestit'}Potrebuem perekre\v{s}\v{c}ivat' vsex mladencev i pereotpevat' vsex pokojnikov? Pereven\v{c}ivat' i pereispovedovat'?\\
+po.demand.\glb{pres.1.pl} pere.baptise.imp.\glb{inf} all infant.\glb{pl.gen} and pere.ot.sing.imp.\glb{inf} all deceased.\glb{pl.gen} pere.baptise.imp.\glb{inf} and pere.profess.\glb{inf}\\
+\trans `Will we demand that they rebaptise all the infants and reread the burial service for all the deceased? Rebaptise and reprofess?'\\\hbox{}\hfill\hbox{\url{http://www.dobroeslovo.ru/viewtopic.php?f=5&t=25559}, accessed on 24.08.2021}
+
+\ex.\label{ex:promise}\ag.\label{ex:promise:ipf}Devu\v{s}ka, kotoroj obe\v{s}\v{c}an dar mol\v{c}it, esli {v te\v{c}enii} nedeli ne otvetit -- budu pereobe\v{s}\v{c}at'.\\
+girl.\glb{sg.nom} which promise.\glb{part.pass.sg.m} gift keep.silent.\glb{pres.3.sg} if during week not answer.\glb{pres.3.sg} {}  will pere.promise.\glb{inf}\\
+\trans `The girl to whom I promised the gift, remains silent, if she does not reply within a week -- I will repromise.'
+\hbox{}\hfill\hbox{\url{https://darudar.org/gift/1359284/}, accessed on 24.08.2021}
+\bg.\label{ex:promise:pf}Poobe\v{s}\v{c}ali perezvonit', \v{c}to ja pereobe\v{s}\v{c}al v svoju o\v{c}ered' Rome...\\
+po.promise.\glb{pst.pl} pere.call.\glb{inf}, what I pere.promise.\glb{pst.sg} in my turn Roma.\glb{dat}\\
+\trans `They promised to call back and I, in my turn, promised that to\linebreak Roma...' \hfill\hbox{\url{yphooteem.kidalia.com}, last accessed in 2016}
+
+\exg.\label{ex:reprofess}Zanovo pereispovedoval i e\v{s}\v{c}\"{e} dolgo ute\v{s}al sladkimi slovami o spasenii i radosti bogoljubija.\\
+Anew pere.profess.\glb{pst.sg.m} and more long comfort.\glb{psd.sg.m} sweet word.\glb{pl.inst} about salvation and joy godliness.\glb{gen}\\
+\trans `He professed me \isi{anew} and spent a long time comforting me with sweet words about the salvation and the joy of godliness.'\hbox{}\hfill\hbox{\url{https://azbyka.ru/otechnik/Varvara_Pylneva/chudo-ispovedi-nepridumannye-rasskazy-o-tainstve-pokajanija/}, accessed on 24.08.2021}
+
+Chapter 4:
+\exg.\label{ex:podzarabatyvat'live}Delaete xoro\v{s}ie fotosnimki? U vas est' vozmo\v{z}nost' podzarabatyvat' na \`{e}tom!\\
+make good photos near you have possibility pod.za.earn.imp.\glb{inf} on this\\
+\trans `Do you take good photos? You have the chance to earn some money from it!'~~\hbox{}\hfill\hbox{\url{http://smolgorforum.ru/index.php?/forum/65-foto-i-video/}, accessed on 24.08.2021}
+
+\bg.\label{ex:po:Tat2}Po\`{e}tomu zapustil programmu, zapisyvaju\v{s}\v{c}uju dejstvija na \`{e}krane, otkryl PSP, i nemnogo $^\#$po-zapisal (\textsuperscript{\JudgeOK}po-zapisyval$^{\PF}$), \v{c}to i kak.\\
+{because of it} za.let.\glb{pst.sg.m} program.\glb{sg.acc}, za.write.\glb{part.act.pres.sg.f.acc} action.\glb{pl.acc} on screen.\glb{sg.prep}, open.\glb{pst.sg.m} PSP, and {a bit} $^\#$po.write.\glb{pst.sg.m} (\textsuperscript{\JudgeOK}po.write.imp\glb{pst.sg.m}), what and how\\
+\trans `For this reason I ran the program that records the actions on the screen and recorded for some time, what was happening and how.'\\\hbox{}\hfill\hbox{=(63b) in \citet{Tatevosov:09}, \url{nova-forum.com}} -- URL from Tatevosov:09, I can't find this link
+
+\exg. \label{ex:popriotkryl}A na e\v{s}elone on nemno\v{z}ko \v{c}ut' popriotkryl oko\v{s}ko.\\
+But at {flight level} he {a little bit} {slightly} po.pri.open.\glb{pst.sg.m} window.\glb{sg.acc}\\
+\trans `And at flight level he opened the window just a little bit.'\\\hbox{}\hfill\hbox{\url{http://www.rsdn.ru/forum/life/4244369.1}, accessed on 24.08.2021}
+
+\exg.\label{ex:popod-}Za sorok let despotizma mozgi popodsoxli.\\
+after forty year.\glb{pl.gen} despotism brain.\glb{nom} po.pod.dry.\glb{pst.pl}\\
+\trans `During forty years of despotism his brain kind of dried up a bit.'\\\hbox{}\hfill\hbox{\url{http://otvet.mail.ru/question/65535779}, accessed on 24.08.2021}
+
+\exg.\label{ex:pereoprosil:iter}Sledovateli Genprokuratury zanovo pereoprosili u\v{c}itelej i odnoklassnikov Jakova.\\
+investigator.\glb{pl.nom} General.Prosecution.\glb{gen} \isi{anew} pere.o.ask.\glb{pst.pl} teacher.\glb{pl.acc} and classmate.\glb{pl.acc} Jakov.\glb{gen}\\
+\trans `Investigators from the General Prosecution interviewed the teachers and the classmates of Jakov again.'\hbox{}\hfill\hbox{\url{https://www.topnews.ru/media_id_5978.html}, accessed on 24.08.2021}
+
+\exg.\label{ex:pereoprosil:distr}Perepostil na vse alfaforumy, pereoprosil vsex znakomyx avtoslesarej.\\ 
+pere.post.\glb{pst.sg.m} on all {alfa.forums}, pere.ask.\glb{pst.sg.m} all.\glb{acc} known mechanic.\glb{pl.gen}\\
+\trans `I posted it on all the major forums and asked all mechanics I know.'\\\hbox{}\hfill\hbox{\url{https://fiat-club.org.ua/forum/viewtopic.php?t=27668}, accessed on 24.08.2021}
+
+
+\exg.\label{ex:pereoprashival}Pereopra\v{s}ival vsex u\v{c}\"{e}nyx, nikto ne da\"{e}t kvest na oazis...\\
+pere.o.ask.imp.\glb{pst.sg.m} all.\glb{acc} scientist.\glb{pl.gen}, nobody not give.\glb{pres.3.sg} quest on oasis.\glb{sg.acc}\\
+\trans `I've talked (asked all the questions) to all the scientists, none of them gave me the oasis quest.'\hbox{}\hfill\hbox{\url{https://antistarforce.com/forum/69-3832-26}, accessed on 24.08.2021}
+
+\exg.\label{ex:nazapostil}I naotkryl i nazapostil mnogo tem.\\
+and na.open.\glb{pst.sg.m} and {na.write.\glb{pst.sg.m}} {many} {topics}\\
+\trans `And started a lot of posts and wrote about a lot of topics.'\\\hbox{}\hfill\hbox{\url{http://forum.hayastan.com/loﬁversion/index.php/t5328-100.html}, last accessed in 2016}
+
+Chapter 5:
+\exg.\label{ex:zateach}Malen'kij Ilja \`{e}to soobra\v{z}al, a bol\v{s}oj vyros -- zava\v{z}ni\v{c}al, zau\v{c}itel'stvoval, {nu i} polu\v{c}il spolna, \v{c}to zarabotal!\\
+little Ilja this understand.\glb{pst.sg.m}, but big grow.\glb{pst.sg.m} -- za.showboat.\glb{pst.sg.m}, za.teach.\glb{pst.sg.m}, {and} receive.\glb{pst.sg.m} full, that earn.\glb{pst.sg.m}\\
+\trans `When he was little, Ilja understood this, but when he grew up, he started to showboat, to teach others, and got everything he deserved!'\\\hbox{}\hfill\hbox{
+\url{positive-lit.ru/novels/gde-konchajutsa-relsy/224}, accessed on 24.08.2021}
