@@ -1,7 +1,1 @@
-{"versions": [{"versiontype": "proofreading",
-		"title": "Russian verbal prefixation",
-		"authors": [{"name": "Yulia Zinova"}],
-	"license": "CC-BY-4.0",
-	"publishedAt": "2020-06-29T11:45:00.000Z"}
-	]
-}
+{"versions": [{"authors": [{"name": "Yulia Zinova"}], "title": "Russian verbal prefixation", "publishedAt": "2020-06-29T11:45:00.000Z", "license": "CC-BY-4.0", "versiontype": "proofreading"}, {"title": "Russian verbal prefixation", "versiontype": "first_edition", "license": "CC-BY-4.0", "publishedAt": "2021-09-17T14:58:36.633734", "authors": [{"name": "Yulia Zinova"}]}]}
